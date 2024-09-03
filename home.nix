@@ -12,6 +12,7 @@
 		enable = true;
 		interactiveShellInit = ''
 			set fish_greeting # Disable greeting
+			alias cd z # Zoxide instead of cd 
 		'';
 	};
 	programs.kitty = {
@@ -25,6 +26,7 @@
 			enable_audio_bell = false;
 		};
 	};
+	programs.zoxide.enable = true;
 	programs.tmux.enable = true;
 	home.stateVersion = "24.11";
 }

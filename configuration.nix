@@ -63,7 +63,6 @@
 		packages = with pkgs; [
 			vesktop
 			kitty
-			firefox
 			heroic
 		];
 	};
@@ -90,6 +89,15 @@
 		wget
 		vulkan-tools
 		fish
+		gcc
+		unzip
+		zip
+		ripgrep
+		jq
+		fzf
+		gnumake
+		cmake
+		zoxide
 	];
 
 	system.stateVersion = "24.05"; # Did you read the comment?
