@@ -98,6 +98,8 @@
 		gnumake
 		cmake
 		zoxide
+		xdg-desktop-portal-gtk
+		xdg-desktop-portal-kde
 	];
 
 	system.stateVersion = "24.05"; # Did you read the comment?
