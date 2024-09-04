@@ -5,6 +5,7 @@
 		./fish.nix
 		./git.nix
 		./kitty.nix
+		./zoxide.nix
 	];
 
 	home.username = "r3ddy";
