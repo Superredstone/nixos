@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, stylix, ... }:
 
 {
 	imports =
@@ -102,6 +102,9 @@
 		gnumake
 		cmake
 		zoxide
+		appimage-run
+		mangohud
+		prismlauncher
 		vim  # The only and one great editor
 		neovim # The only and one great editor improved even further 
 
@@ -115,6 +118,34 @@
 		# LSPs 
 		nil # .nix
 	];
+
+	# Styling
+	stylix.enable = true;
+	stylix.image = pkgs.fetchurl {
+		url = "https://wallpaperaccess.com/full/4268145.jpg";
+		sha256 = "06c8jmm7m0n4xlfki8sx6msdjjjbyydpyxs4k71d1lxn20ga2zph";
+	};
+	stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+	stylix.cursor.package = pkgs.bibata-cursors;
+	stylix.cursor.name = "Bibata-Modern-Classic";
+	stylix.fonts = {
+		monospace = {
+			package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+			name = "JetBrainsMono Nerd Font";
+		};
+		sansSerif = {
+			package = pkgs.dejavu_fonts;
+			name = "DejaVu Sans";
+		};
+		serif = {
+			package = pkgs.dejavu_fonts;
+			name = "DejaVu Serif";
+		};
+		sizes = {
+			terminal = 16;
+		};
+	};
+	stylix.polarity = "dark";
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
