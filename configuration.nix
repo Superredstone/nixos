@@ -89,11 +89,9 @@
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	environment.systemPackages = with pkgs; [
+		# CLI utils
 		git
-		vim 
-		neovim
 		wget
-		vulkan-tools
 		fish
 		gcc
 		unzip
@@ -104,8 +102,18 @@
 		gnumake
 		cmake
 		zoxide
-		xdg-desktop-portal-gtk
+		vim  # The only and one great editor
+		neovim # The only and one great editor improved even further 
+
+		# Video card
+		vulkan-tools
+
+		# Desktop utils 
 		xdg-desktop-portal-kde
+		xdg-desktop-portal-gtk
+
+		# LSPs 
+		nil # .nix
 	];
 
 	system.stateVersion = "24.05"; # Did you read the comment?
