@@ -8,6 +8,12 @@
 
 	boot.loader.systemd-boot.enable = true;
 	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader.systemd-boot.configurationLimit = 10;
+	nix.gc = {
+		automatic = true;
+		dates = "weekly";
+		options = "--delete-older-than 1w";
+	};
 
 	boot.initrd.luks.devices."luks-332a07bd-65fb-4d91-91ba-fe3f594063b1".device = "/dev/disk/by-uuid/332a07bd-65fb-4d91-91ba-fe3f594063b1";
 	networking.hostName = "nixos"; # Define your hostname.
