@@ -15,6 +15,15 @@
 		options = "--delete-older-than 1w";
 	};
 
+	# Remove old gtkrc file, otherwise it will not work
+	system.userActivationScripts = {
+		removeConflictingFiles = {
+			text = ''
+				rm -f /home/r3ddy/.gtkrc-2.0.backup
+			'';
+		};
+	};
+
 	boot.initrd.luks.devices."luks-332a07bd-65fb-4d91-91ba-fe3f594063b1".device = "/dev/disk/by-uuid/332a07bd-65fb-4d91-91ba-fe3f594063b1";
 	networking.hostName = "nixos"; # Define your hostname.
 
@@ -103,13 +112,16 @@
 		cmake
 		zoxide
 		appimage-run
-		mangohud
-		prismlauncher
+
 		vim  # The only and one great editor
 		neovim # The only and one great editor improved even further 
 
 		# Video card
 		vulkan-tools
+
+		# Gaming
+		prismlauncher
+		mangohud
 
 		# Desktop utils 
 		xdg-desktop-portal-kde
@@ -128,6 +140,7 @@
 	stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
 	stylix.cursor.package = pkgs.bibata-cursors;
 	stylix.cursor.name = "Bibata-Modern-Classic";
+	stylix.cursor.size = 24;
 	stylix.fonts = {
 		monospace = {
 			package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
@@ -143,6 +156,9 @@
 		};
 		sizes = {
 			terminal = 16;
+			desktop = 10;
+			popups = 10;
+			applications = 10;
 		};
 	};
 	stylix.polarity = "dark";
