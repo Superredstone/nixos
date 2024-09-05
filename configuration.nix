@@ -4,6 +4,8 @@
 	imports =
 	[ # Include the results of the hardware scan.
 		./hardware-configuration.nix
+		./modules/services.nix
+		./modules/styling.nix
 	];
 
 	boot.loader.systemd-boot.enable = true;
@@ -28,6 +30,25 @@
 	networking.hostName = "nixos"; # Define your hostname.
 
 	networking.networkmanager.enable = true;
+	networking.firewall.allowedUDPPorts = [ 25565 ];
+	networking.firewall.allowedTCPPorts = [ 25565 ];
+	hardware.bluetooth.enable = true;
+	hardware.bluetooth.powerOnBoot = true;
+
+	hardware.nvidia = {
+		modesetting.enable = true;	
+		package = config.boot.kernelPackages.nvidiaPackages.beta;
+		open = true;
+		prime = {
+			offload = {
+				enable = true;
+				enableOffloadCmd = true;
+			};
+
+			intelBusId = "PCI:0:2:0";
+			nvidiaBusId = "PCI:1:0:0";
+		};
+	};
 
 	time.timeZone = "Europe/Rome";
 
@@ -46,47 +67,17 @@
 		LC_TIME = "it_IT.UTF-8";
 	};
 
-	services.xserver.enable = true;
-	services.flatpak.enable = true;
-	services.displayManager.sddm.enable = true;
-	services.desktopManager.plasma6.enable = true;
-
-	# Configure keymap in X11
-	services.xserver.xkb = {
-		layout = "us";
-		variant = "";
-	};
-
-	# Enable CUPS to print documents.
-	services.printing.enable = true;
 
 	# Enable sound with pipewire.
 	hardware.pulseaudio.enable = false;
 	security.rtkit.enable = true;
-	services.pipewire = {
-		enable = true;
-		alsa.enable = true;
-		alsa.support32Bit = true;
-		pulse.enable = true;
-	};
 
+	programs.fish.enable = true; # This must be true before initializing my user
 	users.users.r3ddy = {
 		isNormalUser = true;
 		description = "Patrick Canal";
 		extraGroups = [ "networkmanager" "wheel" ];
 		shell = pkgs.fish;
-		packages = with pkgs; [
-			vesktop
-			kitty
-			heroic
-		];
-	};
-
-	programs.fish.enable = true;
-	programs.steam = {
-		enable = true;
-		remotePlay.openFirewall = true;
-		localNetworkGameTransfers.openFirewall = true;
 	};
 
 	fonts.packages = with pkgs; [
@@ -99,19 +90,21 @@
 
 	environment.systemPackages = with pkgs; [
 		# CLI utils
-		git
-		wget
-		fish
-		gcc
-		unzip
-		zip
-		ripgrep
-		jq
-		fzf
-		gnumake
-		cmake
-		zoxide
 		appimage-run
+		cmake
+		fish
+		fzf
+		gcc
+		git
+		gnumake
+		jq
+		ripgrep
+		tree
+		unzip
+		wget
+		zip
+		zoxide
+		zulu
 
 		vim  # The only and one great editor
 		neovim # The only and one great editor improved even further 
@@ -120,48 +113,23 @@
 		vulkan-tools
 
 		# Gaming
-		prismlauncher
+		heroic
 		mangohud
+		prismlauncher
+		steam
+		vesktop
 
 		# Desktop utils 
-		xdg-desktop-portal-kde
+		kitty
 		xdg-desktop-portal-gtk
+		xdg-desktop-portal-kde
 
 		# LSPs 
 		nil # .nix
 	];
 
-	# Styling
-	stylix.enable = true;
-	stylix.image = pkgs.fetchurl {
-		url = "https://wallpaperaccess.com/full/4268145.jpg";
-		sha256 = "06c8jmm7m0n4xlfki8sx6msdjjjbyydpyxs4k71d1lxn20ga2zph";
-	};
-	stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
-	stylix.cursor.package = pkgs.bibata-cursors;
-	stylix.cursor.name = "Bibata-Modern-Classic";
-	stylix.cursor.size = 24;
-	stylix.fonts = {
-		monospace = {
-			package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
-			name = "JetBrainsMono Nerd Font";
-		};
-		sansSerif = {
-			package = pkgs.dejavu_fonts;
-			name = "DejaVu Sans";
-		};
-		serif = {
-			package = pkgs.dejavu_fonts;
-			name = "DejaVu Serif";
-		};
-		sizes = {
-			terminal = 16;
-			desktop = 10;
-			popups = 10;
-			applications = 10;
-		};
-	};
-	stylix.polarity = "dark";
+	programs.steam.enable = true;
+	programs.steam.remotePlay.openFirewall = true;
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }

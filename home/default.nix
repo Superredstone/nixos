@@ -11,7 +11,6 @@
 	home.username = "r3ddy";
 
 	programs.home-manager.enable = true;
-	programs.zoxide.enable = true;
 
 	home.stateVersion = "24.11";
 }
