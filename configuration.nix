@@ -1,17 +1,14 @@
-{ config, pkgs, ... }:
-
+{ pkgs, ... }:
 {
 	imports =
 	[ # Include the results of the hardware scan.
 		./hardware-configuration.nix
+		./modules/boot.nix
 		./modules/nvidia.nix
 		./modules/services.nix
 		./modules/styling.nix
 	];
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
-	boot.loader.systemd-boot.configurationLimit = 10;
 	nix.gc = {
 		automatic = true;
 		dates = "weekly";
@@ -27,7 +24,6 @@
 		};
 	};
 
-	boot.initrd.luks.devices."luks-332a07bd-65fb-4d91-91ba-fe3f594063b1".device = "/dev/disk/by-uuid/332a07bd-65fb-4d91-91ba-fe3f594063b1";
 	networking.hostName = "nixos"; # Define your hostname.
 
 	networking.networkmanager.enable = true;
@@ -62,7 +58,7 @@
 	users.users.r3ddy = {
 		isNormalUser = true;
 		description = "Patrick Canal";
-		extraGroups = [ "networkmanager" "wheel" ];
+		extraGroups = [ "networkmanager" "wheel" "docker" ];
 		shell = pkgs.fish;
 	};
 
@@ -78,6 +74,8 @@
 		# CLI utils
 		appimage-run
 		cmake
+		distrobox
+		docker
 		fish
 		fzf
 		gcc
@@ -117,6 +115,13 @@
 
 	programs.steam.enable = true;
 	programs.steam.remotePlay.openFirewall = true;
+	virtualisation.docker = {
+		enable = true;
+		rootless = {
+			enable = true;
+			setSocketVariable = true;
+		};
+	};
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
