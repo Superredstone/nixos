@@ -1,9 +1,10 @@
-{ config, pkgs, stylix, ... }:
+{ config, pkgs, ... }:
 
 {
 	imports =
 	[ # Include the results of the hardware scan.
 		./hardware-configuration.nix
+		./modules/nvidia.nix
 		./modules/services.nix
 		./modules/styling.nix
 	];
@@ -34,21 +35,6 @@
 	networking.firewall.allowedTCPPorts = [ 25565 ];
 	hardware.bluetooth.enable = true;
 	hardware.bluetooth.powerOnBoot = true;
-
-	hardware.nvidia = {
-		modesetting.enable = true;	
-		package = config.boot.kernelPackages.nvidiaPackages.beta;
-		open = true;
-		prime = {
-			offload = {
-				enable = true;
-				enableOffloadCmd = true;
-			};
-
-			intelBusId = "PCI:0:2:0";
-			nvidiaBusId = "PCI:1:0:0";
-		};
-	};
 
 	time.timeZone = "Europe/Rome";
 
@@ -102,6 +88,7 @@
 		tree
 		unzip
 		wget
+		wl-clipboard
 		zip
 		zoxide
 		zulu
