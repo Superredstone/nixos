@@ -49,7 +49,7 @@
 		LC_TIME = "it_IT.UTF-8";
 	};
 
-	environment.sessionVariables = rec {
+	environment.sessionVariables = {
 		GOPATH = "$HOME/.go";
 	};
 
@@ -77,6 +77,7 @@
 	environment.systemPackages = with pkgs; [
 		# CLI utils
 		appimage-run
+		btop
 		cmake
 		distrobox
 		docker
