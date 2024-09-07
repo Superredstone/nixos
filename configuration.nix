@@ -49,6 +49,10 @@
 		LC_TIME = "it_IT.UTF-8";
 	};
 
+	environment.sessionVariables = rec {
+		GOPATH = "$HOME/.go";
+	};
+
 
 	# Enable sound with pipewire.
 	hardware.pulseaudio.enable = false;
@@ -110,6 +114,7 @@
 		xdg-desktop-portal-kde
 
 		# LSPs 
+		gopls # .go
 		nil # .nix
 	];
 
