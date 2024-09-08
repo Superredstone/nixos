@@ -21,7 +21,7 @@
 					home-manager.backupFileExtension = "backup";
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
-					home-manager.users.r3ddy = import ./home/default.nix;
+					home-manager.users.r3ddy = import ./home;
 				}
 				stylix.nixosModules.stylix
 			];

@@ -50,6 +50,7 @@
 	};
 
 	environment.sessionVariables = {
+		NIXOS_OZONE_WL = "1"; # Use Wayland when possible
 		GOPATH = "$HOME/.go";
 	};
 
