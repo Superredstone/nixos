@@ -88,6 +88,7 @@
 		git
 		gnumake
 		jq
+		python3
 		ripgrep
 		tree
 		unzip
@@ -118,6 +119,8 @@
 		# LSPs 
 		gopls # .go
 		nil # .nix
+		luajitPackages.lua-lsp # .lua
+		jdt-language-server # .java
 	];
 
 	programs.steam.enable = true;
