@@ -87,6 +87,7 @@
 		gcc
 		git
 		gnumake
+		home-manager
 		jq
 		python3
 		ripgrep
