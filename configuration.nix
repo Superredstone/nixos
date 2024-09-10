@@ -113,6 +113,7 @@
 
 		# Desktop utils 
 		kitty
+		xdg-desktop-portal
 		xdg-desktop-portal-gtk
 		xdg-desktop-portal-kde
 
