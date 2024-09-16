@@ -117,6 +117,9 @@
 		xdg-desktop-portal-gtk
 		xdg-desktop-portal-kde
 
+		# GUI applications
+		ciscoPacketTracer8
+
 		# LSPs 
 		gopls # .go
 		nil # .nix
