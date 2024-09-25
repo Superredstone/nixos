@@ -105,6 +105,7 @@
 		vulkan-tools
 
 		# Gaming
+		gamemode
 		heroic
 		mangohud
 		prismlauncher
@@ -118,6 +119,7 @@
 		xdg-desktop-portal-kde
 
 		# GUI applications
+		baobab
 		ciscoPacketTracer8
 
 		# LSPs 
