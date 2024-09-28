@@ -105,6 +105,7 @@
 		vulkan-tools
 
 		# Gaming
+		dolphin-emu
 		gamemode
 		heroic
 		mangohud
@@ -138,6 +139,13 @@
 			setSocketVariable = true;
 		};
 	};
+	services.sunshine = {
+		enable = true;
+		autoStart = false;
+		capSysAdmin = true;
+		openFirewall = true;
+	};
+
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
