@@ -122,6 +122,7 @@
 		# GUI applications
 		baobab
 		ciscoPacketTracer8
+		telegram-desktop
 
 		# LSPs 
 		gopls # .go
