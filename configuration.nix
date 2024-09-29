@@ -107,6 +107,7 @@
 		# Gaming
 		dolphin-emu
 		gamemode
+		gamescope
 		heroic
 		mangohud
 		prismlauncher
