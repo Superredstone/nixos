@@ -131,7 +131,7 @@
 		# LSPs 
 		gopls # .go
 		nil # .nix
-		luajitPackages.lua-lsp # .lua
+		# luajitPackages.lua-lsp # .lua
 		jdt-language-server # .java
 	];
 
