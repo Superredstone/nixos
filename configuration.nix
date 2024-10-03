@@ -87,7 +87,9 @@
 		gcc
 		git
 		gnumake
+		htop
 		jq
+		killall
 		python3
 		ripgrep
 		tree
@@ -116,6 +118,7 @@
 
 		# Desktop utils 
 		kitty
+		mpv
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
 		xdg-desktop-portal-kde
@@ -134,13 +137,15 @@
 
 	programs.steam.enable = true;
 	programs.steam.remotePlay.openFirewall = true;
-	virtualisation.docker = {
-		enable = true;
-		rootless = {
-			enable = true;
-			setSocketVariable = true;
-		};
-	};
+	# virtualisation.docker = {
+	# 	enable = true;
+	# 	rootless = {
+	# 		enable = true;
+	# 		setSocketVariable = true;
+	# 	};
+	# };
+	virtualisation.podman.enable = true;
+	virtualisation.podman.dockerCompat = true;
 	services.sunshine = {
 		enable = true;
 		autoStart = false;
