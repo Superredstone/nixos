@@ -90,6 +90,7 @@
 		htop
 		jq
 		killall
+		md2pdf
 		python3
 		ripgrep
 		tree
