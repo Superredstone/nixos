@@ -126,7 +126,8 @@
 
 		# GUI applications
 		baobab
-		ciscoPacketTracer8
+		# ciscoPacketTracer8 # Every time this application fucks up
+		libreoffice
 		telegram-desktop
 
 		# LSPs 
@@ -138,14 +139,16 @@
 
 	programs.steam.enable = true;
 	programs.steam.remotePlay.openFirewall = true;
+	virtualisation.waydroid.enable = true;
 	virtualisation.podman.enable = true;
 	virtualisation.podman.dockerCompat = true;
-	services.sunshine = {
-		enable = true;
-		autoStart = false;
-		capSysAdmin = true;
-		openFirewall = true;
-	};
+	# services.sunshine = {
+	# 	enable = true;
+	# 	autoStart = false;
+	# 	capSysAdmin = true;
+	# 	openFirewall = true;
+	# };
+
 
 
 	system.stateVersion = "24.05"; # Did you read the comment?
