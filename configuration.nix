@@ -97,9 +97,15 @@
 		unzip
 		wget
 		wl-clipboard
+		xdotool
+		xorg.xwininfo
+		yad
 		zip
 		zoxide
 		zulu
+
+		# Man pages
+		man-pages
 
 		vim  # The only and one great editor
 		neovim # The only and one great editor improved even further 
@@ -139,17 +145,11 @@
 
 	programs.steam.enable = true;
 	programs.steam.remotePlay.openFirewall = true;
-	virtualisation.waydroid.enable = true;
 	virtualisation.podman.enable = true;
 	virtualisation.podman.dockerCompat = true;
-	# services.sunshine = {
-	# 	enable = true;
-	# 	autoStart = false;
-	# 	capSysAdmin = true;
-	# 	openFirewall = true;
-	# };
-
-
+	virtualisation.virtualbox.host.enable = true;
+	virtualisation.virtualbox.host.enableExtensionPack = true;
+	users.extraGroups.vboxusers.members = [ "r3ddy" ];
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
