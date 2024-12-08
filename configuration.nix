@@ -68,7 +68,7 @@
 	};
 
 	fonts.packages = with pkgs; [
-		(nerdfonts.override { fonts = [ "JetBrainsMono" "FiraCode" ]; })
+		nerd-fonts.jetbrains-mono
 	];
 
 	nixpkgs.config.allowUnfree = true;
