@@ -56,7 +56,7 @@
 
 
 	# Enable sound with pipewire.
-	hardware.pulseaudio.enable = false;
+	services.pulseaudio.enable = false;
 	security.rtkit.enable = true;
 
 	programs.fish.enable = true; # This must be true before initializing my user
@@ -79,6 +79,7 @@
 		# CLI utils
 		appimage-run
 		btop
+		busybox
 		cmake
 		distrobox
 		docker
@@ -117,7 +118,7 @@
 		dolphin-emu
 		gamemode
 		gamescope
-		heroic
+		heroic 
 		mangohud
 		prismlauncher
 		steam
@@ -147,9 +148,10 @@
 	programs.steam.remotePlay.openFirewall = true;
 	virtualisation.podman.enable = true;
 	virtualisation.podman.dockerCompat = true;
-	virtualisation.virtualbox.host.enable = true;
-	virtualisation.virtualbox.host.enableExtensionPack = true;
-	users.extraGroups.vboxusers.members = [ "r3ddy" ];
+	virtualisation.vmware.host.enable = true;
+	# virtualisation.virtualbox.host.enable = true;
+	# virtualisation.virtualbox.host.enableExtensionPack = true;
+	# users.extraGroups.vboxusers.members = [ "r3ddy" ];
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
