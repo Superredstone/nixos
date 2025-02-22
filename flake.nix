@@ -7,10 +7,9 @@
 			url = "github:nix-community/home-manager/master";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-		stylix.url = "github:danth/stylix";
 	};
 
-	outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs: {
+	outputs = { self, nixpkgs, home-manager, ... }@inputs: {
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 			modules = [
@@ -23,7 +22,6 @@
 					home-manager.useUserPackages = true;
 					home-manager.users.r3ddy = import ./home;
 				}
-				stylix.nixosModules.stylix
 			];
 		};
 	};

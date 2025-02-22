@@ -125,6 +125,7 @@
 		vesktop
 
 		# Desktop utils 
+		brave
 		kitty
 		mpv
 		xdg-desktop-portal
