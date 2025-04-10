@@ -1,6 +1,7 @@
 { ... }:
 {
 	imports = [ 
+		./nvim
 		./tmux.nix
 		./fish.nix
 		./git.nix

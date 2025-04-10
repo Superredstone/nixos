@@ -1,0 +1,31 @@
+{ ... }:
+{
+	programs.nixvim.plugins.lsp = {
+		enable = true;
+		servers = {
+			clangd.enable = true;
+			nil_ls.enable = true;
+			gopls.enable = true;
+			jdtls.enable = true;
+			lua_ls.enable = true;
+			rust_analyzer = {
+				enable = true;
+				installCargo = true;
+				installRustc = true;
+				installRustfmt = true;
+			};
+			zls.enable = true;
+			nim_langserver.enable = true;
+			pylsp.enable = true;
+			emmet_language_server.enable = true;
+			ts_ls.enable = true;
+		};
+		keymaps = {
+			lspBuf = {
+				"<Space>k" = "hover";
+				"<Space>r" = "rename";
+				"<Space>a" = "code_action";
+			};
+		};
+	};
+}

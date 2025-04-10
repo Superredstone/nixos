@@ -6,7 +6,6 @@
 		./modules/boot.nix
 		./modules/nvidia.nix
 		./modules/services.nix
-		./modules/styling.nix
 	];
 
 	nix.gc = {
@@ -80,18 +79,16 @@
 		appimage-run
 		btop
 		busybox
-		cmake
 		distrobox
 		docker
 		fish
 		fzf
-		gcc
 		git
-		gnumake
 		htop
 		jq
 		killall
 		md2pdf
+		nmap
 		python3
 		ripgrep
 		tree
@@ -109,34 +106,30 @@
 		man-pages
 
 		vim  # The only and one great editor
-		neovim # The only and one great editor improved even further 
+		# neovim # The only and one great editor improved even further 
 
 		# Video card
 		vulkan-tools
 
 		# Gaming
 		dolphin-emu
-		gamemode
-		gamescope
 		heroic 
 		mangohud
 		prismlauncher
 		steam
 		vesktop
 
-		# Desktop utils 
-		brave
-		kitty
-		mpv
-		xdg-desktop-portal
-		xdg-desktop-portal-gtk
-		xdg-desktop-portal-kde
-
 		# GUI applications
 		baobab
-		# ciscoPacketTracer8 # Every time this application fucks up
+		brave
+		kdePackages.xdg-desktop-portal-kde
+		kitty
 		libreoffice
+		mpv
+		spotube
 		telegram-desktop
+		xdg-desktop-portal
+		xdg-desktop-portal-gtk
 
 		# LSPs 
 		gopls # .go
@@ -150,9 +143,6 @@
 	virtualisation.podman.enable = true;
 	virtualisation.podman.dockerCompat = true;
 	virtualisation.vmware.host.enable = true;
-	# virtualisation.virtualbox.host.enable = true;
-	# virtualisation.virtualbox.host.enableExtensionPack = true;
-	# users.extraGroups.vboxusers.members = [ "r3ddy" ];
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
