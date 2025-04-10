@@ -16,7 +16,7 @@
 			};
 			zls.enable = true;
 			nim_langserver.enable = true;
-			pylsp.enable = true;
+			pyright.enable = true;
 			emmet_language_server.enable = true;
 			ts_ls.enable = true;
 		};
