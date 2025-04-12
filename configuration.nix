@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, zen-browser, ... }:
 {
 	imports =
 	[ # Include the results of the hardware scan.
@@ -130,19 +130,13 @@
 		telegram-desktop
 		xdg-desktop-portal
 		xdg-desktop-portal-gtk
-
-		# LSPs 
-		gopls # .go
-		nil # .nix
-		# luajitPackages.lua-lsp # .lua
-		jdt-language-server # .java
 	];
 
 	programs.steam.enable = true;
 	programs.steam.remotePlay.openFirewall = true;
 	virtualisation.podman.enable = true;
 	virtualisation.podman.dockerCompat = true;
-	virtualisation.vmware.host.enable = true;
+	# virtualisation.vmware.host.enable = true;
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }
