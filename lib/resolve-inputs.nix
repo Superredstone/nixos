@@ -6,11 +6,9 @@
 let
 	isDarwin = (import inputs.nixpkgs-unstable { inherit system; }).stdenv.isDarwin;
 	darwin = if stable then inputs.darwin-stable else inputs.darwin-unstable;
-	stable-suffix = if isDarwin then "stable-darwin" else "stable-nixos";
-	nixpkgs-stable = inputs."nixpkgs-${stable-suffix}";
+	nixpkgs-stable = inputs."nixpkgs-unstable";
 	nixpkgs = if stable then nixpkgs-stable else inputs.nixpkgs-unstable;
-	home-manager =
-		if stable then inputs."home-manager-${stable-suffix}" else inputs.home-manager-unstable;
+	home-manager = inputs.home-manager-unstable;
 in
 {
 	inherit isDarwin nixpkgs-stable;

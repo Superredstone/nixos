@@ -1,6 +1,7 @@
 # This file comes from https://github.com/kahlstrm/nixos-config/blob/main/lib/mksystem.nix
 {
 	overlays,
+	nixvim,
 	inputs,
 }:
 name:
@@ -31,7 +32,7 @@ let
 		;
 	# The config files for this system.
 	nixConfig = ../modules/nix-config/default.nix;
-	machineConfig = ../machines/${name}.nix;
+	machineConfig = ../machines/${name}/default.nix;
 	# OSConfig = ../modules/${if isDarwin then "darwin" else "nixos"}.nix;
 	HMConfig = ../home;
 	# systemPackages = ../modules/packages.nix;
@@ -68,31 +69,22 @@ in
 assert isWSL -> !isDarwin;
 systemFunc {
 	inherit system specialArgs;
-	# We expose some extra arguments so that our modules can parameterize
-	# better based on these values.
 	modules = [
-		# Apply our overlays. Overlays are keyed by system type so we have
-		# to go through and apply our system type. We do this first so
-		# the overlays are available globally.
 		{ nixpkgs.overlays = overlays; }
-
-		# Allow unfree packages.
 		{ nixpkgs.config.allowUnfree = true; }
-
-		# Bring in WSL if this is a WSL build
 		(if isWSL then inputs.nixos-wsl.nixosModules.wsl else { })
 		nixConfig
 		nix-homebrew
 		nix-homebrew-config
-		# systemPackages
-		# OSConfig
-		# TODO: make user config & home-manager optional
 		home-manager.home-manager
 		{
 			home-manager.useGlobalPkgs = true;
 			home-manager.useUserPackages = true;
 			home-manager.users.${user} = import HMConfig;
 			home-manager.extraSpecialArgs = specialArgs;
+			home-manager.sharedModules = [
+				nixvim.homeManagerModules.nixvim
+			];
 		}
 		machineConfig
 	];

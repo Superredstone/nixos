@@ -59,6 +59,68 @@
         "type": "github"
       }
     },
+    "home-manager-stable-darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable-darwin"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746171682,
+        "narHash": "sha256-EyXUNSa+H+YvGVuQJP1nZskXAowxKYp79RNUsNdQTj4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "50eee705bbdbac942074a8c120e8194185633675",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager-stable-nixos": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-stable-nixos"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746171682,
+        "narHash": "sha256-EyXUNSa+H+YvGVuQJP1nZskXAowxKYp79RNUsNdQTj4=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "50eee705bbdbac942074a8c120e8194185633675",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-24.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "home-manager-unstable": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1746413188,
+        "narHash": "sha256-i6BoiQP0PasExESQHszC0reQHfO6D4aI2GzOwZMOI20=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "8a318641ac13d3bc0a53651feaee9560f9b2d89a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
     "ixx": {
       "inputs": {
         "flake-utils": [
@@ -89,16 +151,64 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1746232882,
-        "narHash": "sha256-MHmBH2rS8KkRRdoU/feC/dKbdlMkcNkB5mwkuipVHeQ=",
-        "owner": "NixOS",
+        "lastModified": 1746397377,
+        "narHash": "sha256-5oLdRa3vWSRbuqPIFFmQBGGUqaYZBxX+GGtN9f/n4lU=",
+        "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "7a2622e2c0dbad5c4493cb268aba12896e28b008",
+        "rev": "ed30f8aba41605e3ab46421e3dcb4510ec560ff8",
         "type": "github"
       },
       "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable-darwin": {
+      "locked": {
+        "lastModified": 1746301764,
+        "narHash": "sha256-5odz+NZszRya//Zd0P8h+sIwOnV35qJi+73f4I+iv1M=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "537ee98218704e21ea465251de512ab6bbb9012e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-24.11-darwin",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-stable-nixos": {
+      "locked": {
+        "lastModified": 1746422338,
+        "narHash": "sha256-NTtKOTLQv6dPfRe00OGSywg37A1FYqldS6xiNmqBUYc=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5b35d248e9206c1f3baf8de6a7683fee126364aa",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-24.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-unstable": {
+      "locked": {
+        "lastModified": 1746397377,
+        "narHash": "sha256-5oLdRa3vWSRbuqPIFFmQBGGUqaYZBxX+GGtN9f/n4lU=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "ed30f8aba41605e3ab46421e3dcb4510ec560ff8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixpkgs-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -151,7 +261,13 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "home-manager-stable-darwin": "home-manager-stable-darwin",
+        "home-manager-stable-nixos": "home-manager-stable-nixos",
+        "home-manager-unstable": "home-manager-unstable",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable-darwin": "nixpkgs-stable-darwin",
+        "nixpkgs-stable-nixos": "nixpkgs-stable-nixos",
+        "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim"
       }
     },

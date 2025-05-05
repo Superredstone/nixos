@@ -4,7 +4,7 @@ all:
 	echo "No command provided"
 
 switch:
-	sudo nixos-rebuild switch --flake ".#${HOSTNAME}"
+	nixos-rebuild switch --flake ".#${HOSTNAME}" --use-remote-sudo
 
 test:
-	sudo nixos-rebuild test --flake ".#${HOSTNAME}"
+	nixos-rebuild test --flake ".#${HOSTNAME}" --use-remote-sudo
