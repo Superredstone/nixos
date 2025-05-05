@@ -84,7 +84,7 @@ systemFunc {
 		nixConfig
 		nix-homebrew
 		nix-homebrew-config
-		systemPackages
+		# systemPackages
 		# OSConfig
 		# TODO: make user config & home-manager optional
 		home-manager.home-manager

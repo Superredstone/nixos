@@ -27,22 +27,5 @@
 			user = "r3ddy";
 			email = personalEmail;
 		};
-		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-			modules = [
-				./configuration.nix
-
-				home-manager.nixosModules.home-manager 
-				{
-					home-manager.backupFileExtension = "backup";
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.sharedModules = [
-              					nixvim.homeManagerModules.nixvim
-            				];
-
-					home-manager.users.r3ddy = import ./home;
-				}
-			];
-		};
 	};
 }
