@@ -15,13 +15,6 @@
 		};
 	};
 
-	networking.hostName = "nixos"; # Define your hostname.
-
-	networking.networkmanager.enable = true;
-	networking.firewall.allowedUDPPorts = [ 25565 ];
-	networking.firewall.allowedTCPPorts = [ 25565 ];
-	hardware.bluetooth.enable = true;
-	hardware.bluetooth.powerOnBoot = true;
 
 	time.timeZone = "Europe/Rome";
 
@@ -46,11 +39,6 @@
 		GOPATH = "$HOME/.go";
 	};
 
-
-	# Enable sound with pipewire.
-	services.pulseaudio.enable = false;
-	security.rtkit.enable = true;
-
 	programs.fish.enable = true; # This must be true before initializing my user
 	users.users.r3ddy = {
 		isNormalUser = true;
@@ -63,75 +51,5 @@
 		nerd-fonts.jetbrains-mono
 	];
 
-	nixpkgs.config.allowUnfree = true;
-
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-	environment.systemPackages = with pkgs; [
-		# CLI utils
-		appimage-run
-		btop
-		busybox
-		distrobox
-		docker
-		fish
-		fzf
-		git
-		gnumake
-		htop
-		jq
-		killall
-		md2pdf
-		nmap
-		python3
-		ripgrep
-		tree
-		unzip
-		wget
-		wl-clipboard
-		xdotool
-		xorg.xwininfo
-		yad
-		zip
-		zoxide
-		zulu
-
-		# Man pages
-		man-pages
-
-		vim  # The only and one great editor
-		# neovim # The only and one great editor improved even further 
-
-		# Video card
-		vulkan-tools
-
-		# Gaming
-		dolphin-emu
-		heroic 
-		mangohud
-		prismlauncher
-		steam
-		vesktop
-
-		# GUI applications
-		baobab
-		brave
-		kdePackages.xdg-desktop-portal-kde
-		kitty
-		libresprite
-		mpv
-		nextcloud-client
-		spotube
-		telegram-desktop
-	];
-
-	programs.steam.enable = true;
-	programs.steam.remotePlay.openFirewall = true;
-	virtualisation.podman.enable = true;
-	virtualisation.podman.dockerCompat = true;
-
-	programs.virt-manager.enable = true;
-	users.groups.libvirtd.members = ["r3ddy"];
-	virtualisation.libvirtd.enable = true;
-	virtualisation.spiceUSBRedirection.enable = true;
 }

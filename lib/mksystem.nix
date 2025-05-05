@@ -35,7 +35,7 @@ let
 	machineConfig = ../machines/${name}/default.nix;
 	# OSConfig = ../modules/${if isDarwin then "darwin" else "nixos"}.nix;
 	HMConfig = ../home;
-	# systemPackages = ../modules/packages.nix;
+	systemPackages = ../modules/packages.nix;
 	# TODO: make this cleaner
 	nix-homebrew = lib.optionalAttrs isDarwin inputs.nix-homebrew.darwinModules.nix-homebrew;
 	nix-homebrew-config = lib.optionalAttrs isDarwin {
@@ -74,6 +74,7 @@ systemFunc {
 		{ nixpkgs.config.allowUnfree = true; }
 		(if isWSL then inputs.nixos-wsl.nixosModules.wsl else { })
 		nixConfig
+		systemPackages
 		nix-homebrew
 		nix-homebrew-config
 		home-manager.home-manager
