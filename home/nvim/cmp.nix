@@ -11,6 +11,7 @@
 				{ name = "nvim_lsp_signature_help"; }
 				{ name = "path"; }
 				{ name = "buffer"; }
+				{ name = "dap"; }
 			];
 			mapping = {
 				"<Tab>" = "cmp.mapping.select_next_item()";

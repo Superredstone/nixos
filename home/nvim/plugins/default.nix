@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
 	imports = [
 		./telescope.nix
@@ -7,6 +7,7 @@
 		./lualine.nix
 		./dashboard.nix
 		./neotree.nix
+		./dap.nix
 	];
 
 	programs.nixvim.plugins = {

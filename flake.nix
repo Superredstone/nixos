@@ -1,6 +1,4 @@
 {
-	description = "My NixOS";
-
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 		home-manager = {
@@ -14,10 +12,21 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: 
-	let 
-		system = "x86_64-linux";
+	let
+		overlays = [];
+		personalEmail = "patrickcanal3@gmail.com";
+		mkSystem = import ./lib/mksystem.nix {
+			inherit	
+				overlays
+				inputs;
+		};
 	in
 	{
+		nixosConfigurations.katana = mkSystem "katana" {
+			system = "x86_64-linux";
+			user = "r3ddy";
+			email = personalEmail;
+		};
 		nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
 			modules = [
 				./configuration.nix

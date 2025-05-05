@@ -1,11 +1,9 @@
-{ pkgs, zen-browser, ... }:
+{ pkgs, ... }:
 {
 	imports =
 	[ # Include the results of the hardware scan.
 		./hardware-configuration.nix
-		./modules/boot.nix
-		./modules/nvidia.nix
-		./modules/services.nix
+		./modules
 	];
 
 	nix.gc = {
@@ -49,7 +47,8 @@
 	};
 
 	environment.sessionVariables = {
-		NIXOS_OZONE_WL = "1"; # Use Wayland when possible
+		NIXOS_OZONE_WL = "1"; # Use Wayland when possible (this does not seem to work)
+		ELECTRON_OZONE_PLATFORM_HINT = "wayland";
 		GOPATH = "$HOME/.go";
 	};
 
@@ -84,6 +83,7 @@
 		fish
 		fzf
 		git
+		gnumake
 		htop
 		jq
 		killall
@@ -124,19 +124,22 @@
 		brave
 		kdePackages.xdg-desktop-portal-kde
 		kitty
-		libreoffice
+		libresprite
 		mpv
+		nextcloud-client
 		spotube
 		telegram-desktop
-		xdg-desktop-portal
-		xdg-desktop-portal-gtk
 	];
 
 	programs.steam.enable = true;
 	programs.steam.remotePlay.openFirewall = true;
 	virtualisation.podman.enable = true;
 	virtualisation.podman.dockerCompat = true;
-	# virtualisation.vmware.host.enable = true;
+
+	programs.virt-manager.enable = true;
+	users.groups.libvirtd.members = ["r3ddy"];
+	virtualisation.libvirtd.enable = true;
+	virtualisation.spiceUSBRedirection.enable = true;
 
 	system.stateVersion = "24.05"; # Did you read the comment?
 }

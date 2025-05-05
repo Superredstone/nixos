@@ -10,15 +10,18 @@
 			lua_ls.enable = true;
 			rust_analyzer = {
 				enable = true;
-				installCargo = true;
-				installRustc = true;
-				installRustfmt = true;
+				installCargo = false;
+				installRustc = false;
+				installRustfmt = false;
 			};
 			zls.enable = true;
 			nim_langserver.enable = true;
 			pyright.enable = true;
 			emmet_language_server.enable = true;
 			ts_ls.enable = true;
+			docker_compose_language_service.enable = true;
+			jsonls.enable = true;
+			phpactor.enable = true;
 		};
 		keymaps = {
 			lspBuf = {

@@ -47,6 +47,15 @@
 			mode = "n";
 		}
 		{
+			action = ":lua vim.lsp.buf.format()<CR>";
+			key = "<C-f>";
+			options = {
+				silent = true;
+				desc = "Format buffer";
+			};
+			mode = "n";
+		}
+		{
 			action = ":q<CR>";
 			key = "<C-q>";
 			options = { 
@@ -128,6 +137,33 @@
 				desc = "Toggle terminal";
 			};
 			mode = "n";
+		}
+		# Dap 
+		{
+			action.__raw = ''
+			function() 
+				require("dap").toggle_breakpoint()
+			end
+			'';
+			key = "<Space>b";
+			mode = "n";
+			options = {
+				silent = true;
+				desc = "Toggle breakpoint";
+			};
+		}
+		{
+			action.__raw = ''
+			function() 
+				require("dapui").toggle()
+			end
+			'';
+			key = "<Space>y";
+			mode = "n";
+			options = {
+				silent = true;
+				desc = "Toggle debugger";
+			};
 		}
 	];
 }
