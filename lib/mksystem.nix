@@ -32,9 +32,9 @@ let
 	# The config files for this system.
 	nixConfig = ../modules/nix-config/default.nix;
 	machineConfig = ../machines/${name}.nix;
-	OSConfig = ../modules/${if isDarwin then "darwin" else "nixos"}.nix;
-	HMConfig = ../modules/home-manager.nix;
-	systemPackages = ../modules/packages.nix;
+	# OSConfig = ../modules/${if isDarwin then "darwin" else "nixos"}.nix;
+	HMConfig = ../home;
+	# systemPackages = ../modules/packages.nix;
 	# TODO: make this cleaner
 	nix-homebrew = lib.optionalAttrs isDarwin inputs.nix-homebrew.darwinModules.nix-homebrew;
 	nix-homebrew-config = lib.optionalAttrs isDarwin {
@@ -85,7 +85,7 @@ systemFunc {
 		nix-homebrew
 		nix-homebrew-config
 		systemPackages
-		OSConfig
+		# OSConfig
 		# TODO: make user config & home-manager optional
 		home-manager.home-manager
 		{
