@@ -1,7 +1,11 @@
-HOSTNAME ?= $(hostname)
+HOSTNAME = $(shell hostname)
 
 all:
 	@echo "No command provided"
+
+
+machine:
+	@echo "${HOSTNAME}"
 
 switch:
 	nixos-rebuild switch --flake ".#${HOSTNAME}" --use-remote-sudo
