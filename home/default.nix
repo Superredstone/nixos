@@ -1,4 +1,4 @@
-{ ... }:
+{ currentSystemUser, ... }:
 {
 	imports = [ 
 		./nvim
@@ -9,7 +9,7 @@
 		./zoxide.nix
 	];
 
-	home.username = "r3ddy";
+	home.username = "${currentSystemUser}";
 
 	programs.home-manager.enable = true;
 

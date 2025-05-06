@@ -1,20 +1,16 @@
-{ pkgs, ... }:
+{ pkgs, currentSystemUser, ... }:
 {
+	imports = [
+		./fonts.nix
+	];
+
 	nix.gc = {
 		automatic = true;
 		dates = "weekly";
 		options = "--delete-older-than 1w";
 	};
 
-	# Remove old gtkrc file, otherwise it will not work
-	system.userActivationScripts = {
-		removeConflictingFiles = {
-			text = ''
-				rm -f /home/r3ddy/.gtkrc-2.0.backup
-			'';
-		};
-	};
-
+	nix.optimise.automatic = true;
 
 	time.timeZone = "Europe/Rome";
 
@@ -40,16 +36,12 @@
 	};
 
 	programs.fish.enable = true; # This must be true before initializing my user
-	users.users.r3ddy = {
+	users.users.${currentSystemUser} = {
 		isNormalUser = true;
 		description = "Patrick Canal";
 		extraGroups = [ "networkmanager" "wheel" "docker" ];
 		shell = pkgs.fish;
 	};
-
-	fonts.packages = with pkgs; [
-		nerd-fonts.jetbrains-mono
-	];
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }

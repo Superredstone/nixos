@@ -8,3 +8,7 @@ switch:
 
 test:
 	nixos-rebuild test --flake ".#${HOSTNAME}" --use-remote-sudo
+
+clean:
+	sudo nix-collect-garbage -d
+	sudo nix-store --optimise
