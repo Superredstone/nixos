@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, gamingSystem, ... }:
 {
 	environment.systemPackages = with pkgs; [
 		# CLI utils
@@ -38,28 +38,28 @@
 		# Video card
 		vulkan-tools
 
-		# Gaming
-		dolphin-emu
-		heroic 
-		mangohud
-		prismlauncher
-		steam
-		vesktop
-
 		# GUI applications
 		baobab
 		brave
 		kdePackages.xdg-desktop-portal-kde
 		kitty
-		libresprite
 		mpv
 		nextcloud-client
 		spotube
 		telegram-desktop
-	];
 
-	programs.steam = {
+	] ++ (if gamingSystem then [
+			libresprite
+			dolphin-emu
+			heroic 
+			mangohud
+			prismlauncher
+			steam
+			vesktop
+	] else []);
+
+	programs.steam = if gamingSystem then {
 		enable = true;
 		remotePlay.openFirewall = true;
-	};
+	} else {};
 }

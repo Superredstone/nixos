@@ -43,6 +43,7 @@
 			system = "x86_64-linux";
 			user = "r3ddy";
 			email = personalEmail;
+			gamingSystem = true;
 		};
 	};
 }

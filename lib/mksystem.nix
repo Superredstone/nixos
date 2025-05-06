@@ -11,6 +11,7 @@ name:
 	email,
 	wsl ? false,
 	stable ? false,
+	gamingSystem ? false
 }:
 let
 	# True if this is a WSL system.
@@ -61,6 +62,7 @@ let
 		currentSystemName = name;
 		currentSystemUser = user;
 		currentSystemEmail = email;
+		gamingSystem = gamingSystem;
 		isWSL = isWSL;
 		isDarwin = isDarwin;
 		inputs = inputs;
