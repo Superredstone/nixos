@@ -21,13 +21,15 @@
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
 		nixvim = {
         		url = "github:nix-community/nixvim";
         		inputs.nixpkgs.follows = "nixpkgs";
 		};
+		hyprland.url = "github:hyprwm/Hyprland";
 	};
 
-	outputs = { self, nixpkgs, home-manager, nixvim, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, nixvim, hyprland, ... }@inputs: 
 	let
 		overlays = [];
 		personalEmail = "patrickcanal3@gmail.com";

@@ -7,6 +7,11 @@
 		./git.nix
 		./kitty.nix
 		./zoxide.nix
+
+		./hyprland.nix
+		./wofi.nix
+		./hyprlock.nix
+		./waybar.nix
 	];
 
 	home.username = "${currentSystemUser}";

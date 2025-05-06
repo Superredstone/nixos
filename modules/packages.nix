@@ -41,10 +41,12 @@
 		# GUI applications
 		baobab
 		brave
+		hyprpaper
 		kdePackages.xdg-desktop-portal-kde
 		kitty
 		mpv
 		nextcloud-client
+		pavucontrol
 		spotube
 		telegram-desktop
 
@@ -62,6 +64,8 @@
 		enable = true;
 		remotePlay.openFirewall = true;
 	} else {};
+
+	programs.hyprland.enable = true;
 
 	programs.nh = {
 		enable = true;
