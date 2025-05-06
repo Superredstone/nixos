@@ -62,4 +62,9 @@
 		enable = true;
 		remotePlay.openFirewall = true;
 	} else {};
+
+	programs.nh = {
+		enable = true;
+		clean.enable = true;
+	};
 }

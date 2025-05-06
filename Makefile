@@ -8,14 +8,15 @@ machine:
 	@echo "${HOSTNAME}"
 
 switch:
-	nixos-rebuild switch --flake ".#${HOSTNAME}" --use-remote-sudo
+	nh os switch -a -H "${HOSTNAME}" . 
 
 test:
-	nixos-rebuild test --flake ".#${HOSTNAME}" --use-remote-sudo
+	nh os test -a -H "${HOSTNAME}" .
 
-upgrade:
+update:
 	sudo nix flake update
-	nixos-rebuild switch --flake ".#${HOSTNAME}" --use-remote-sudo
+
+upgrade: update switch
 
 clean:
 	sudo nix-collect-garbage -d
