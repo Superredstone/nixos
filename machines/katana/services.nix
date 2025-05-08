@@ -1,12 +1,20 @@
-{ pkgs, ... }:
+{ lib, currentSystemDe, ... }:
 {
 	services.flatpak.enable = true;
 	services.xserver.videoDrivers = ["nvidia"];
 
 	services.xserver.enable = true;
-	services.displayManager.sddm.enable = true;
-	services.desktopManager.plasma6.enable = true;
-	services.displayManager.sddm.wayland.enable = true; 
+
+	# Display managers
+	services.displayManager.sddm = lib.mkIf (currentSystemDe == "plasma") {
+		enable = true;
+		wayland.enable = true; 
+	};
+	services.xserver.displayManager.gdm.enable = lib.mkIf (currentSystemDe == "gnome") true;
+
+	# Desktop environments
+	services.desktopManager.plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
+	services.xserver.desktopManager.gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
 
 	# Enable sound with pipewire.
 	services.pulseaudio.enable = false;

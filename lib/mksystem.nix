@@ -1,4 +1,4 @@
-# This file comes from https://github.com/kahlstrm/nixos-config/blob/main/lib/mksystem.nix
+# This file is based on https://github.com/kahlstrm/nixos-config/blob/main/lib/mksystem.nix
 {
 	overlays,
 	nixvim,
@@ -11,7 +11,8 @@ name:
 	email,
 	wsl ? false,
 	stable ? false,
-	gamingSystem ? false
+	gamingSystem ? false,
+	desktopEnvironment ? ""
 }:
 let
 	# True if this is a WSL system.
@@ -62,6 +63,7 @@ let
 		currentSystemName = name;
 		currentSystemUser = user;
 		currentSystemEmail = email;
+		currentSystemDe = desktopEnvironment;
 		gamingSystem = gamingSystem;
 		isWSL = isWSL;
 		isDarwin = isDarwin;

@@ -46,6 +46,8 @@
 			user = "r3ddy";
 			email = personalEmail;
 			gamingSystem = true;
+			# Currently supported: plasma, gnome, hyprland
+			desktopEnvironment = "plasma";
 		};
 	};
 }

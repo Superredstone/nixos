@@ -1,4 +1,4 @@
-{ pkgs, gamingSystem, ... }:
+{ pkgs, gamingSystem, currentSystemDe, ... }:
 {
 	environment.systemPackages = with pkgs; [
 		# CLI utils
@@ -14,6 +14,7 @@
 		htop
 		jq
 		killall
+		krabby
 		md2pdf
 		nmap
 		python3
@@ -41,12 +42,9 @@
 		# GUI applications
 		baobab
 		brave
-		hyprpaper
-		kdePackages.xdg-desktop-portal-kde
 		kitty
 		mpv
 		nextcloud-client
-		pavucontrol
 		spotube
 		telegram-desktop
 
@@ -58,6 +56,14 @@
 			prismlauncher
 			steam
 			vesktop
+	] else [])
+	++ (if currentSystemDe == "hyprland" then [
+		# Hyprland
+		brightnessctl
+		hyprpaper
+		pamixer
+		pavucontrol
+		kdePackages.dolphin
 	] else []);
 
 	programs.steam = if gamingSystem then {
@@ -65,10 +71,20 @@
 		remotePlay.openFirewall = true;
 	} else {};
 
-	programs.hyprland.enable = true;
+	programs.hyprland.enable = if currentSystemDe == "hyprland" then true else false;
 
 	programs.nh = {
 		enable = true;
 		clean.enable = true;
+	};
+
+	xdg = {
+		autostart.enable = true;
+		portal = {
+			enable = true;
+			extraPortals = with pkgs; [
+				xdg-desktop-portal-gtk
+			];
+		};
 	};
 }
