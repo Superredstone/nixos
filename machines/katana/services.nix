@@ -1,4 +1,4 @@
-{ lib, currentSystemDe, ... }:
+{ pkgs, lib, currentSystemDe, ... }:
 {
 	services.flatpak.enable = true;
 	services.xserver.videoDrivers = ["nvidia"];
@@ -14,6 +14,10 @@
 
 	# Desktop environments
 	services.desktopManager.plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
+	environment.plasma6.excludePackages = with pkgs.kdePackages; [
+		elisa
+		konsole
+	];
 	services.xserver.desktopManager.gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
 
 	# Enable sound with pipewire.
