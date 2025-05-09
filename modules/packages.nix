@@ -64,6 +64,9 @@
 		pamixer
 		pavucontrol
 		kdePackages.dolphin
+	] else [])
+	++ (if currentSystemDe == "gnome" then [
+		gnome-tweaks
 	] else []);
 
 	programs.steam = if gamingSystem then {
