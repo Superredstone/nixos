@@ -8,10 +8,7 @@
 		./kitty.nix
 		./zoxide.nix
 	] ++ (if currentSystemDe == "hyprland" then [
-		./hyprland.nix
-		./wofi.nix
-		./hyprlock.nix
-		./waybar.nix
+		./hyprland
 	] else []
 	);
 
