@@ -45,9 +45,7 @@
 		kitty
 		mpv
 		nextcloud-client
-		spotube
 		telegram-desktop
-
 	] ++ (if gamingSystem then [
 			libresprite
 			dolphin-emu
