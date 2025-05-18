@@ -47,13 +47,16 @@
 		nextcloud-client
 		telegram-desktop
 	] ++ (if gamingSystem then [
-			libresprite
-			dolphin-emu
-			heroic 
-			mangohud
-			prismlauncher
-			steam
-			vesktop
+		libresprite
+		dolphin-emu
+		heroic 
+		mangohud
+		prismlauncher
+		steam
+		vesktop
+	] else [])
+	++ (if currentSystemDe == "plasma" then [
+		kdePackages.wallpaper-engine-plugin
 	] else [])
 	++ (if currentSystemDe == "hyprland" then [
 		# Hyprland
