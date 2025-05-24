@@ -2,6 +2,9 @@
 {
 	imports = [
 		./fonts.nix
+		./de.nix
+		./sound.nix
+		./keyboard.nix
 	];
 
 	time.timeZone = "Europe/Rome";
@@ -31,7 +34,7 @@
 	users.users.${currentSystemUser} = {
 		isNormalUser = true;
 		description = "Patrick Canal";
-		extraGroups = [ "networkmanager" "wheel" "docker" ];
+		extraGroups = [ "networkmanager" "wheel" ];
 		shell = pkgs.fish;
 	};
 

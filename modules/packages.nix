@@ -42,14 +42,16 @@
 		# GUI applications
 		baobab
 		brave
+		floorp
+		gnome-boxes
 		kitty
 		mpv
 		nextcloud-client
 		telegram-desktop
 	] ++ (if gamingSystem then [
-		libresprite
 		dolphin-emu
 		heroic 
+		libresprite
 		mangohud
 		prismlauncher
 		steam
