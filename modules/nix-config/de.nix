@@ -7,7 +7,7 @@
 		enable = true;
 		wayland.enable = true; 
 	};
-	services.xserver.displayManager.gdm.enable = lib.mkIf (currentSystemDe == "gnome") true;
+	services.displayManager.gdm.enable = lib.mkIf (currentSystemDe == "gnome") true;
 
 	# Desktop environments
 	services.desktopManager.plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
@@ -15,5 +15,22 @@
 		elisa
 		konsole
 	];
-	services.xserver.desktopManager.gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
+	services.desktopManager.gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
+	environment.gnome.excludePackages = with pkgs; [
+		gnome-contacts
+		gnome-console
+		gnome-calculator
+		gnome-tour
+		gnome-characters
+		gnome-maps
+		gnome-clocks
+		gnome-text-editor	
+		xterm
+		epiphany
+		gedit
+		simple-scan
+		yelp
+		geary
+		seahorse
+	];
 }

@@ -45,7 +45,6 @@
 		gnome-boxes
 		kitty
 		mpv
-		nextcloud-client
 		telegram-desktop
 	] ++ (if gamingSystem then [
 		dolphin-emu

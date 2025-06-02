@@ -4,6 +4,7 @@
 		enable = true;
 		settings = {
 			enable_audio_bell = false;
+			linux_display_server = "x11"; # This is how you get borders in gnome! 
 		};
 		font = {
 			package = pkgs.nerd-fonts.jetbrains-mono;
