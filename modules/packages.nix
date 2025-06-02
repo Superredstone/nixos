@@ -41,7 +41,6 @@
 
 		# GUI applications
 		baobab
-		brave
 		floorp
 		gnome-boxes
 		kitty
@@ -81,7 +80,6 @@
 
 	programs.nh = {
 		enable = true;
-		clean.enable = true;
 	};
 
 	xdg = {
