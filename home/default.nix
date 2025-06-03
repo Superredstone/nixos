@@ -13,6 +13,11 @@
 	);
 
 	home.username = "${currentSystemUser}";
+	home.sessionVariables = {
+		EDITOR = "nvim";
+		BROWSER = "floorp";
+		TERMINAL = "kitty";
+	};
 
 	programs.home-manager.enable = true;
 

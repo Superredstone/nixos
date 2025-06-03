@@ -1,6 +1,9 @@
 { pkgs, lib, currentSystemDe, ... }:
 {
 	services.xserver.enable = true;
+	services.xserver.excludePackages = with pkgs; [
+		xterm
+	];
 
 	# Display managers
 	services.displayManager.sddm = lib.mkIf (currentSystemDe == "plasma") {
