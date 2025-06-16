@@ -17,6 +17,7 @@
 		krabby
 		md2pdf
 		nmap
+		nodejs
 		python3
 		ripgrep
 		tree
