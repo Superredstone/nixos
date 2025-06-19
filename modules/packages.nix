@@ -18,6 +18,7 @@
 		md2pdf
 		nmap
 		nodejs
+		podman-compose
 		python3
 		ripgrep
 		tree
