@@ -1,13 +1,14 @@
 { pkgs, ... }:
 {
 	imports = [
+		./comment.nix
+		./dap.nix
+		./dashboard.nix
+		./guess-indent.nix
+		./lualine.nix
+		./neotree.nix
 		./telescope.nix
 		./treesitter.nix
-		./comment.nix
-		./lualine.nix
-		./dashboard.nix
-		./neotree.nix
-		./dap.nix
 	];
 
 	programs.nixvim.plugins = {
