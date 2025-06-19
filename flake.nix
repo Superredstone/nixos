@@ -49,5 +49,12 @@
 			# Currently supported: plasma, gnome, hyprland
 			desktopEnvironment = "gnome";
 		};
+		nixosConfigurations.workstation = mkSystem "workstation" {
+			system = "x86_64-linux";
+			user = "r3ddy";
+			email = personalEmail;
+			gamingSystem = false;
+			desktopEnvironment = "gnome";
+		};	
 	};
 }
