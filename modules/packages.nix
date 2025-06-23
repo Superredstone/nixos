@@ -49,6 +49,7 @@
 		mpv
 		telegram-desktop
 	] ++ (if gamingSystem then [
+		archipelago
 		dolphin-emu
 		heroic 
 		libresprite
