@@ -1,11 +1,12 @@
 { currentSystemUser, currentSystemDe, ... }:
 {
 	imports = [ 
-		./nvim
-		./tmux.nix
 		./fish.nix
 		./git.nix
+		./gnome.nix
 		./kitty.nix
+		./nvim
+		./tmux.nix
 		./zoxide.nix
 	] ++ (if currentSystemDe == "hyprland" then [
 		./hyprland
