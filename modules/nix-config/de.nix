@@ -27,7 +27,6 @@
 		gnome-characters
 		gnome-maps
 		gnome-clocks
-		gnome-text-editor	
 		xterm
 		epiphany
 		gedit
