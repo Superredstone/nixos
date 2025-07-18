@@ -43,7 +43,7 @@
 
 		# GUI applications
 		baobab
-		floorp
+		firefox
 		gnome-boxes
 		kitty
 		mpv
@@ -54,6 +54,7 @@
 		heroic 
 		libresprite
 		mangohud
+		openrgb
 		prismlauncher
 		steam
 		vesktop
