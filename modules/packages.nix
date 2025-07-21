@@ -59,6 +59,7 @@
 		mangohud
 		openrgb
 		prismlauncher
+		protonplus
 		steam
 		vesktop
 	] else [])
