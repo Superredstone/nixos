@@ -15,9 +15,11 @@
 		jq
 		killall
 		krabby
+		libreoffice
 		md2pdf
 		nmap
 		nodejs
+		openvpn
 		podman-compose
 		python3
 		ripgrep
@@ -42,6 +44,7 @@
 		vulkan-tools
 
 		# GUI applications
+		android-studio
 		baobab
 		firefox
 		gnome-boxes

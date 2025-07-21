@@ -34,7 +34,7 @@
 	users.users.${currentSystemUser} = {
 		isNormalUser = true;
 		description = "Patrick Canal";
-		extraGroups = [ "networkmanager" "wheel" ];
+		extraGroups = [ "networkmanager" "wheel" "docker" ];
 		shell = pkgs.fish;
 	};
 
