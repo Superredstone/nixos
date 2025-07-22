@@ -12,6 +12,7 @@ name:
 	wsl ? false,
 	stable ? false,
 	gamingSystem ? false,
+	workSystem ? false,
 	desktopEnvironment ? ""
 }:
 let
@@ -65,6 +66,7 @@ let
 		currentSystemEmail = email;
 		currentSystemDe = desktopEnvironment;
 		gamingSystem = gamingSystem;
+		workSystem = workSystem;
 		isWSL = isWSL;
 		isDarwin = isDarwin;
 		inputs = inputs;

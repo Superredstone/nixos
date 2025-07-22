@@ -53,7 +53,7 @@
 			system = "x86_64-linux";
 			user = "r3ddy";
 			email = personalEmail;
-			gamingSystem = false;
+			workSystem = true;
 			desktopEnvironment = "gnome";
 		};	
 	};

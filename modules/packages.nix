@@ -44,7 +44,6 @@
 		vulkan-tools
 
 		# GUI applications
-		android-studio
 		baobab
 		firefox
 		gnome-boxes
@@ -62,7 +61,10 @@
 		protonplus
 		steam
 		vesktop
-	] else [])
+	] else []
+	++ (if workSystem then [
+		android-studio
+	] else []))
 	++ (if currentSystemDe == "plasma" then [
 		kdePackages.wallpaper-engine-plugin
 	] else [])
