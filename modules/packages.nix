@@ -1,4 +1,4 @@
-{ pkgs, gamingSystem, currentSystemDe, ... }:
+{ pkgs, gamingSystem, workSystem, currentSystemDe, ... }:
 {
 	environment.systemPackages = with pkgs; [
 		# CLI utils
