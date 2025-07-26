@@ -10,6 +10,7 @@
 		fish
 		fzf
 		git
+		gitlab-ci-local
 		gnumake
 		htop
 		jq
