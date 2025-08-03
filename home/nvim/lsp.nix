@@ -23,6 +23,7 @@
 			jsonls.enable = true;
 			phpactor.enable = true;
 			gleam.enable = true;
+			elixirls.enable = true;
 		};
 		keymaps = {
 			lspBuf = {
