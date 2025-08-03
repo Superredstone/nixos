@@ -13,6 +13,7 @@
 		gitlab-ci-local
 		gnumake
 		htop
+		inotify-tools
 		jq
 		killall
 		krabby
