@@ -61,7 +61,6 @@
 		openrgb
 		prismlauncher
 		protonplus
-		steam
 		vesktop
 	] else []
 	++ (if workSystem then [
@@ -84,6 +83,7 @@
 
 	programs.steam = if gamingSystem then {
 		enable = true;
+		package = pkgs.steam-millennium;
 		remotePlay.openFirewall = true;
 	} else {};
 

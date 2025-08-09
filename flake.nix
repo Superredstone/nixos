@@ -27,16 +27,20 @@
         		inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 		hyprland.url = "github:hyprwm/Hyprland";
+		millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
 	};
 
-	outputs = { self, nixpkgs, home-manager, nixvim, hyprland, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, ... }@inputs: 
 	let
-		overlays = [];
+		overlays = [
+			millennium.overlays.default
+		];
 		personalEmail = "patrickcanal3@gmail.com";
 		mkSystem = import ./lib/mksystem.nix {
 			inherit	
 				overlays
 				nixvim
+				millennium
 				inputs;
 		};
 	in

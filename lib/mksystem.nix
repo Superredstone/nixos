@@ -2,6 +2,7 @@
 {
 	overlays,
 	nixvim,
+	millennium,
 	inputs,
 }:
 name:
@@ -70,6 +71,7 @@ let
 		isWSL = isWSL;
 		isDarwin = isDarwin;
 		nixvim = nixvim;
+		millennium = millennium;
 		inputs = inputs;
 	};
 in
