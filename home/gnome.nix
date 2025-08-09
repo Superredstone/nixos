@@ -1,4 +1,4 @@
-{ pkgs, currentSystemUser, ... }:
+{ pkgs, ... }:
 {
 	dconf = {
 		enable = true;
@@ -6,7 +6,8 @@
 			disable-user-extensions = false;
 			enabled-extensions = with pkgs.gnomeExtensions; [
 				blur-my-shell.extensionUuid
-				dash-to-dock.extensionUuid
+				# dash-to-dock.extensionUuid
+				dash-to-panel.extensionUuid
 				caffeine.extensionUuid
 				timer.extensionUuid
 			];
