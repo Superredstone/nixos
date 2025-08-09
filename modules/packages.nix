@@ -55,6 +55,7 @@
 	] ++ (if gamingSystem then [
 		archipelago
 		dolphin-emu
+		gamescope
 		heroic 
 		libresprite
 		mangohud
