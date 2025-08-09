@@ -52,7 +52,6 @@
 		kitty
 		mpv
 		telegram-desktop
-		virt-manager
 	] ++ (if gamingSystem then [
 		archipelago
 		dolphin-emu
@@ -67,6 +66,7 @@
 	++ (if workSystem then [
 		android-studio
 		ansible
+		virt-manager
 	] else []))
 	++ (if currentSystemDe == "plasma" then [
 		kdePackages.wallpaper-engine-plugin
@@ -85,7 +85,7 @@
 
 	programs.steam = if gamingSystem then {
 		enable = true;
-		package = pkgs.steam-millennium;
+		# package = pkgs.steam-millennium;
 		remotePlay.openFirewall = true;
 	} else {};
 
