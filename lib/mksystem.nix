@@ -69,6 +69,7 @@ let
 		workSystem = workSystem;
 		isWSL = isWSL;
 		isDarwin = isDarwin;
+		nixvim = nixvim;
 		inputs = inputs;
 	};
 in
@@ -91,7 +92,6 @@ systemFunc {
 			home-manager.users.${user} = import HMConfig;
 			home-manager.extraSpecialArgs = specialArgs;
 			home-manager.sharedModules = [
-				nixvim.homeManagerModules.nixvim
 			];
 		}
 		machineConfig

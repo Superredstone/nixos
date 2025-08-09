@@ -1,4 +1,4 @@
-{ pkgs, gamingSystem, workSystem, currentSystemDe, ... }:
+{ pkgs, gamingSystem, workSystem, currentSystemDe, ... }@ inputs:
 {
 	environment.systemPackages = with pkgs; [
 		# CLI utils
@@ -40,7 +40,7 @@
 		man-pages
 
 		vim  # The only and one great editor
-		# neovim # The only and one great editor improved even further 
+		inputs.nixvim.packages.${system}.default # The only and one great editor improved even further 
 
 		# Video card
 		vulkan-tools

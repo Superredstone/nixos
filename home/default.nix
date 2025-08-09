@@ -5,7 +5,6 @@
 		./git.nix
 		./gnome.nix
 		./kitty.nix
-		./nvim
 		./tmux.nix
 		./zoxide.nix
 		./mangohud.nix

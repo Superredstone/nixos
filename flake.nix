@@ -23,8 +23,8 @@
 		};
 
 		nixvim = {
-        		url = "github:nix-community/nixvim";
-        		inputs.nixpkgs.follows = "nixpkgs";
+        		url = "github:Superredstone/nixvim";
+        		inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 		hyprland.url = "github:hyprwm/Hyprland";
 	};
