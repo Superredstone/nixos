@@ -65,6 +65,7 @@
 	] else []
 	++ (if workSystem then [
 		android-studio
+		ansible
 	] else []))
 	++ (if currentSystemDe == "plasma" then [
 		kdePackages.wallpaper-engine-plugin
