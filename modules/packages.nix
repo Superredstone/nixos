@@ -52,6 +52,7 @@
 		kitty
 		mpv
 		telegram-desktop
+		virt-manager
 	] ++ (if gamingSystem then [
 		archipelago
 		dolphin-emu
