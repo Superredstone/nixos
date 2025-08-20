@@ -27,6 +27,7 @@
 		gnome-characters
 		gnome-maps
 		gnome-clocks
+		# gnome-software # Uncomment this once bazaar is available
 		xterm
 		epiphany
 		gedit
