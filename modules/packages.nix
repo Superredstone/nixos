@@ -51,6 +51,7 @@
 		gnome-boxes
 		kitty
 		mpv
+		piper
 		telegram-desktop
 	] ++ (if gamingSystem then [
 		archipelago
