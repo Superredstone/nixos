@@ -63,6 +63,7 @@
 		prismlauncher
 		protonplus
 		vesktop
+		xivlauncher
 	] else []
 	++ (if workSystem then [
 		android-studio
