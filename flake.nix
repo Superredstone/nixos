@@ -59,6 +59,11 @@
 			email = personalEmail;
 			workSystem = true;
 			desktopEnvironment = "gnome";
-		};	
+		};
+		nixosConfigurations."bomba" = mkSystem "bomba" {
+			system = "x86_64-linux";
+			email = personalEmail;
+			user = "r3ddy";
+		};
 	};
 }
