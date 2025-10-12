@@ -41,7 +41,7 @@
 
 		vim  # The only and one great editor
 		inputs.nixvim.packages.${system}.default # The only and one great editor improved even further 
-
+	] ++ (if currentSystemDe != "none" then [
 		# Video card
 		vulkan-tools
 
@@ -53,7 +53,8 @@
 		mpv
 		piper
 		telegram-desktop
-	] ++ (if gamingSystem then [
+	] else [])
+	++ (if gamingSystem then [
 		archipelago
 		dolphin-emu
 		heroic 
@@ -63,12 +64,12 @@
 		prismlauncher
 		protonplus
 		vesktop
-	] else []
+	] else [])
 	++ (if workSystem then [
 		android-studio
 		ansible
 		virt-manager
-	] else []))
+	] else [])
 	++ (if currentSystemDe == "plasma" then [
 		kdePackages.wallpaper-engine-plugin
 	] else [])

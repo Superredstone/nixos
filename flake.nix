@@ -50,7 +50,7 @@
 			user = "r3ddy";
 			email = personalEmail;
 			gamingSystem = true;
-			# Currently supported: plasma, gnome, hyprland
+			# Currently supported: plasma, gnome, hyprland and none
 			desktopEnvironment = "gnome";
 		};
 		nixosConfigurations.workstation = mkSystem "workstation" {
@@ -64,6 +64,7 @@
 			system = "x86_64-linux";
 			email = personalEmail;
 			user = "r3ddy";
+			desktopEnvironment = "none";
 		};
 	};
 }

@@ -1,11 +1,12 @@
-{ pkgs, currentSystemUser, ... }:
+{ pkgs, currentSystemUser, currentSystemDe, ... }:
 {
 	imports = [
+		./keyboard.nix
+	] ++ (if (currentSystemDe != "none") then [
+		./sound.nix
 		./fonts.nix
 		./de.nix
-		./sound.nix
-		./keyboard.nix
-	];
+	] else []);
 
 	time.timeZone = "Europe/Rome";
 
