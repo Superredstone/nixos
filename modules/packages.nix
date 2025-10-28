@@ -17,7 +17,6 @@
 		jq
 		killall
 		krabby
-		libreoffice
 		md2pdf
 		nmap
 		nodejs
