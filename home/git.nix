@@ -2,7 +2,9 @@
 {
 	programs.git = {
 		enable = true;
-		userName = "Superredstone";
-		userEmail = "patrickcanal3@gmail.com";
+		settings.user = {
+			name = "Superredstone";	
+			email = "patrickcanal3@gmail.com";
+		};
 	};
 }
