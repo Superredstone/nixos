@@ -12,6 +12,7 @@
 		git
 		gitlab-ci-local
 		gnumake
+		gnupg
 		htop
 		inotify-tools
 		jq
@@ -21,6 +22,7 @@
 		nmap
 		nodejs
 		openvpn
+		pinentry-tty
 		podman-compose
 		python3
 		ripgrep
@@ -56,6 +58,7 @@
 	++ (if gamingSystem then [
 		archipelago
 		dolphin-emu
+		ftb-app
 		heroic 
 		libresprite
 		mangohud
