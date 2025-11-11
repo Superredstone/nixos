@@ -3,7 +3,6 @@
 	networking.networkmanager.enable = true;
 	networking.firewall.allowedUDPPorts = [ 8000 23 ];
 	networking.firewall.allowedTCPPorts = [ 8000 23 ];
-	networking.useDHCP = true;
 	# networking.bridges = {
 	# 	"br0" = {
 	# 		interfaces = [ "eno1" ];
