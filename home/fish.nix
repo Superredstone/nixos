@@ -3,7 +3,8 @@
 	programs.fish = {
 		enable = true;
 		interactiveShellInit = ''
-			fish_config theme choose Catppuccin\ Mocha
+			# This is commented until a good way of installing themes is found
+			# fish_config theme choose Catppuccin\ Mocha
 
 			function fish_greeting 
 				krabby random --no-title --padding-left 2
