@@ -57,6 +57,7 @@
 	] else [])
 	++ (if gamingSystem then [
 		archipelago
+		cura-appimage
 		dolphin-emu
 		ftb-app
 		heroic 
