@@ -48,6 +48,7 @@
 
 		# GUI applications
 		baobab
+		bazaar
 		firefox
 		gnome-boxes
 		kitty
@@ -67,6 +68,7 @@
 		prismlauncher
 		protonplus
 		vesktop
+		xenia-canary
 	] else [])
 	++ (if workSystem then [
 		android-studio
