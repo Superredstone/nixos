@@ -27,7 +27,10 @@
         		inputs.nixpkgs.follows = "nixpkgs-unstable";
 		};
 		hyprland.url = "github:hyprwm/Hyprland";
-		millennium.url = "git+https://github.com/SteamClientHomebrew/Millennium";
+		millennium = {
+			url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=legacy";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, ... }@inputs: 
