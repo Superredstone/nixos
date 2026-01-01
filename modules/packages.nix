@@ -63,6 +63,7 @@
 		ftb-app
 		heroic 
 		libresprite
+		lutris
 		mangohud
 		openrgb
 		prismlauncher
@@ -90,6 +91,10 @@
 		gnome-tweaks
 	] else []);
 
+	programs.gamescope = {
+		enable = true;
+		capSysNice = true;
+	};
 	programs.steam = if gamingSystem then {
 		enable = true;
 		# package = pkgs.steam-millennium;
