@@ -31,12 +31,17 @@
 			url = "git+https://github.com/SteamClientHomebrew/Millennium?ref=legacy";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		nur = {
+			url = "github:nix-community/NUR";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, nur, ... }@inputs: 
 	let
 		overlays = [
 			millennium.overlays.default
+			nur.overlays.default
 		];
 		personalEmail = "patrickcanal3@gmail.com";
 		mkSystem = import ./lib/mksystem.nix {
@@ -44,6 +49,7 @@
 				overlays
 				nixvim
 				millennium
+				nur
 				inputs;
 		};
 	in

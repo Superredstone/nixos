@@ -1,8 +1,12 @@
 { ... }: 
 {
 	networking.networkmanager.enable = true;
-	networking.firewall.allowedUDPPorts = [ 25565 ];
-	networking.firewall.allowedTCPPorts = [ 25565 ];
+	networking.firewall = {
+		checkReversePath = false;
+		allowedUDPPorts = [ 25565 1194 ];
+		allowedTCPPorts = [ 25565 443 ];
+	};
 	hardware.bluetooth.enable = true;
 	hardware.bluetooth.powerOnBoot = true;
+	networking.wireguard.enable = true;
 }

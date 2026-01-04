@@ -1,5 +1,9 @@
-{ pkgs, gamingSystem, workSystem, currentSystemDe, ... }@ inputs:
+{ pkgs, nur, gamingSystem, workSystem, currentSystemDe, ... }@ inputs:
 {
+	imports = [
+		./nordvpn.nix
+	];
+
 	environment.systemPackages = with pkgs; [
 		# CLI utils
 		appimage-run
@@ -59,6 +63,7 @@
 	++ (if gamingSystem then [
 		archipelago
 		cura-appimage
+		discord
 		dolphin-emu
 		ftb-app
 		heroic 
@@ -68,7 +73,6 @@
 		openrgb
 		prismlauncher
 		protonplus
-		vesktop
 		xenia-canary
 	] else [])
 	++ (if workSystem then [
@@ -106,5 +110,4 @@
 	programs.nh = {
 		enable = true;
 	};
-
 }

@@ -3,6 +3,7 @@
 	overlays,
 	nixvim,
 	millennium,
+	nur,
 	inputs,
 }:
 name:
@@ -72,6 +73,7 @@ let
 		isDarwin = isDarwin;
 		nixvim = nixvim;
 		millennium = millennium;
+		nur = nur;
 		inputs = inputs;
 	};
 in
@@ -86,6 +88,8 @@ systemFunc {
 		systemPackages
 		nix-homebrew
 		nix-homebrew-config
+		nur.modules.nixos.default
+		nur.legacyPackages."${system}".repos.iopq.modules.xraya
 		home-manager.home-manager
 		{
 			home-manager.backupFileExtension = "backup";

@@ -35,9 +35,14 @@
 	users.users.${currentSystemUser} = {
 		isNormalUser = true;
 		description = "Patrick Canal";
-		extraGroups = [ "networkmanager" "wheel" "docker" ];
+		extraGroups = [ "networkmanager" "wheel" "docker" "nordvpn" ];
 		shell = pkgs.fish;
 	};
 
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nixpkgs.config.packageOverrides = pkgs: {
+    		nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
+      			inherit pkgs;
+    		};
+  	};
 }
