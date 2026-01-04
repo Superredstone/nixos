@@ -18,9 +18,9 @@
 		jq
 		killall
 		krabby
-		md2pdf
 		nmap
 		nodejs
+		openssl
 		openvpn
 		pinentry-tty
 		podman-compose
