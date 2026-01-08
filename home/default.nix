@@ -1,4 +1,4 @@
-{ currentSystemUser, currentSystemDe, ... }:
+{ currentSystemUser, currentSystemDe, pkgs, ... }:
 {
 	imports = [ 
 		./fish.nix
@@ -19,6 +19,13 @@
 		BROWSER = "floorp";
 		TERMINAL = "kitty";
 	};
+	home.packages = [
+		pkgs.dconf
+	];
+
+	dconf.enable = true;
+
+	services.udiskie.enable = true;
 
 	programs.home-manager.enable = true;
 

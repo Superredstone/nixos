@@ -5,26 +5,21 @@
 { config, pkgs, ... }:
 
 {
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
 
-  # Enable networking
-  networking.networkmanager.enable = true;
+	networking.networkmanager.enable = true;
 
-  # Set your time zone.
-  time.timeZone = "Europe/Rome";
+	time.timeZone = "Europe/Rome";
 
-  nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowUnfree = true;
 
-  services.openssh.enable = true;
+	services = {
+		openssh.enable = true;
+		udisks2.enable = true;
+	};
 
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 22 ];
-  networking.firewall.allowedUDPPorts = [ ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
-	# xdg.portal.extraPortals = with pkgs; [ 
-	# 	xdg-desktop-portal-gtk
-	# ];
+	networking.firewall.allowedTCPPorts = [ 22 ];
+	networking.firewall.allowedUDPPorts = [ ];
+	networking.firewall.enable = true;
 }

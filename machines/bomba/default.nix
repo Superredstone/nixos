@@ -3,6 +3,7 @@
 	imports = [ 
 		./configuration.nix
 		./hardware.nix
+		./virtualisation.nix
 	];
 
 	networking.hostName = "bomba";
