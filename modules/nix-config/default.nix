@@ -2,6 +2,7 @@
 {
 	imports = [
 		./keyboard.nix
+		./security.nix
 	] ++ (if (currentSystemDe != "none") then [
 		./sound.nix
 		./fonts.nix
