@@ -13,6 +13,9 @@ machine:
 switch:
 	nh os switch -a -H "${HOSTNAME}" . 
 
+new-machine:
+	sudo nixos-rebuild switch --flake .#${HOSTNAME}
+
 test:
 	nh os test -a -H "${HOSTNAME}" .
 
