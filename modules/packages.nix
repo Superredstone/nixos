@@ -68,7 +68,6 @@
 		dolphin-emu
 		ftb-app
 		heroic 
-		libresprite
 		lutris
 		mangohud
 		openrgb
