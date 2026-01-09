@@ -13,15 +13,22 @@
 	] else []
 	);
 
-	home.username = "${currentSystemUser}";
-	home.sessionVariables = {
-		EDITOR = "nvim";
-		BROWSER = "floorp";
-		TERMINAL = "kitty";
+	home = {
+		username = "${currentSystemUser}";
+		sessionVariables = {
+			EDITOR = "nvim";
+			BROWSER = "floorp";
+			TERMINAL = "kitty";
+		};
+		packages = [
+			pkgs.dconf
+		];
+		pointerCursor = {
+			gtk.enable = true;
+			package = pkgs.bibata-cursors;
+			name = "Bibata-Modern-Classic";
+		};
 	};
-	home.packages = [
-		pkgs.dconf
-	];
 
 	dconf.enable = true;
 
