@@ -60,6 +60,7 @@
 		mpv
 		piper
 		telegram-desktop
+		thunderbird
 	] else [])
 	++ (if gamingSystem then [
 		cura-appimage
