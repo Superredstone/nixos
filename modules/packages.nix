@@ -62,7 +62,6 @@
 		telegram-desktop
 	] else [])
 	++ (if gamingSystem then [
-		archipelago
 		cura-appimage
 		discord
 		ftb-app
