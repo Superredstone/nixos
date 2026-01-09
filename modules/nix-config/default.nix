@@ -45,4 +45,6 @@
       			inherit pkgs;
     		};
   	};
+
+	documentation.man.generateCaches = false;
 }
