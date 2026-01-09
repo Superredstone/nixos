@@ -1,8 +1,11 @@
-HOSTNAME = $(shell hostname)
+default:
+    @just --list
 
 all:
 	@echo "No command provided"
 
+home:
+	echo "HOME is: '${HOME}'"
 
 machine:
 	@echo "${HOSTNAME}"

@@ -20,6 +20,7 @@
 		htop
 		inotify-tools
 		jq
+		just
 		killall
 		krabby
 		nmap
