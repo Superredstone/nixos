@@ -56,7 +56,6 @@
 		bazaar
 		firefox
 		gnome-boxes
-		kitty
 		mpv
 		piper
 		telegram-desktop
