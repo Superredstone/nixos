@@ -54,6 +54,7 @@
 		# GUI applications
 		baobab
 		bazaar
+		blackbox-terminal
 		firefox
 		gnome-boxes
 		mpv

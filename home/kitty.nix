@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
 	programs.kitty = {
-		enable = true;
+		enable = false;
 		settings = {
 			enable_audio_bell = false;
 			linux_display_server = "x11"; # This is how you get borders in gnome! 
