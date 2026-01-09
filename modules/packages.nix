@@ -65,7 +65,6 @@
 		archipelago
 		cura-appimage
 		discord
-		dolphin-emu
 		ftb-app
 		heroic 
 		lutris
