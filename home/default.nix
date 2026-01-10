@@ -24,9 +24,8 @@
 			pkgs.dconf
 		];
 		pointerCursor = {
-			gtk.enable = true;
+			enable = false;
 			package = pkgs.bibata-cursors;
-			size = 16;
 			name = "Bibata-Modern-Classic";
 		};
 	};
