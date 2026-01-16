@@ -46,4 +46,9 @@
 			];
 		};
 	};
+
+	programs.kdeconnect = lib.mkIf (currentSystemDe != "none") {
+	  enable = true;
+	  package = pkgs.gnomeExtensions.gsconnect;
+	};
 }
