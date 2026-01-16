@@ -22,11 +22,9 @@
 	environment.gnome.excludePackages = with pkgs; [
 		gnome-contacts
 		gnome-console
-		gnome-calculator
 		gnome-tour
 		gnome-characters
 		gnome-maps
-		gnome-clocks
 		gnome-software
 		xterm
 		epiphany
