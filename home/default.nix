@@ -17,8 +17,8 @@
 		username = "${currentSystemUser}";
 		sessionVariables = {
 			EDITOR = "nvim";
-			BROWSER = "floorp";
-			TERMINAL = "kitty";
+			BROWSER = "firefox";
+			TERMINAL = "gnome-boxes";
 		};
 		packages = [
 			pkgs.dconf
