@@ -58,6 +58,7 @@
 		firefox
 		gnome-boxes
 		mpv
+		nextcloud-client
 		piper
 		telegram-desktop
 		thunderbird
