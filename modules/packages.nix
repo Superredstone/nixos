@@ -16,7 +16,6 @@
 		git
 		gitlab-ci-local
 		gnumake
-		gnupg
 		htop
 		inotify-tools
 		jq
@@ -107,6 +106,13 @@
 	} else {};
 
 	programs.hyprland.enable = if currentSystemDe == "hyprland" then true else false;
+
+	services.pcscd.enable = true;
+	programs.gnupg.agent = {
+		enable = true;
+		pinentryPackage = pkgs.pinentry-tty;
+		enableSSHSupport = true;
+	};
 
 	programs.nh = {
 		enable = true;
