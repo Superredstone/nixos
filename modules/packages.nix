@@ -8,6 +8,7 @@
 		# CLI utils
 		appimage-run
 		btop
+		bun
 		busybox
 		distrobox
 		docker
