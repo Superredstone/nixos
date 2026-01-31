@@ -60,6 +60,7 @@
 		mpv
 		nextcloud-client
 		piper
+		spotube
 		telegram-desktop
 		thunderbird
 	] else [])

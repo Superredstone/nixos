@@ -1,11 +1,10 @@
 { ... }:
 {
-	services.flatpak.enable = true;
-	services.xserver.videoDrivers = ["nvidia"];
-
-	# Enable CUPS to print documents.
-	services.printing.enable = true;
-
-	# Required for piper to work
-	services.ratbagd.enable = true;
+	services = {
+		flatpak.enable = true;
+		printing.enable = true;
+		# Required for piper to work
+		ratbagd.enable = true;
+		xserver.videoDrivers = ["nvidia"];
+	};
 }

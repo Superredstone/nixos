@@ -9,8 +9,10 @@
 
 	networking.hostName = "workstation"; # Define your hostname.
 
-	boot.loader.systemd-boot.enable = true;
-  	boot.loader.efi.canTouchEfiVariables = true;
+	boot.loader = {
+		systemd-boot.enable = true;
+		efi.canTouchEfiVariables = true;
+	};
 
 	system.stateVersion = "24.11"; # Did you read the comment?
 }
