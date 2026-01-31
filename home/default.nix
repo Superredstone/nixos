@@ -32,8 +32,6 @@
 
 	dconf.enable = true;
 
-	services.udiskie.enable = true;
-
 	programs.home-manager.enable = true;
 
 	home.stateVersion = "24.11";
