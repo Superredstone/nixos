@@ -28,4 +28,14 @@ upgrade: update switch
 [group("maintenance")]
 clean:
 	sudo nix-collect-garbage -d
+
+[group("maintenance")]
+optimise:
 	sudo nix-store --optimise
+
+[group("maintenance")]
+clean-all: clean optimise
+
+[group("maintenance")]
+generations:
+	@nh os info
