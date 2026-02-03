@@ -25,6 +25,7 @@
 			nur.overlays.default
 		];
 		personalEmail = "patrickcanal3@gmail.com";
+		username = "r3ddy";
 		mkSystem = import ./lib/mksystem.nix {
 			inherit	
 				overlays
@@ -39,7 +40,7 @@
 	{
 		nixosConfigurations.katana = mkSystem "katana" {
 			system = "x86_64-linux";
-			user = "r3ddy";
+			user = username;
 			email = personalEmail;
 			gamingSystem = true;
 			# Currently supported: plasma, gnome, hyprland and none
@@ -47,7 +48,7 @@
 		};
 		nixosConfigurations.workstation = mkSystem "workstation" {
 			system = "x86_64-linux";
-			user = "r3ddy";
+			user = username;
 			email = personalEmail;
 			workSystem = true;
 			desktopEnvironment = "gnome";
@@ -55,7 +56,7 @@
 		nixosConfigurations."bomba" = mkSystem "bomba" {
 			system = "x86_64-linux";
 			email = personalEmail;
-			user = "r3ddy";
+			user = username;
 			desktopEnvironment = "none";
 		};
 	};
