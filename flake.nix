@@ -1,9 +1,6 @@
 {
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-	    	nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-	    	nixpkgs-stable-nixos.url = "github:nixos/nixpkgs/nixos-24.11";
-	    	nixpkgs-stable-darwin.url = "github:nixos/nixpkgs/nixpkgs-24.11-darwin";
 		millennium.url = "github:trivaris/millennium?dir=packages/nix"; # Temporary fix until this is merged into main millennium repo 
 
 	    	home-manager-unstable = {
