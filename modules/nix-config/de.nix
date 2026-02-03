@@ -26,19 +26,20 @@
 		konsole
 	];
 	environment.gnome.excludePackages = with pkgs; [
-		gnome-contacts
-		gnome-console
-		gnome-tour
-		gnome-characters
-		gnome-maps
-		gnome-software
-		xterm
 		epiphany
-		gedit
-		simple-scan
-		yelp
 		geary
+		gedit
+		gnome-characters
+		gnome-console
+		gnome-contacts
+		gnome-maps
+		gnome-music
+		gnome-software
+		gnome-tour
 		seahorse
+		simple-scan
+		xterm
+		yelp
 	];
 
 	xdg = {
