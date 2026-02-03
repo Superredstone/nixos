@@ -97,6 +97,10 @@
 	] else [])
 	++ (if currentSystemDe == "gnome" then [
 		gnome-tweaks
+		gnomeExtensions.appindicator
+		gnomeExtensions.caffeine
+		gnomeExtensions.dash-to-dock
+		gnomeExtensions.wallpaper-slideshow
 	] else []);
 
 }
