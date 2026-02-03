@@ -9,6 +9,7 @@
 	environment.systemPackages = with pkgs; [
 		# CLI utils
 		appimage-run
+		bat
 		btop
 		bun
 		busybox
