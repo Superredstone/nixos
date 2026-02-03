@@ -13,6 +13,10 @@
 			function weather
 				curl "wttr.in/Bolzano?0?Q?" 
 			end
+
+			function dev
+				nix develop --command "fish"
+			end
 		'';
 	};
 }
