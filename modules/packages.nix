@@ -14,6 +14,7 @@
 		busybox
 		distrobox
 		docker
+		fd
 		fish
 		fzf
 		git
