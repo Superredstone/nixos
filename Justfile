@@ -7,8 +7,8 @@ machine:
 	@echo "${HOSTNAME}"
 
 [group("maintenance")]
-switch:
-	nh os switch -a -H "${HOSTNAME}" . 
+switch args="":
+	nh os switch -a -H "${HOSTNAME}" . {{args}}
 
 [group("setup")]
 new-machine:
