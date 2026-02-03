@@ -1,8 +1,10 @@
 { pkgs, nur, gamingSystem, workSystem, currentSystemDe, ... }@ inputs:
 {
 	imports = [
-		./nordvpn.nix
+		./programs
 	];
+
+	nixpkgs.config.allowUnfree = true;
 
 	environment.systemPackages = with pkgs; [
 		# CLI utils
@@ -97,26 +99,4 @@
 		gnome-tweaks
 	] else []);
 
-	programs.gamescope = {
-		enable = true;
-		capSysNice = true;
-	};
-	programs.steam = if gamingSystem then {
-		enable = true;
-		# package = pkgs.steam-millennium;
-		remotePlay.openFirewall = true;
-	} else {};
-
-	programs.hyprland.enable = if currentSystemDe == "hyprland" then true else false;
-
-	services.pcscd.enable = true;
-	programs.gnupg.agent = {
-		enable = true;
-		pinentryPackage = pkgs.pinentry-tty;
-		enableSSHSupport = true;
-	};
-
-	programs.nh = {
-		enable = true;
-	};
 }

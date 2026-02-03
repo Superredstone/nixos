@@ -1,24 +1,30 @@
 { pkgs, lib, currentSystemDe, ... }:
 {
-	services.xserver.enable = true;
-	services.xserver.excludePackages = with pkgs; [
-		xterm
-	];
+	service = {
+		xserver.enable = true;
+		xserver.excludePackages = with pkgs; [
+			xterm
+		];
 
-	# Display managers
-	services.displayManager.sddm = lib.mkIf (currentSystemDe == "plasma") {
-		enable = true;
-		wayland.enable = true; 
+		# Display managers
+		displayManager = {
+			sddm = lib.mkIf (currentSystemDe == "plasma") {
+				enable = true;
+				wayland.enable = true; 
+			};
+			gdm.enable = lib.mkIf (currentSystemDe == "gnome") true;
+		};
+
+		# Desktop environments
+		desktopManager = {
+			plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
+			gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
+		};
 	};
-	services.displayManager.gdm.enable = lib.mkIf (currentSystemDe == "gnome") true;
-
-	# Desktop environments
-	services.desktopManager.plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
 	environment.plasma6.excludePackages = with pkgs.kdePackages; [
 		elisa
 		konsole
 	];
-	services.desktopManager.gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
 	environment.gnome.excludePackages = with pkgs; [
 		gnome-contacts
 		gnome-console
@@ -37,16 +43,12 @@
 
 	xdg = {
 		autostart.enable = true;
-		portal = {
-			enable = true;
-			extraPortals = with pkgs; [
-				# xdg-desktop-portal-gtk
-			];
-		};
+		portal.enable = true;
 	};
 
 	programs.kdeconnect = lib.mkIf (currentSystemDe != "none") {
 	  enable = true;
+	  # FIXME: Make this work for KDE 
 	  package = pkgs.gnomeExtensions.gsconnect;
 	};
 }

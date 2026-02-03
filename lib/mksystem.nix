@@ -5,60 +5,26 @@
 	millennium,
 	nur,
 	inputs,
+	nixpkgs,
+	home-manager,
 }:
 name:
 {
 	system,
 	user,
 	email,
-	wsl ? false,
 	stable ? false,
 	gamingSystem ? false,
 	workSystem ? false,
 	desktopEnvironment ? ""
 }:
 let
-	# True if this is a WSL system.
-	isWSL = wsl;
-	# resolves NixOS vs nix-darwin and stable vs unstable functions
-	inherit
-		(import ./resolve-inputs.nix {
-			inherit
-				system
-				stable
-				inputs
-				;
-		})
-		isDarwin
-		lib
-		systemFunc
-		nixpkgs-stable
-		home-manager
-		;
-	# The config files for this system.
 	nixConfig = ../modules/nix-config/default.nix;
 	machineConfig = ../machines/${name}/default.nix;
-	# OSConfig = ../modules/${if isDarwin then "darwin" else "nixos"}.nix;
 	HMConfig = ../home;
 	systemPackages = ../modules/packages.nix;
-	# TODO: make this cleaner
-	nix-homebrew = lib.optionalAttrs isDarwin inputs.nix-homebrew.darwinModules.nix-homebrew;
-	nix-homebrew-config = lib.optionalAttrs isDarwin {
-		nix-homebrew = {
-			enable = true;
-			inherit user;
-			# Detect and automatically migrate existing Homebrew installations
-			autoMigrate = true;
-			# With mutableTaps disabled, taps can no longer be added imperatively with `brew tap`.
-			#mutableTaps = false;
-		};
-	};
 	specialArgs = {
-		pkgs-stable = import nixpkgs-stable {
-			inherit system;
-			config.allowUnfree = true;
-		};
-		pkgs-unstable = import inputs.nixpkgs-unstable {
+		pkgs-stable = import nixpkgs {
 			inherit system;
 			config.allowUnfree = true;
 		};
@@ -69,28 +35,21 @@ let
 		currentSystemDe = desktopEnvironment;
 		gamingSystem = gamingSystem;
 		workSystem = workSystem;
-		isWSL = isWSL;
-		isDarwin = isDarwin;
 		nixvim = nixvim;
 		millennium = millennium;
 		nur = nur;
 		inputs = inputs;
 	};
 in
-assert isWSL -> !isDarwin;
-systemFunc {
+nixpkgs.lib.nixosSystem {
 	inherit system specialArgs;
 	modules = [
 		{ nixpkgs.overlays = overlays; }
-		{ nixpkgs.config.allowUnfree = true; }
-		(if isWSL then inputs.nixos-wsl.nixosModules.wsl else { })
 		nixConfig
 		systemPackages
-		nix-homebrew
-		nix-homebrew-config
 		nur.modules.nixos.default
 		nur.legacyPackages."${system}".repos.iopq.modules.xraya
-		home-manager.home-manager
+		home-manager.nixosModules.home-manager
 		{
 			home-manager.backupFileExtension = "backup";
 			home-manager.useGlobalPkgs = true;

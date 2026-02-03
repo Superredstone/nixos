@@ -2,19 +2,6 @@
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 		millennium.url = "github:trivaris/millennium?dir=packages/nix"; # Temporary fix until this is merged into main millennium repo 
-
-	    	home-manager-unstable = {
-	      		url = "github:nix-community/home-manager";
-	      		inputs.nixpkgs.follows = "nixpkgs-unstable";
-	    	};
-	    	home-manager-stable-nixos = {
-	      		url = "github:nix-community/home-manager/release-24.11";
-	      		inputs.nixpkgs.follows = "nixpkgs-stable-nixos";
-	    	};
-	    	home-manager-stable-darwin = {
-	      		url = "github:nix-community/home-manager/release-24.11";
-	      		inputs.nixpkgs.follows = "nixpkgs-stable-darwin";
-	    	};
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +9,7 @@
 
 		nixvim = {
         		url = "github:Superredstone/nixvim";
-        		inputs.nixpkgs.follows = "nixpkgs-unstable";
+        		inputs.nixpkgs.follows = "nixpkgs";
 		};
 		hyprland.url = "github:hyprwm/Hyprland";
 		nur = {
@@ -44,7 +31,9 @@
 				nixvim
 				millennium
 				nur
-				inputs;
+				inputs
+				nixpkgs
+				home-manager;
 		};
 	in
 	{

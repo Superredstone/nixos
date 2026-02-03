@@ -10,6 +10,4 @@
 			nordvpn = pkgs.nur.repos.wingej0.nordvpn;
 		})
 	];
-	services.nordvpn.enable = true;
-
 }
