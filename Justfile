@@ -19,8 +19,8 @@ test:
 	nh os test -a -H "${HOSTNAME}" .
 
 [group("maintenance")]
-update:
-	sudo nix flake update
+update flake="":
+	nix flake update {{flake}}
 
 [group("maintenance")]
 upgrade: update switch
