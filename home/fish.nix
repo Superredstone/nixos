@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
 	programs.fish = {
 		enable = true;
@@ -18,5 +18,11 @@
 				nix develop --command "fish"
 			end
 		'';
+		plugins = with pkgs.fishPlugins; [
+			{
+				name = "fzf.fish";
+				src = fzf-fish.src;
+			}
+		];
 	};
 }
