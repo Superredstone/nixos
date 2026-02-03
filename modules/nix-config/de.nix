@@ -1,6 +1,6 @@
 { pkgs, lib, currentSystemDe, ... }:
 {
-	service = {
+	services = {
 		xserver.enable = true;
 		xserver.excludePackages = with pkgs; [
 			xterm
@@ -48,7 +48,6 @@
 
 	programs.kdeconnect = lib.mkIf (currentSystemDe != "none") {
 	  enable = true;
-	  # FIXME: Make this work for KDE 
-	  package = pkgs.gnomeExtensions.gsconnect;
+	  package = if (currentSystemDe == "gnome") then pkgs.gnomeExtensions.gsconnect else pkgs.kdePackages.kdeconnect-kde;
 	};
 }
