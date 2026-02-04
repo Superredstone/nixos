@@ -16,7 +16,8 @@ name:
 	stable ? false,
 	gamingSystem ? false,
 	workSystem ? false,
-	desktopEnvironment ? ""
+	desktopEnvironment ? "",
+	additionalModules ? [],
 }:
 let
 	nixConfig = ../modules/nix-config/default.nix;
@@ -39,6 +40,7 @@ let
 		millennium = millennium;
 		nur = nur;
 		inputs = inputs;
+		additionalModules = additionalModules;
 	};
 in
 nixpkgs.lib.nixosSystem {
@@ -60,6 +62,6 @@ nixpkgs.lib.nixosSystem {
 			];
 		}
 		machineConfig
-	];
+	] ++ additionalModules;
 }
 

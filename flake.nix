@@ -1,7 +1,6 @@
 {
 	inputs = {
 		nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-		millennium.url = "github:trivaris/millennium?dir=packages/nix"; # Temporary fix until this is merged into main millennium repo 
 		home-manager = {
 			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
@@ -11,14 +10,16 @@
         		url = "github:Superredstone/nixvim";
         		inputs.nixpkgs.follows = "nixpkgs";
 		};
-		hyprland.url = "github:hyprwm/Hyprland";
 		nur = {
 			url = "github:nix-community/NUR";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+		hyprland.url = "github:hyprwm/Hyprland";
+		catppuccin.url = "github:catppuccin/nix";
 	};
 
-	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, nur, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, nur, catppuccin, ... }@inputs: 
 	let
 		overlays = [
 			millennium.overlays.default
@@ -45,6 +46,9 @@
 			gamingSystem = true;
 			# Currently supported: plasma, gnome, hyprland and none
 			desktopEnvironment = "gnome";
+			additionalModules = [
+				catppuccin.nixosModules.catppuccin
+			];
 		};
 		nixosConfigurations.workstation = mkSystem "workstation" {
 			system = "x86_64-linux";
