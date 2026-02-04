@@ -1,6 +1,7 @@
 { currentSystemUser, currentSystemDe, pkgs, ... }:
 {
 	imports = [ 
+		./catppuccin.nix
 		./fish.nix
 		./git.nix
 		./gnome.nix
