@@ -35,7 +35,8 @@
 				nur
 				inputs
 				nixpkgs
-				home-manager;
+				home-manager
+				catppuccin;
 		};
 	in
 	{

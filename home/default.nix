@@ -1,4 +1,4 @@
-{ currentSystemUser, currentSystemDe, pkgs, ... }:
+{ currentSystemUser, currentSystemDe, pkgs, catppuccin, ... }:
 {
 	imports = [ 
 		./catppuccin.nix
@@ -9,6 +9,7 @@
 		./mangohud.nix
 		./tmux.nix
 		./zoxide.nix
+		catppuccin.homeModules.catppuccin
 	] ++ (if currentSystemDe == "hyprland" then [
 		./hyprland
 	] else []
