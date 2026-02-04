@@ -5,6 +5,7 @@
 		./security.nix
 		./services.nix
 	] ++ (if (currentSystemDe != "none") then [
+		./catppuccin.nix
 		./de.nix
 		./fonts.nix
 		./sound.nix
