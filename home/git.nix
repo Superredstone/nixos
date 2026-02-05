@@ -8,6 +8,7 @@
 				email = "patrickcanal3@gmail.com";
 			};
 			init.defaultBranch = "main";
+			pull.rebase = true;
 		};
 	};
 }
