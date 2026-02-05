@@ -15,6 +15,7 @@
 		busybox
 		distrobox
 		docker
+		dua
 		fd
 		fish
 		fzf
