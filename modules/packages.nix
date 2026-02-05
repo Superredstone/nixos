@@ -34,7 +34,6 @@
 		openssl
 		openvpn
 		pinentry-tty
-		podman-compose
 		python3
 		ripgrep
 		tree
