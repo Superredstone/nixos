@@ -39,7 +39,7 @@
 	users.users.${currentSystemUser} = {
 		isNormalUser = true;
 		description = "Patrick Canal";
-		extraGroups = [ "networkmanager" "wheel" "docker" "nordvpn" ];
+		extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "nordvpn" ];
 		shell = pkgs.fish;
 	};
 
