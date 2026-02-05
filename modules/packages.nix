@@ -73,7 +73,6 @@
 	++ (if gamingSystem then [
 		cura-appimage
 		discord
-		ftb-app
 		heroic 
 		lutris
 		mangohud
