@@ -60,6 +60,7 @@
 		bazaar
 		blackbox-terminal
 		firefox
+		fluffychat
 		gnome-boxes
 		mpv
 		nextcloud-client
