@@ -27,6 +27,7 @@
 		just
 		killall
 		krabby
+		lazygit
 		nmap
 		nodejs
 		openssl
