@@ -18,6 +18,7 @@
 		fd
 		fish
 		fzf
+		gh
 		git
 		gitlab-ci-local
 		gnumake
