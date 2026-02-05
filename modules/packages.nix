@@ -80,7 +80,6 @@
 		prismlauncher
 		protonplus
 		satisfactorymodmanager
-		xenia-canary
 	] else [])
 	++ (if workSystem then [
 		android-studio
