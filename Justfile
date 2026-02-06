@@ -1,6 +1,6 @@
 [default]
 _default:
-    @just --list
+    	@just --list
 
 [group("utils")]
 machine:
@@ -9,6 +9,7 @@ machine:
 [group("utils")]
 clean-code:
 	sudo nix run nixpkgs#deadnix -- -eq
+	sudo nix run nixpkgs#nixfmt -- **/**.nix
 
 [group("maintenance")]
 switch args="":
