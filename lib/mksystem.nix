@@ -7,7 +7,6 @@
 	inputs,
 	nixpkgs,
 	home-manager,
-	catppuccin,
 }:
 name:
 {
@@ -42,7 +41,6 @@ let
 		nur = nur;
 		inputs = inputs;
 		additionalModules = additionalModules;
-		catppuccin = catppuccin;
 	};
 in
 nixpkgs.lib.nixosSystem {

@@ -16,10 +16,9 @@
 		};
 		millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
 		hyprland.url = "github:hyprwm/Hyprland";
-		catppuccin.url = "github:catppuccin/nix";
 	};
 
-	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, nur, catppuccin, ... }@inputs: 
+	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, nur, ... }@inputs: 
 	let
 		overlays = [
 			millennium.overlays.default
@@ -35,8 +34,7 @@
 				nur
 				inputs
 				nixpkgs
-				home-manager
-				catppuccin;
+				home-manager;
 		};
 	in
 	{
@@ -48,7 +46,6 @@
 			# Currently supported: plasma, gnome, hyprland and none
 			desktopEnvironment = "gnome";
 			additionalModules = [
-				catppuccin.nixosModules.catppuccin
 			];
 		};
 		nixosConfigurations.workstation = mkSystem "workstation" {
