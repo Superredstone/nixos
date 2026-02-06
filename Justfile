@@ -6,6 +6,10 @@ _default:
 machine:
 	@echo "${HOSTNAME}"
 
+[group("utils")]
+clean-code:
+	sudo nix run nixpkgs#deadnix -- -eq
+
 [group("maintenance")]
 switch args="":
 	nh os switch -a -H "${HOSTNAME}" . {{args}}
@@ -39,3 +43,4 @@ clean-all: clean optimise
 [group("maintenance")]
 generations:
 	@nh os info
+
