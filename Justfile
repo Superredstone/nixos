@@ -9,7 +9,7 @@ machine:
 [group("utils")]
 clean-code:
 	sudo nix run nixpkgs#deadnix -- -eq
-	sudo nix run nixpkgs#nixfmt -- **/**.nix
+	sudo nix run nixpkgs#nixfmt-tree
 
 [group("maintenance")]
 switch args="":
