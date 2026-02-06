@@ -1,13 +1,13 @@
 { pkgs, ... }:
 {
-	dconf = {
-		settings."org/gnome/shell" = {
-			enabled-extensions = with pkgs.gnomeExtensions; [
-				appindicator.extensionUuid
-				caffeine.extensionUuid
-				dash-to-dock.extensionUuid
-				wallpaper-slideshow.extensionUuid
-			];
-		};
-	};
+  dconf = {
+    settings."org/gnome/shell" = {
+      enabled-extensions = with pkgs.gnomeExtensions; [
+        appindicator.extensionUuid
+        caffeine.extensionUuid
+        dash-to-dock.extensionUuid
+        wallpaper-slideshow.extensionUuid
+      ];
+    };
+  };
 }

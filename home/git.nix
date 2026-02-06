@@ -1,14 +1,14 @@
 { ... }:
 {
-	programs.git = {
-		enable = true;
-		settings = {
-			user = {
-				name = "Superredstone";	
-				email = "patrickcanal3@gmail.com";
-			};
-			init.defaultBranch = "main";
-			pull.rebase = true;
-		};
-	};
+  programs.git = {
+    enable = true;
+    settings = {
+      user = {
+        name = "Superredstone";
+        email = "patrickcanal3@gmail.com";
+      };
+      init.defaultBranch = "main";
+      pull.rebase = true;
+    };
+  };
 }

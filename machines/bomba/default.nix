@@ -1,17 +1,17 @@
-{ ... }: 
+{ ... }:
 {
-	imports = [ 
-		./configuration.nix
-		./hardware.nix
-		./networking.nix
-		./services.nix
-		./virtualisation.nix
-	];
+  imports = [
+    ./configuration.nix
+    ./hardware.nix
+    ./networking.nix
+    ./services.nix
+    ./virtualisation.nix
+  ];
 
-	networking.hostName = "bomba";
+  networking.hostName = "bomba";
 
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  	system.stateVersion = "25.05"; # Did you read the comment?
+  system.stateVersion = "25.05"; # Did you read the comment?
 }

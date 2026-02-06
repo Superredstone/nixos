@@ -1,7 +1,7 @@
 { ... }:
 {
-	security.sudo.extraConfig = ''
-		Defaults pwfeedback
-    		Defaults timestamp_timeout=120
-	'';
+  security.sudo.extraConfig = ''
+    		Defaults pwfeedback
+        		Defaults timestamp_timeout=120
+    	'';
 }

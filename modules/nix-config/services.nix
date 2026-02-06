@@ -1,7 +1,7 @@
-{ ... }: 
-{ 
-	services = {
-		pcscd.enable = true;
-		nordvpn.enable = true;
-	};
+{ ... }:
+{
+  services = {
+    pcscd.enable = true;
+    nordvpn.enable = true;
+  };
 }

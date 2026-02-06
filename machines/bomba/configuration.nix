@@ -5,10 +5,10 @@
 { ... }:
 
 {
-	boot.loader.systemd-boot.enable = true;
-	boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-	time.timeZone = "Europe/Rome";
+  time.timeZone = "Europe/Rome";
 
-	nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 }
