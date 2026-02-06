@@ -1,4 +1,4 @@
-{ currentSystemUser, ... }:
+{ ... }:
 {
 	programs.virt-manager.enable = true;
 	virtualisation = {
