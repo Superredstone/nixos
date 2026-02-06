@@ -45,13 +45,19 @@
     GOPATH = "$HOME/.go";
   };
 
-	programs.fish.enable = true; # This must be true before initializing my user
-	users.users.${currentSystemUser} = {
-		isNormalUser = true;
-		description = "Patrick Canal";
-		extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "nordvpn" ];
-		shell = pkgs.fish;
-	};
+  programs.fish.enable = true; # This must be true before initializing my user
+  users.users.${currentSystemUser} = {
+    isNormalUser = true;
+    description = "Patrick Canal";
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
+      "libvirtd"
+      "nordvpn"
+    ];
+    shell = pkgs.fish;
+  };
 
   nix.settings.experimental-features = [
     "nix-command"
