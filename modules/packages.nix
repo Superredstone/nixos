@@ -1,4 +1,4 @@
-{ pkgs, nur, gamingSystem, workSystem, currentSystemDe, ... }@ inputs:
+{ pkgs, gamingSystem, workSystem, currentSystemDe, ... }@ inputs:
 {
 	imports = [
 		./programs

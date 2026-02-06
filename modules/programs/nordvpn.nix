@@ -1,4 +1,4 @@
-{ pkgs, nur, ... } @ inputs: 
+{ pkgs, ... } @ inputs: 
 {
 	imports = [
 		inputs.nur.modules.nixos.default
@@ -6,7 +6,7 @@
 	];
 
 	nixpkgs.overlays = [
-		(final: prev: {
+		(_final: _prev: {
 			nordvpn = pkgs.nur.repos.wingej0.nordvpn;
 		})
 	];

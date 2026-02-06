@@ -13,7 +13,6 @@ name:
 	system,
 	user,
 	email,
-	stable ? false,
 	gamingSystem ? false,
 	workSystem ? false,
 	desktopEnvironment ? "",

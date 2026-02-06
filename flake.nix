@@ -18,7 +18,7 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 	};
 
-	outputs = { self, nixpkgs, home-manager, nixvim, millennium, hyprland, nur, ... }@inputs: 
+	outputs = { nixpkgs, home-manager, nixvim, millennium, nur, ... }@inputs: 
 	let
 		overlays = [
 			millennium.overlays.default

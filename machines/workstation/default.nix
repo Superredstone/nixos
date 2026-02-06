@@ -1,4 +1,4 @@
-{ currentSystemUser, ... }:
+{ ... }:
 {
 	imports = [
 		./hardware.nix
