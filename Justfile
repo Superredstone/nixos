@@ -1,6 +1,6 @@
 [default]
 _default:
-    	@just --list
+	@just --list
 
 [group("utils")]
 machine:
