@@ -50,7 +50,6 @@
       wget
       wl-clipboard
       xdotool
-      xorg.xwininfo
       yad
       zip
       zoxide
