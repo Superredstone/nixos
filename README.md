@@ -25,3 +25,6 @@ git clone git@github.com:Superredstone/nixos.git ~/.nixos && cd .nixos
 HOSTNAME=HOSTNAME just switch
 ```
 
+## Contributing 
+After commit [bd788c3](https://github.com/Superredstone/nixos/commit/bd788c366af4b94e1fab8251cabc08fc10f5b037) this repository will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/#specification)
+
