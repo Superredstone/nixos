@@ -32,7 +32,6 @@
       gitlab-ci-local
       gnumake
       htop
-      inotify-tools
       jq
       just
       killall
