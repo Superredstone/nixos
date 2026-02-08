@@ -69,19 +69,19 @@
           vulkan-tools
 
           # GUI applications
+          addwater
           baobab
           bazaar
           blackbox-terminal
+          delfin
           firefox
           fluffychat
+          fractal
+          gapless
           gnome-boxes
           mpv
-          delfin
-          fractal
-          obs-studio
-          addwater
-          gapless
           nextcloud-client
+          obs-studio
           piper
           spotube
           telegram-desktop
