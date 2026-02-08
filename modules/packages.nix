@@ -77,6 +77,7 @@
           gnome-boxes
           mpv
           delfin
+          gapless
           nextcloud-client
           piper
           spotube
