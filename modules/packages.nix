@@ -49,7 +49,6 @@
       unzip
       wget
       wl-clipboard
-      xdotool
       yad
       zip
       zoxide
