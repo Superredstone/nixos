@@ -76,6 +76,7 @@
           fluffychat
           gnome-boxes
           mpv
+          delfin
           nextcloud-client
           piper
           spotube
