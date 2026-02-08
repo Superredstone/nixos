@@ -71,7 +71,6 @@
           blackbox-terminal
           delfin
           firefox
-          fluffychat
           fractal
           gapless
           gnome-boxes
