@@ -78,6 +78,7 @@
           mpv
           delfin
           fractal
+          obs-studio
           addwater
           gapless
           nextcloud-client
