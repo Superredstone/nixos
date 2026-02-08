@@ -49,7 +49,6 @@
       unzip
       wget
       wl-clipboard
-      yad
       zip
       zoxide
       zulu
