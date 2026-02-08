@@ -78,6 +78,7 @@
           mpv
           delfin
           fractal
+          addwater
           gapless
           nextcloud-client
           piper
