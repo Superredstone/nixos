@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
-  dconf = {
-    settings."org/gnome/shell" = {
+  dconf.settings = {
+    "org/gnome/shell" = {
       enabled-extensions = with pkgs.gnomeExtensions; [
         appindicator.extensionUuid
         caffeine.extensionUuid
@@ -9,5 +9,6 @@
         wallpaper-slideshow.extensionUuid
       ];
     };
+    "org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 }
