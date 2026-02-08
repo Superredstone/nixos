@@ -77,6 +77,7 @@
           gnome-boxes
           mpv
           delfin
+          fractal
           gapless
           nextcloud-client
           piper
