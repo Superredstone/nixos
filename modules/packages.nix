@@ -78,7 +78,6 @@
           nextcloud-client
           obs-studio
           piper
-          spotube
           telegram-desktop
           thunderbird
         ]
