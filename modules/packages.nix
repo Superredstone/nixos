@@ -88,7 +88,6 @@
       if gamingSystem then
         [
           cura-appimage
-          discord
           heroic
           lutris
           mangohud
