@@ -12,6 +12,7 @@
     ./kitty.nix
     ./mangohud.nix
     ./tmux.nix
+    ./vesktop.nix
     ./zoxide.nix
   ]
   ++ (

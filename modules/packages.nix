@@ -95,6 +95,9 @@
           prismlauncher
           protonplus
           satisfactorymodmanager
+
+          # Required for Discord RPC
+          arrpc
         ]
       else
         [ ]
