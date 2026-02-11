@@ -39,6 +39,9 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
+    sessionPath = [
+      "$HOME/.local/bin"
+    ];
 
     stateVersion = "24.11";
   };
