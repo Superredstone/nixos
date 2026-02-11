@@ -39,11 +39,11 @@
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
     };
+
+    stateVersion = "24.11";
   };
 
   dconf.enable = true;
 
   programs.home-manager.enable = true;
-
-  home.stateVersion = "24.11";
 }
