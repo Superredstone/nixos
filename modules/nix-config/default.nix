@@ -64,7 +64,10 @@
       "nix-command"
       "flakes"
     ];
-    trusted-users = [ "root" currentSystemUser ];
+    trusted-users = [
+      "root"
+      currentSystemUser
+    ];
   };
   nixpkgs.config.packageOverrides = pkgs: {
     nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/main.tar.gz") {
