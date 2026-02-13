@@ -16,6 +16,7 @@
     };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     hyprland.url = "github:hyprwm/Hyprland";
+    spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
   };
 
   outputs =
@@ -24,6 +25,7 @@
       home-manager,
       nixvim,
       millennium,
+      spotiflac-cli,
       nur,
       ...
     }@inputs:
@@ -40,6 +42,7 @@
           nixvim
           millennium
           nur
+          spotiflac-cli
           inputs
           nixpkgs
           home-manager

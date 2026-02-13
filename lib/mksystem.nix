@@ -4,6 +4,7 @@
   nixvim,
   millennium,
   nur,
+  spotiflac-cli,
   inputs,
   nixpkgs,
   home-manager,
@@ -38,6 +39,7 @@ let
     nixvim = nixvim;
     millennium = millennium;
     nur = nur;
+    spotiflac-cli = spotiflac-cli;
     inputs = inputs;
     additionalModules = additionalModules;
   };

@@ -57,6 +57,8 @@
 
       vim # The only and one great editor
       inputs.nixvim.packages.${stdenv.hostPlatform.system}.default # The only and one great editor improved even further
+
+      inputs.spotiflac-cli.packages.${stdenv.hostPlatform.system}.default
     ]
     ++ (
       if currentSystemDe != "none" then
