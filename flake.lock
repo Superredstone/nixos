@@ -207,11 +207,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770936159,
-        "narHash": "sha256-INksKY2oo1hDNrDYh0r+uK0Fd4hBxkQwD4qQAl8lYyg=",
+        "lastModified": 1770961512,
+        "narHash": "sha256-NZ1V/y2HeR9ThZe+wzBwVxERD0psDYmQnhF+iF0+Pv8=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "9bdb6938109884cb8b6a79ab79ba18e7b585a881",
+        "rev": "a6c93262f349afeeebb390fb441910abffef329c",
         "type": "github"
       },
       "original": {
@@ -856,11 +856,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1770950254,
-        "narHash": "sha256-jJGF+vdKaI+sYeJCSJUNKkXI/uC3Ki2LCFKePvTBhdc=",
+        "lastModified": 1770963957,
+        "narHash": "sha256-D3ENFDEr5weD/TSteAEhKAcNOaEiKlrGntQfzH12pEk=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "70ee3877d0c1f57aa2cb5e1562780130c5646423",
+        "rev": "29085e7ba07b67189872459ff5513d5265545c5a",
         "type": "github"
       },
       "original": {
@@ -925,11 +925,11 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1770927625,
-        "narHash": "sha256-8hG29pICeMsPRyRytm9wQ9ne6LtIXJriHRhoL78Rjc4=",
+        "lastModified": 1770965429,
+        "narHash": "sha256-qnITfC0eeK6XZqH1a+k7xaxxkNF77o8FU3k+/jPNbTw=",
         "owner": "Superredstone",
         "repo": "spotiflac-cli",
-        "rev": "fea147ac9e973f96cc2d11962118d07e29dd6a71",
+        "rev": "9582864321b0192d9c13ce41e26b461ffd13bf0c",
         "type": "github"
       },
       "original": {
