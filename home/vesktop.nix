@@ -1,7 +1,7 @@
 { ... }:
 {
   programs.vesktop = {
-    enable = true;
+    enable = false;
 
     settings = {
       arRPC = true;

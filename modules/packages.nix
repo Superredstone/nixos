@@ -72,6 +72,7 @@
           bazaar
           blackbox-terminal
           delfin
+          discord
           firefox
           fractal
           gapless
