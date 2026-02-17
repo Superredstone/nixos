@@ -63,6 +63,16 @@
         pkgs.kdePackages.kdeconnect-kde;
   };
 
+  programs.thunar.plugins =
+    with pkgs.xfce;
+    lib.mkIf (currentSystemDe == "gnome") [ ]
+    ++ [
+      thunar-archive-plugin
+      thunar-media-tags-plugin
+      thunar-vcs-plugin
+      tumbler
+    ];
+
   # Hack to fix "Your GStreamer installation is missing a plug-in." inside of Nautilus
   environment.sessionVariables.GST_PLUGIN_SYSTEM_PATH_1_0 =
     lib.makeSearchPathOutput "lib" "lib/gstreamer-1.0"
