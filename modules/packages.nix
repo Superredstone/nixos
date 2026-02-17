@@ -81,6 +81,7 @@
           nextcloud-client
           obs-studio
           piper
+          seahorse
           telegram-desktop
           thunderbird
         ]
