@@ -25,6 +25,8 @@
       plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
       gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
     };
+
+    gnome.gnome-keyring.enable = lib.mkIf (currentSystemDe == "gnome") true;
   };
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
