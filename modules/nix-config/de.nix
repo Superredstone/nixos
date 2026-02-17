@@ -4,6 +4,11 @@
   currentSystemDe,
   ...
 }:
+let
+  libDe = import ../../lib/libde.nix {
+    inherit currentSystemDe lib;
+  };
+in
 {
   services = {
     xserver.enable = true;
@@ -13,20 +18,20 @@
 
     # Display managers
     displayManager = {
-      sddm = lib.mkIf (currentSystemDe == "plasma") {
+      sddm = libDe.ifPlasma {
         enable = true;
         wayland.enable = true;
       };
-      gdm.enable = lib.mkIf (currentSystemDe == "gnome") true;
+      gdm.enable = libDe.ifGnome true;
     };
 
     # Desktop environments
     desktopManager = {
-      plasma6.enable = lib.mkIf (currentSystemDe == "plasma") true;
-      gnome.enable = lib.mkIf (currentSystemDe == "gnome") true;
+      plasma6.enable = libDe.ifPlasma true;
+      gnome.enable = libDe.ifGnome true;
     };
 
-    gnome.gnome-keyring.enable = lib.mkIf (currentSystemDe == "gnome") true;
+    gnome.gnome-keyring.enable = libDe.ifGnome true;
   };
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
@@ -54,7 +59,7 @@
     portal.enable = true;
   };
 
-  programs.kdeconnect = lib.mkIf (currentSystemDe != "none") {
+  programs.kdeconnect = libDe.ifNotNone {
     enable = true;
     package =
       if (currentSystemDe == "gnome") then
@@ -65,7 +70,7 @@
 
   programs.thunar.plugins =
     with pkgs.xfce;
-    lib.mkIf (currentSystemDe == "gnome") [ ]
+    libDe.ifGnome [ ]
     ++ [
       thunar-archive-plugin
       thunar-media-tags-plugin
