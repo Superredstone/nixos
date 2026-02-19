@@ -15,7 +15,7 @@ name:
   email,
   gamingSystem ? false,
   workSystem ? false,
-  desktopEnvironment ? "",
+  desktopEnvironment ? "none",
   enableZram ? false,
   additionalModules ? [ ],
 }:
