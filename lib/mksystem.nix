@@ -17,6 +17,7 @@ name:
   gamingSystem ? false,
   workSystem ? false,
   desktopEnvironment ? "",
+  enableZram ? false,
   additionalModules ? [ ],
 }:
 let
@@ -36,6 +37,7 @@ let
     currentSystemDe = desktopEnvironment;
     gamingSystem = gamingSystem;
     workSystem = workSystem;
+    enableZram = enableZram;
     nixvim = nixvim;
     millennium = millennium;
     nur = nur;

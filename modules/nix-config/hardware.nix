@@ -1,0 +1,4 @@
+{ enableZram, ... }:
+{
+  zramSwap.enable = enableZram;
+}

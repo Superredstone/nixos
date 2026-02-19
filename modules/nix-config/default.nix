@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./hardware.nix
     ./keyboard.nix
     ./security.nix
     ./services.nix

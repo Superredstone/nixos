@@ -57,6 +57,7 @@
         gamingSystem = true;
         # Currently supported: plasma, gnome, hyprland and none
         desktopEnvironment = "gnome";
+        enableZram = true;
         additionalModules = [
         ];
       };
@@ -66,12 +67,14 @@
         email = personalEmail;
         workSystem = true;
         desktopEnvironment = "gnome";
+        enableZram = true;
       };
       nixosConfigurations."bomba" = mkSystem "bomba" {
         system = "x86_64-linux";
         email = personalEmail;
         user = username;
         desktopEnvironment = "none";
+        enableZram = true;
       };
     };
 }
