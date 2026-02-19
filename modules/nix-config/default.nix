@@ -54,7 +54,6 @@
       "wheel"
       "docker"
       "libvirtd"
-      "nordvpn"
     ];
     shell = pkgs.fish;
   };

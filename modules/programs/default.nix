@@ -5,10 +5,6 @@
   ...
 }:
 {
-  imports = [
-    ./nordvpn.nix
-  ];
-
   programs = {
     gamescope = {
       enable = true;
