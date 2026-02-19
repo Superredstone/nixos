@@ -14,7 +14,6 @@
       if gamingSystem then
         {
           enable = true;
-          # package = pkgs.steam-millennium;
           remotePlay.openFirewall = true;
         }
       else

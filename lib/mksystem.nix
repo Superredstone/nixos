@@ -2,7 +2,6 @@
 {
   overlays,
   nixvim,
-  millennium,
   spotiflac-cli,
   inputs,
   nixpkgs,
@@ -38,7 +37,6 @@ let
     workSystem = workSystem;
     enableZram = enableZram;
     nixvim = nixvim;
-    millennium = millennium;
     spotiflac-cli = spotiflac-cli;
     inputs = inputs;
     additionalModules = additionalModules;

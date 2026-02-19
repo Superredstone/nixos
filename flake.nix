@@ -10,7 +10,6 @@
       url = "github:Superredstone/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     hyprland.url = "github:hyprwm/Hyprland";
     spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
   };
@@ -20,13 +19,11 @@
       nixpkgs,
       home-manager,
       nixvim,
-      millennium,
       spotiflac-cli,
       ...
     }@inputs:
     let
       overlays = [
-        millennium.overlays.default
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
@@ -34,7 +31,6 @@
         inherit
           overlays
           nixvim
-          millennium
           spotiflac-cli
           inputs
           nixpkgs
