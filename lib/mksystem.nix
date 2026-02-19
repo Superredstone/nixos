@@ -3,7 +3,6 @@
   overlays,
   nixvim,
   millennium,
-  nur,
   spotiflac-cli,
   inputs,
   nixpkgs,
@@ -40,7 +39,6 @@ let
     enableZram = enableZram;
     nixvim = nixvim;
     millennium = millennium;
-    nur = nur;
     spotiflac-cli = spotiflac-cli;
     inputs = inputs;
     additionalModules = additionalModules;
@@ -52,8 +50,6 @@ nixpkgs.lib.nixosSystem {
     { nixpkgs.overlays = overlays; }
     nixConfig
     systemPackages
-    nur.modules.nixos.default
-    nur.legacyPackages."${system}".repos.iopq.modules.xraya
     home-manager.nixosModules.home-manager
     {
       home-manager.backupFileExtension = "backup";

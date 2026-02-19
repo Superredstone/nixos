@@ -10,10 +10,6 @@
       url = "github:Superredstone/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
     hyprland.url = "github:hyprwm/Hyprland";
     spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
@@ -26,13 +22,11 @@
       nixvim,
       millennium,
       spotiflac-cli,
-      nur,
       ...
     }@inputs:
     let
       overlays = [
         millennium.overlays.default
-        nur.overlays.default
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
@@ -41,7 +35,6 @@
           overlays
           nixvim
           millennium
-          nur
           spotiflac-cli
           inputs
           nixpkgs
