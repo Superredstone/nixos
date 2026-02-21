@@ -8,7 +8,6 @@
   imports = [
     ./fish.nix
     ./git.nix
-    ./gnome.nix
     ./kitty.nix
     ./mangohud.nix
     ./tmux.nix
@@ -17,11 +16,9 @@
   ]
   ++ (
     if currentSystemDe == "hyprland" then
-      [
-        ./hyprland
-      ]
+      ./hyprland
     else
-      [ ]
+      [ ] ++ (if currentSystemDe == "gnome" then ./gnome.nix else [ ])
   );
 
   home = {
@@ -34,11 +31,6 @@
     packages = [
       pkgs.dconf
     ];
-    pointerCursor = {
-      enable = false;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
-    };
     sessionPath = [
       "$HOME/.local/bin"
     ];
