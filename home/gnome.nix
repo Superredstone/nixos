@@ -23,4 +23,10 @@
       package = pkgs.bibata-cursors;
     };
   };
+
+  # Fix for steam cursor
+  home.file.".local/share/icons/default" = {
+    source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic/";
+    recursive = true;
+  };
 }

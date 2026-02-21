@@ -14,12 +14,8 @@
     ./vesktop.nix
     ./zoxide.nix
   ]
-  ++ (
-    if currentSystemDe == "hyprland" then
-      ./hyprland
-    else
-      [ ] ++ (if currentSystemDe == "gnome" then ./gnome.nix else [ ])
-  );
+  ++ (if currentSystemDe == "hyprland" then [ ./hyprland ] else [ ])
+  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ]);
 
   home = {
     username = "${currentSystemUser}";
