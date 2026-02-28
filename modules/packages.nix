@@ -74,7 +74,6 @@
           delfin
           discord
           firefox
-          fractal
           gapless
           gnome-boxes
           mpv
