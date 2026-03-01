@@ -93,7 +93,6 @@
         [
           cura-appimage
           heroic
-          lutris
           mangohud
           openrgb
           prismlauncher
