@@ -71,7 +71,6 @@
           baobab
           bazaar
           blackbox-terminal
-          cinny
           delfin
           discord
           firefox
