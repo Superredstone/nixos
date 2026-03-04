@@ -44,6 +44,7 @@
       pinentry-tty
       python3
       ripgrep
+      sops
       tree
       unzip
       wget
