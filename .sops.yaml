@@ -1,0 +1,7 @@
+keys:
+  - &katana age18ujjw92tm6vpcpgqqky7dzg3yvzm9nytgzeptkfhtz5jhdskcdpsgmv0vs
+creation_rules:
+  - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+    - age:
+      - *katana
