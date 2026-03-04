@@ -1,4 +1,4 @@
-{ ... }:
+{ currentSystemUser, ... }:
 {
   security.sudo.extraConfig = ''
     		Defaults pwfeedback
@@ -10,7 +10,9 @@
     ];
     defaultSopsFile = ../../secrets/default.sops.yaml;
     secrets = {
-      "wifi_password" = { };
+      "wifi_password" = {
+        owner = currentSystemUser;
+      };
     };
   };
 }
