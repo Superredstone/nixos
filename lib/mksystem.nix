@@ -3,6 +3,7 @@
   overlays,
   nixvim,
   spotiflac-cli,
+  sops-nix,
   inputs,
   nixpkgs,
   home-manager,
@@ -38,6 +39,7 @@ let
     enableZram = enableZram;
     nixvim = nixvim;
     spotiflac-cli = spotiflac-cli;
+    sops-nix = sops-nix;
     inputs = inputs;
     additionalModules = additionalModules;
   };
@@ -58,6 +60,7 @@ nixpkgs.lib.nixosSystem {
       home-manager.sharedModules = [
       ];
     }
+    sops-nix.nixosModules.sops
     machineConfig
   ]
   ++ additionalModules;

@@ -5,9 +5,12 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixvim = {
       url = "github:Superredstone/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
@@ -20,6 +23,7 @@
       home-manager,
       nixvim,
       spotiflac-cli,
+      sops-nix,
       ...
     }@inputs:
     let
@@ -32,6 +36,7 @@
           overlays
           nixvim
           spotiflac-cli
+          sops-nix
           inputs
           nixpkgs
           home-manager
