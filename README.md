@@ -20,7 +20,8 @@ git clone git@github.com:Superredstone/nixos.git ~/.nixos && cd .nixos
 	];
 }
 ```
-5) Switch to the new configuration
+5) Follow `secrets/README.md`
+6) Switch to the new configuration
 ```bash
 HOSTNAME=HOSTNAME just switch
 ```
