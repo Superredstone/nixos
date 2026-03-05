@@ -5,13 +5,13 @@
 ```bash
 nix run nixpkgs#ssh-to-age -- \
   -private-key \
-  -i $HOME/.ssh/id_ed25519 \
+  -i /etc/ssh/ssh_host_ed25519_key \
   -o $HOME/.config/sops/age/keys.txt
 ```
 
 2) Obtain age recipient for the machine
 ```bash
-cat /etc/ssh/ssh_host_ed25519_key.pub | nix run nixpkgs#ssh-to-age | wl-copy
+cat /etc/ssh/ssh_host_ed25519_key.pub | nix run nixpkgs#ssh-to-age
 ```
 
 3) Paste obtained key into `.sops.yaml`
