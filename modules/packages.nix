@@ -68,7 +68,6 @@
           vulkan-tools
 
           # GUI applications
-          addwater
           baobab
           bazaar
           blackbox-terminal
