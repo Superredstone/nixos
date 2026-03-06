@@ -1,4 +1,4 @@
-{ currentSystemDe, lib, ... }:
+{ currentSystemDe, ... }:
 let
   ifDesktop = de: content: {
     _type = "if";
