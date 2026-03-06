@@ -56,3 +56,6 @@ clean-all: clean optimise
 generations:
 	@nh os info
 
+[group("remote")]
+switch-bomba:
+	nh os switch --target-host r3ddy@192.168.1.223 -H bomba -a .
