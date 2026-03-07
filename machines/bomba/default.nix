@@ -4,9 +4,8 @@
     ./configuration.nix
     ./hardware.nix
     ./networking.nix
-    ./services.nix
-    ./virtualisation.nix
     ./services
+    ./virtualisation.nix
   ];
 
   networking.hostName = "bomba";
