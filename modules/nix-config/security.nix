@@ -13,6 +13,9 @@
       "wifi_password" = {
         owner = currentSystemUser;
       };
+      "user_password" = {
+        neededForUsers = true;
+      };
     };
   };
 }

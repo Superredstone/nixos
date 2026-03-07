@@ -2,6 +2,7 @@
   pkgs,
   currentSystemUser,
   currentSystemDe,
+  config,
   ...
 }:
 {
@@ -51,13 +52,14 @@
   users.users.${currentSystemUser} = {
     isNormalUser = true;
     description = "Patrick Canal";
+    shell = pkgs.fish;
+    hashedPasswordFile = config.sops.secrets.user_password.path;
     extraGroups = [
       "networkmanager"
       "wheel"
       "docker"
       "libvirtd"
     ];
-    shell = pkgs.fish;
   };
 
   nix.settings = {
