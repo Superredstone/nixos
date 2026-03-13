@@ -4,6 +4,7 @@
     ./configuration.nix
     ./hardware.nix
     ./networking.nix
+    ./secrets.nix
     ./services
     ./virtualisation.nix
   ];
