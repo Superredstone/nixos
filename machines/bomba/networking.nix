@@ -7,7 +7,12 @@
         22
         80
         443
-        8001
+      ];
+      allowedTCPPortRanges = [
+        {
+          from = 8001;
+          to = 8005;
+        }
       ];
       allowedUDPPorts = [
         80
