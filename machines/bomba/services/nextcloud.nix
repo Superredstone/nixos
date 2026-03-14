@@ -19,6 +19,11 @@
       settings = {
         default_phone_region = "IT";
         overwriteprotocol = "https";
+        mail_domain = "patrickcanal.it";
+        mail_from_address = "nextcloud";
+        mail_smtphost = "127.0.0.1";
+        mail_smtpport = 25;
+        log_type = "file";
         trusted_domains = [
           "nextcloud.patrickcanal.it"
         ];
