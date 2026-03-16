@@ -7,6 +7,7 @@
         22
         80
         443
+        5900
       ];
       allowedTCPPortRanges = [
         {
