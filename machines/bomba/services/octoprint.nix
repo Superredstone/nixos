@@ -23,7 +23,6 @@
   ];
   services.octoprint = {
     enable = true;
-    openFirewall = true;
     port = 8002;
     plugins =
       plugins: with plugins; [
