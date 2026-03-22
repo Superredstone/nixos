@@ -82,15 +82,6 @@
           seahorse
           telegram-desktop
           thunderbird
-
-          (delfin.overrideAttrs (old: {
-            src = fetchFromCodeberg {
-              repo = "delfin";
-              owner = "Fisch";
-              rev = "0c4edad17189943162bbc98304e0211f765ba70e";
-              hash = "sha256-xe1US0Yk6hpRN57qx0yhuwolope/j4UkDtIGliOO4Gc=";
-            };
-          }))
         ]
       else
         [ ]
