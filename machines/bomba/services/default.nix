@@ -8,6 +8,10 @@
     ./octoprint.nix
     ./vaultwarden.nix
   ];
+  services.teamspeak3 = {
+    enable = true;
+    openFirewall = true;
+  };
 
   services.openssh.enable = true;
 }
