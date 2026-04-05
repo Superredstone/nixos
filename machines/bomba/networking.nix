@@ -10,8 +10,13 @@ in
       enable = true;
       allowedTCPPorts = [
         22
+        25
         80
+        143
         443
+        465
+        587
+        993
       ];
       allowedUDPPorts = [
         80

@@ -7,11 +7,11 @@
         sopsFile = ../../secrets/bomba.sops.yaml;
       };
       ntfy_users = {
-        owner = "ntfy-sh";
+        # owner = "ntfy-sh";
         sopsFile = ../../secrets/bomba.sops.yaml;
       };
       ntfy_access = {
-        owner = "ntfy-sh";
+        # owner = "ntfy-sh";
         sopsFile = ../../secrets/bomba.sops.yaml;
       };
     };

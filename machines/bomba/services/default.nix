@@ -5,6 +5,7 @@
     ./gitea.nix
     ./nextcloud.nix
     ./ntfy.nix
+    ./maddy.nix
     ./octoprint.nix
     ./vaultwarden.nix
   ];
