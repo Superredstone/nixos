@@ -15,6 +15,7 @@
   gtk = {
     enable = true;
     colorScheme = "dark";
+    gtk4.theme = null;
     iconTheme = {
       name = "Papirus";
       package = pkgs.papirus-icon-theme;
