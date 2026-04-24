@@ -10,7 +10,7 @@
       verbose = false;
       systemd.enable = true;
     };
-    kernelPackages = pkgs.linuxPackages_zen; # pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest; # pkgs.linuxPackages_latest;
     consoleLogLevel = 3;
     kernelParams = [
       "quiet"

@@ -13,6 +13,7 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     hyprland.url = "github:hyprwm/Hyprland";
     spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
   };
@@ -24,10 +25,12 @@
       nixvim,
       spotiflac-cli,
       sops-nix,
+      nix-cachyos-kernel,
       ...
     }@inputs:
     let
       overlays = [
+        nix-cachyos-kernel.overlays.pinned  
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
