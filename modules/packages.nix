@@ -49,6 +49,7 @@
       unzip
       wget
       wl-clipboard
+      xwayland-satellite
       zip
       zoxide
       zulu
@@ -60,6 +61,9 @@
       inputs.nixvim.packages.${stdenv.hostPlatform.system}.default # The only and one great editor improved even further
 
       inputs.spotiflac-cli.packages.${stdenv.hostPlatform.system}.default
+
+      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
+      gnome-keyring
     ]
     ++ (
       if currentSystemDe != "none" then
@@ -76,6 +80,7 @@
           gapless
           gnome-boxes
           mpv
+          nautilus
           nextcloud-client
           obs-studio
           piper

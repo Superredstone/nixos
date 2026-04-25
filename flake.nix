@@ -13,6 +13,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    noctalia = {
+      url = "github:noctalia-dev/noctalia-shell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     hyprland.url = "github:hyprwm/Hyprland";
     spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
@@ -26,11 +30,12 @@
       spotiflac-cli,
       sops-nix,
       nix-cachyos-kernel,
+      noctalia,
       ...
     }@inputs:
     let
       overlays = [
-        nix-cachyos-kernel.overlays.pinned  
+        nix-cachyos-kernel.overlays.pinned
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
@@ -40,6 +45,7 @@
           nixvim
           spotiflac-cli
           sops-nix
+          noctalia
           inputs
           nixpkgs
           home-manager

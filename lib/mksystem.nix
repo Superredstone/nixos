@@ -4,6 +4,7 @@
   nixvim,
   spotiflac-cli,
   sops-nix,
+  noctalia,
   inputs,
   nixpkgs,
   home-manager,
@@ -40,6 +41,7 @@ let
     nixvim = nixvim;
     spotiflac-cli = spotiflac-cli;
     sops-nix = sops-nix;
+    noctalia = noctalia;
     inputs = inputs;
     additionalModules = additionalModules;
   };
