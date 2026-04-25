@@ -10,6 +10,7 @@
     ./git.nix
     ./kitty.nix
     ./mangohud.nix
+    ./niri.nix
     ./tmux.nix
     ./vesktop.nix
     ./zoxide.nix
