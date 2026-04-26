@@ -23,7 +23,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "gnome-boxes";
+      TERMINAL = "blackbox";
     };
     packages = [
       pkgs.dconf
