@@ -6,6 +6,7 @@
   services.dbus.implementation = "broker";
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
   services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
   services.displayManager.dms-greeter = {
     enable = true;
     compositor.name = "niri";
