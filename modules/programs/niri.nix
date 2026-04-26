@@ -8,6 +8,8 @@
     xserver.desktopManager.runXdgAutostartIfNone = true;
     upower.enable = true;
     power-profiles-daemon.enable = true;
+    udisks2.enable = true;
+    gvfs.enable = true;
     displayManager.dms-greeter = {
       enable = true;
       compositor.name = "niri";

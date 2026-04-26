@@ -35,4 +35,9 @@
     source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic/";
     recursive = true;
   };
+
+  services.udiski = {
+    enable = true;
+    settings.program_options.file_manager = "${pkgs.nautilus}/bin/nautilus";
+  };
 }
