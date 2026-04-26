@@ -62,7 +62,6 @@
 
       inputs.spotiflac-cli.packages.${stdenv.hostPlatform.system}.default
 
-      inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
       gnome-keyring
     ]
     ++ (
@@ -147,6 +146,15 @@
           gnomeExtensions.caffeine
           gnomeExtensions.dash-to-dock
           gnomeExtensions.wallpaper-slideshow
+        ]
+      else
+        [ ]
+    )
+    ++ (
+      if currentSystemDe == "niri" then
+        [
+
+          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         ]
       else
         [ ]
