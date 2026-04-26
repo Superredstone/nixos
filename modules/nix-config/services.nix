@@ -1,7 +1,11 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services = {
     pcscd.enable = true;
+    xserver.enable = true;
+    xserver.excludePackages = with pkgs; [
+      xterm
+    ];
     openssh = {
       enable = true;
       hostKeys = [

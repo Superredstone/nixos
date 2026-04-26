@@ -9,7 +9,8 @@
 
   ]
   ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ])
-  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ]);
+  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ])
+  ++ (if currentSystemDe == "plasma" then [ ./plasma.nix ] else [ ]);
 
   programs = {
     gamescope = {

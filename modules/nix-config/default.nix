@@ -16,7 +16,6 @@
   ++ (
     if (currentSystemDe != "none") then
       [
-        ./de.nix
         ./fonts.nix
         ./sound.nix
       ]
