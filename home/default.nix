@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./blackbox.nix
     ./fish.nix
     ./git.nix
     ./kitty.nix
