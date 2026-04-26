@@ -162,7 +162,7 @@ spawn-at-startup "noctalia-shell"
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
-    Mod+T hotkey-overlay-title="Run Blackbox" { spawn "blackbox"; }
+    Mod+Return hotkey-overlay-title="Run Blackbox" { spawn "blackbox"; }
     Mod+B hotkey-overlay-title="Run Firefox" { spawn "firefox"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
     Mod+Space hotkey-overlay-title="Run application launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
