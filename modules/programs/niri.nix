@@ -1,15 +1,17 @@
-{ pkgs, lib, config, ... }:
+{ pkgs, lib, ... }:
 {
   programs.niri.enable = true;
 
-  services.dbus.packages = [ pkgs.nautilus ];
-  services.dbus.implementation = "broker";
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
-  services.displayManager.dms-greeter = {
-    enable = true;
-    compositor.name = "niri";
+  services = {
+    dbus.packages = [ pkgs.nautilus ];
+    dbus.implementation = "broker";
+    xserver.desktopManager.runXdgAutostartIfNone = true;
+    upower.enable = true;
+    power-profiles-daemon.enable = true;
+    displayManager.dms-greeter = {
+      enable = true;
+      compositor.name = "niri";
+    };
   };
 
   # For god's sake, never touch this code again, so much pain has been released on the following lines.
