@@ -60,6 +60,27 @@
           "usePadding": false
         },
         {
+          "characterCount": 2,
+          "colorizeIcons": false,
+          "emptyColor": "none",
+          "enableScrollWheel": true,
+          "focusedColor": "primary",
+          "followFocusedScreen": false,
+          "fontWeight": "bold",
+          "groupedBorderOpacity": 1,
+          "hideUnoccupied": false,
+          "iconScale": 0.8,
+          "id": "Workspace",
+          "labelMode": "index",
+          "occupiedColor": "error",
+          "pillSize": 0.6,
+          "showApplications": false,
+          "showApplicationsHover": false,
+          "showBadge": true,
+          "showLabelsOnlyWhenOccupied": true,
+          "unfocusedIconsOpacity": 1
+        },
+        {
           "colorizeIcons": false,
           "hideMode": "hidden",
           "id": "ActiveWindow",
@@ -85,27 +106,6 @@
           "textColor": "none",
           "useFixedWidth": false,
           "visualizerType": "linear"
-        },
-        {
-          "characterCount": 2,
-          "colorizeIcons": false,
-          "emptyColor": "none",
-          "enableScrollWheel": true,
-          "focusedColor": "primary",
-          "followFocusedScreen": false,
-          "fontWeight": "bold",
-          "groupedBorderOpacity": 1,
-          "hideUnoccupied": false,
-          "iconScale": 0.8,
-          "id": "Workspace",
-          "labelMode": "index",
-          "occupiedColor": "error",
-          "pillSize": 0.6,
-          "showApplications": false,
-          "showApplicationsHover": false,
-          "showBadge": true,
-          "showLabelsOnlyWhenOccupied": true,
-          "unfocusedIconsOpacity": 1
         }
       ],
       "center": [
