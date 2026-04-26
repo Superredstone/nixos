@@ -8,7 +8,8 @@
   imports = [
 
   ]
-  ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ]);
+  ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ])
+  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ]);
 
   programs = {
     gamescope = {
