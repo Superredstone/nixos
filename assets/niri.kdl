@@ -35,8 +35,6 @@ output "eDP-1" {
 
 output "Acer Technologies Acer KG241Q 0x93210922" {
     mode "1920x1080@74.986"
-    transform "normal"
-    position x=1920 y=0
 }
 
 // https://yalter.github.io/niri/Configuration:-Layout
@@ -147,6 +145,7 @@ window-rule {
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
+    open-maximized true
 }
 
 layer-rule {
