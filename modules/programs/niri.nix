@@ -10,6 +10,7 @@
     power-profiles-daemon.enable = true;
     udisks2.enable = true;
     gvfs.enable = true;
+    gnome.gnome-keyring.enable = true;
     displayManager.dms-greeter = {
       enable = true;
       compositor.name = "niri";
