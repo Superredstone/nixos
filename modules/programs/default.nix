@@ -5,6 +5,11 @@
   ...
 }:
 {
+  imports = [
+
+  ]
+  ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ]);
+
   programs = {
     gamescope = {
       enable = true;

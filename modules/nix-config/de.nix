@@ -11,31 +11,6 @@ let
   };
 in
 {
-  programs.niri.enable = true;
-  services.dbus.packages = [ pkgs.nautilus ];
-  services.dbus.implementation = "broker";
-  services.xserver.desktopManager.runXdgAutostartIfNone = true;
-
-  # For god's sake, never touch this code again, so much pain has been released on the following lines.
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = lib.mkForce [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config = {
-      niri = {
-        default = lib.mkForce [
-          "wlr"
-          "gtk"
-        ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
-      };
-    };
-  };
-
   services = {
     xserver.enable = true;
     xserver.excludePackages = with pkgs; [
@@ -59,13 +34,6 @@ in
 
     gnome.gnome-keyring.enable = true;
   };
-  environment.etc."xdg/autostart/niri.desktop".text = ''
-    [Desktop Entry]
-    Name=Niri
-    Exec=${config.programs.niri.package}/bin/niri-session
-    Type=Application
-    X-GDM-SessionRegisters=true
-  '';
   environment.plasma6.excludePackages = with pkgs.kdePackages; [
     elisa
     konsole

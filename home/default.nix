@@ -10,13 +10,13 @@
     ./git.nix
     ./kitty.nix
     ./mangohud.nix
-    ./niri.nix
     ./tmux.nix
     ./vesktop.nix
     ./zoxide.nix
   ]
   ++ (if currentSystemDe == "hyprland" then [ ./hyprland ] else [ ])
-  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ]);
+  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ])
+  ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ]);
 
   home = {
     username = "${currentSystemUser}";

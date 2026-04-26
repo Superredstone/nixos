@@ -7,7 +7,7 @@
     };
     nixvim = {
       url = "github:Superredstone/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
@@ -59,7 +59,7 @@
         email = personalEmail;
         gamingSystem = true;
         # Currently supported: plasma, gnome, hyprland and none
-        desktopEnvironment = "gnome";
+        desktopEnvironment = "niri";
         enableZram = true;
         additionalModules = [
         ];
