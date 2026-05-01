@@ -7,7 +7,10 @@
       			# fish_config theme choose Catppuccin\ Mocha
 
       			function fish_greeting 
-      				krabby random --no-title --padding-left 2
+              # Check if not inside of a distrobox 
+              if not test -n "$CONTAINER_ID" 
+      				  krabby random --no-title --padding-left 2
+              end
       			end
        
       			function weather
