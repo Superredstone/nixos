@@ -81,10 +81,10 @@
           "unfocusedIconsOpacity": 1
         },
         {
-          "colorizeIcons": false,
-          "hideMode": "hidden",
+          "colorizeIcons": true,
+          "hideMode": "visible",
           "id": "ActiveWindow",
-          "maxWidth": 145,
+          "maxWidth": 250,
           "scrollingMode": "hover",
           "showIcon": true,
           "showText": true,
@@ -123,7 +123,7 @@
         {
           "blacklist": [],
           "chevronColor": "none",
-          "colorizeIcons": false,
+          "colorizeIcons": true,
           "drawerEnabled": false,
           "hidePassive": true,
           "id": "Tray",
