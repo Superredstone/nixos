@@ -30,6 +30,13 @@
     };
   };
 
+  qt = {
+    enable = true;
+    style = {
+      name = "adwaita-dark";
+    };
+  };
+
   # Fix for steam cursor
   home.file.".local/share/icons/default" = {
     source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic/";
