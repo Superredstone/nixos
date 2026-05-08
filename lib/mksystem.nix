@@ -7,6 +7,7 @@
   noctalia,
   inputs,
   nixpkgs,
+  nixpkgs-25-11,
   home-manager,
 }:
 name:
@@ -26,10 +27,11 @@ let
   HMConfig = ../home;
   systemPackages = ../modules/packages.nix;
   specialArgs = {
-    pkgs-stable = import nixpkgs {
+    pkgs-unstable = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
     };
+    pkgs-25-11 = nixpkgs-25-11.legacyPackages.${system};
     currentSystem = system;
     currentSystemName = name;
     currentSystemUser = user;

@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-25-11,
   gamingSystem,
   workSystem,
   currentSystemDe,
@@ -103,6 +104,8 @@
 
           # Required for Discord RPC
           arrpc
+
+          pkgs-25-11.lutris-free
         ]
       else
         [ ]

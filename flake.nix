@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,6 +26,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-25-11,
       home-manager,
       nixvim,
       spotiflac-cli,
@@ -48,6 +50,7 @@
           noctalia
           inputs
           nixpkgs
+          nixpkgs-25-11
           home-manager
           ;
       };
