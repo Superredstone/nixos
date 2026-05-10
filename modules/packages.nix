@@ -66,34 +66,39 @@
       ];
 
       guiPackages = lib.optionals (currentSystemDe != "none") [
-        vulkan-tools
         baobab
         bazaar
         blackbox-terminal
         discord
         firefox
         gapless
+        gimp
         gnome-boxes
         mpv
         nautilus
         nextcloud-client
         obs-studio
         ollama
+        onlyoffice-desktopeditors
         piper
+        qbittorrent
         seahorse
         telegram-desktop
         thunderbird
+        vlc
+        vulkan-tools
       ];
 
       gamingPackages = lib.optionals gamingSystem [
+        arrpc
         cura-appimage
         heroic
         mangohud
+        obs-studio 
         openrgb
         prismlauncher
         protonplus
         satisfactorymodmanager
-        arrpc
       ];
 
       workPackages = lib.optionals workSystem [
@@ -124,6 +129,8 @@
 
       niriPackages = lib.optionals (currentSystemDe == "niri") [
         gnome-keyring
+        gnome-photos
+
         inputs.noctalia.packages.${hostSystem}.default
       ];
     in
