@@ -4,13 +4,6 @@
     inputs.noctalia.homeModules.default
   ];
 
-  home.file = {
-    "niri-config" = {
-      source = ../assets/niri.kdl;
-      target = ".config/niri/config.kdl";
-    };
-  };
-
   programs.noctalia-shell = {
     enable = true;
     settings = ../assets/noctalia.json;
@@ -37,10 +30,16 @@
     };
   };
 
-  # Fix for steam cursor
-  home.file.".local/share/icons/default" = {
-    source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic/";
-    recursive = true;
+  home.file = {
+    # Fix for steam cursor
+    ".local/share/icons/default" = {
+      source = "${pkgs.bibata-cursors}/share/icons/Bibata-Modern-Classic/";
+      recursive = true;
+    };
+    "niri-config" = {
+      source = ../assets/niri.kdl;
+      target = ".config/niri/config.kdl";
+    };
   };
 
   services.udiskie = {
