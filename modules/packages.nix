@@ -83,6 +83,7 @@
           nautilus
           nextcloud-client
           obs-studio
+          ollama
           piper
           seahorse
           telegram-desktop
