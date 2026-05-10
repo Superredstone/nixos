@@ -28,6 +28,7 @@
         docker
         dua
         fd
+        file
         fish
         fzf
         gh
