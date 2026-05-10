@@ -1,6 +1,7 @@
 {
   pkgs,
-  pkgs-25-11,
+  # pkgs-25-11,
+  lib,
   gamingSystem,
   workSystem,
   currentSystemDe,
@@ -13,152 +14,126 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages =
-    with pkgs;
-    [
-      # CLI utils
-      appimage-run
-      bat
-      btop
-      bun
-      busybox
-      distrobox
-      docker
-      dua
-      fd
-      fish
-      fzf
-      gh
-      git
-      gitlab-ci-local
-      gnumake
-      htop
-      jq
-      just
-      killall
-      krabby
-      lazygit
-      nmap
-      nodejs
-      openssl
-      openvpn
-      pinentry-tty
-      python3
-      ripgrep
-      sops
-      tree
-      unzip
-      wget
-      wl-clipboard
-      xwayland-satellite
-      zip
-      zoxide
-      zulu
+  environment.systemPackages = with pkgs;
+    let
+      hostSystem = pkgs.stdenv.hostPlatform.system;
+      basePackages = [
+        # CLI utils
+        appimage-run
+        bat
+        btop
+        bun
+        busybox
+        distrobox
+        docker
+        dua
+        fd
+        fish
+        fzf
+        gh
+        git
+        gitlab-ci-local
+        gnumake
+        htop
+        jq
+        just
+        killall
+        krabby
+        lazygit
+        nmap
+        nodejs
+        openssl
+        openvpn
+        pinentry-tty
+        python3
+        ripgrep
+        sops
+        tree
+        unzip
+        wget
+        wl-clipboard
+        xwayland-satellite
+        zip
+        zoxide
+        zulu
 
-      # Man pages
-      man-pages
+        # Man pages
+        man-pages
 
-      vim # The only and one great editor
-      inputs.nixvim.packages.${stdenv.hostPlatform.system}.default # The only and one great editor improved even further
+        vim # The only and one great editor
+        inputs.nixvim.packages.${stdenv.hostPlatform.system}.default # The only and one great editor improved even further
+        inputs.spotiflac-cli.packages.${stdenv.hostPlatform.system}.default
+      ];
 
-      inputs.spotiflac-cli.packages.${stdenv.hostPlatform.system}.default
-    ]
-    ++ (
-      if currentSystemDe != "none" then
-        [
-          # Video card
-          vulkan-tools
+      guiPackages = lib.optionals (currentSystemDe != "none") [
+        vulkan-tools
+        baobab
+        bazaar
+        blackbox-terminal
+        discord
+        firefox
+        gapless
+        gnome-boxes
+        mpv
+        nautilus
+        nextcloud-client
+        obs-studio
+        ollama
+        piper
+        seahorse
+        telegram-desktop
+        thunderbird
+      ];
 
-          # GUI applications
-          baobab
-          bazaar
-          blackbox-terminal
-          discord
-          firefox
-          gapless
-          gnome-boxes
-          mpv
-          nautilus
-          nextcloud-client
-          obs-studio
-          ollama
-          piper
-          seahorse
-          telegram-desktop
-          thunderbird
-        ]
-      else
-        [ ]
-    )
-    ++ (
-      if gamingSystem then
-        [
-          cura-appimage
-          heroic
-          mangohud
-          openrgb
-          prismlauncher
-          protonplus
-          satisfactorymodmanager
+      gamingPackages = lib.optionals gamingSystem [
+        cura-appimage
+        heroic
+        mangohud
+        openrgb
+        prismlauncher
+        protonplus
+        satisfactorymodmanager
+        arrpc
+      ];
 
-          # Required for Discord RPC
-          arrpc
-        ]
-      else
-        [ ]
-    )
-    ++ (
-      if workSystem then
-        [
-          android-studio
-          ansible
-          virt-manager
-        ]
-      else
-        [ ]
-    )
-    ++ (
-      if currentSystemDe == "plasma" then
-        [
-          kdePackages.wallpaper-engine-plugin
-        ]
-      else
-        [ ]
-    )
-    ++ (
-      if currentSystemDe == "hyprland" then
-        [
-          # Hyprland
-          brightnessctl
-          hyprpaper
-          pamixer
-          pavucontrol
-          kdePackages.dolphin
-        ]
-      else
-        [ ]
-    )
-    ++ (
-      if currentSystemDe == "gnome" then
-        [
-          gnome-tweaks
-          gnomeExtensions.appindicator
-          gnomeExtensions.caffeine
-          gnomeExtensions.dash-to-dock
-          gnomeExtensions.wallpaper-slideshow
-        ]
-      else
-        [ ]
-    )
-    ++ (
-      if currentSystemDe == "niri" then
-        [
-          gnome-keyring
+      workPackages = lib.optionals workSystem [
+        android-studio
+        ansible
+        virt-manager
+      ];
 
-          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-        ]
-      else
-        [ ]
-    );
+      plasmaPackages = lib.optionals (currentSystemDe == "plasma") [
+        kdePackages.wallpaper-engine-plugin
+      ];
+
+      hyprlandPackages = lib.optionals (currentSystemDe == "hyprland") [
+        brightnessctl
+        hyprpaper
+        pamixer
+        pavucontrol
+        kdePackages.dolphin
+      ];
+
+      gnomePackages = lib.optionals (currentSystemDe == "gnome") [
+        gnome-tweaks
+        gnomeExtensions.appindicator
+        gnomeExtensions.caffeine
+        gnomeExtensions.dash-to-dock
+        gnomeExtensions.wallpaper-slideshow
+      ];
+
+      niriPackages = lib.optionals (currentSystemDe == "niri") [
+        gnome-keyring
+        inputs.noctalia.packages.${hostSystem}.default
+      ];
+    in
+    basePackages
+      ++ guiPackages
+      ++ gamingPackages
+      ++ workPackages
+      ++ plasmaPackages
+      ++ hyprlandPackages
+      ++ gnomePackages
+      ++ niriPackages;
 
 }
