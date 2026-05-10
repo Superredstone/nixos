@@ -17,24 +17,40 @@
     };
   };
 
-  # For god's sake, never touch this code again, so much pain has been released on the following lines.
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = lib.mkForce [
-      pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];
-    config = {
-      niri = {
-        default = lib.mkForce [
-          "gtk"
-          "wlr"
+  xdg = {
+    mime = {
+      enable = true;
+      defaultApplications = {
+        "application/pdf" = "firefox.desktop";
+        "audio/*" = [
+          "mpv.desktop"
         ];
-        "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
-        "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+        "video/*" = [
+          "mpv.desktop"
+        ];
+        "image/*" = [
+          "org.gnome.Loupe.desktop"
+        ];
+      };
+    };
+    # For god's sake, never touch this code again, so much pain has been released on the following lines.
+    portal = {
+      enable = true;
+      xdgOpenUsePortal = true;
+      extraPortals = lib.mkForce [
+        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gtk
+      ];
+      config = {
+        niri = {
+          default = lib.mkForce [
+            "gtk"
+            "wlr"
+          ];
+          "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+        };
       };
     };
   };
-
 }

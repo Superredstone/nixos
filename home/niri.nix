@@ -46,11 +46,4 @@
     enable = true;
     settings.program_options.file_manager = "${pkgs.nautilus}/bin/nautilus";
   };
-
-  xdg.mime = {
-    enable = true;
-    defaultApplications = {
-      "application/pdf" = "firefox.desktop";
-    };
-  };
 }
