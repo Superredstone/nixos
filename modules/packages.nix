@@ -62,8 +62,6 @@
       inputs.nixvim.packages.${stdenv.hostPlatform.system}.default # The only and one great editor improved even further
 
       inputs.spotiflac-cli.packages.${stdenv.hostPlatform.system}.default
-
-      gnome-keyring
     ]
     ++ (
       if currentSystemDe != "none" then
@@ -155,6 +153,7 @@
     ++ (
       if currentSystemDe == "niri" then
         [
+          gnome-keyring
 
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
         ]
