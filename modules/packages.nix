@@ -130,7 +130,7 @@
 
       niriPackages = lib.optionals (currentSystemDe == "niri") [
         gnome-keyring
-        gnome-photos
+        loupe
 
         inputs.noctalia.packages.${hostSystem}.default
       ];
