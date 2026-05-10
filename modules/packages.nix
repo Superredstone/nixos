@@ -105,8 +105,6 @@
 
           # Required for Discord RPC
           arrpc
-
-          pkgs-25-11.lutris-free
         ]
       else
         [ ]
