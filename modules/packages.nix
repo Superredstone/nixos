@@ -21,9 +21,11 @@
         # CLI utils
         appimage-run
         bat
+        bintools
         btop
         bun
         busybox
+        dig
         distrobox
         docker
         dua
@@ -41,6 +43,7 @@
         killall
         krabby
         lazygit
+        nixpkgs-review
         nmap
         nodejs
         openssl
@@ -48,6 +51,7 @@
         pinentry-tty
         python3
         ripgrep
+        rsync
         sops
         tree
         unzip
