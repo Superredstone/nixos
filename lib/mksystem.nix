@@ -27,6 +27,7 @@ let
   HMConfig = ../home;
   systemPackages = ../modules/packages.nix;
   specialArgs = {
+    inherit gamingSystem workSystem enableZram nixvim spotiflac-cli sops-nix noctalia inputs additionalModules;
     pkgs-unstable = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
@@ -37,15 +38,6 @@ let
     currentSystemUser = user;
     currentSystemEmail = email;
     currentSystemDe = desktopEnvironment;
-    gamingSystem = gamingSystem;
-    workSystem = workSystem;
-    enableZram = enableZram;
-    nixvim = nixvim;
-    spotiflac-cli = spotiflac-cli;
-    sops-nix = sops-nix;
-    noctalia = noctalia;
-    inputs = inputs;
-    additionalModules = additionalModules;
   };
 in
 nixpkgs.lib.nixosSystem {
