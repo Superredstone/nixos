@@ -2,7 +2,7 @@
 
 My own NixOS configuration, made for myself so probably won't suit you well.
 
-![Screenshot](assets/gnome.png)
+![Screenshot](assets/niri.png)
 
 ## How to install 
 1) Clone the repo
