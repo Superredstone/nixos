@@ -1,7 +1,7 @@
-{ ... }:
+{ gamingSystem, ... }:
 {
   programs.mangohud = {
-    enable = true;
+    enable = gamingSystem;
     settings = {
       fps_limit = 75;
     };
