@@ -98,7 +98,6 @@
         arrpc
         cura-appimage
         heroic
-        mangohud
         obs-studio 
         openrgb
         prismlauncher
