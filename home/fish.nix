@@ -20,6 +20,8 @@
       			function dev
       				nix develop --command "fish"
       			end
+
+            alias ssh "kitten ssh"
       		'';
     plugins = with pkgs.fishPlugins; [
       {
