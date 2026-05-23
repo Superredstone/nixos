@@ -1,23 +1,25 @@
-{ config, ... }:
+{ ... }:
 {
-  sops = {
-    secrets = {
-      nextcloud_password = {
-        owner = "nextcloud";
+  sops =
+    let
+      default = {
         sopsFile = ../../secrets/bomba.sops.yaml;
       };
-      ntfy_users = {
-        # owner = "ntfy-sh";
-        sopsFile = ../../secrets/bomba.sops.yaml;
-      };
-      ntfy_access = {
-        # owner = "ntfy-sh";
-        sopsFile = ../../secrets/bomba.sops.yaml;
+    in
+    {
+      secrets = {
+        nextcloud_password = default // {
+          owner = "nextcloud";
+        };
+        nixflix_password = default;
+        jellyfin_api_key = default;
+        qbittorrent_api_key = default;
+        qbittorrent_password = default;
+        radarr_api_key = default;
+        sonarr_api_key = default;
+        prowlarr_api_key = default;
+        seerr_api_key = default;
+        indexers_ilcorsaroblu_password = default;
       };
     };
-    templates."ntfy.env".content = ''
-      NTFY_AUTH_USERS='${config.sops.placeholder.ntfy_users}'
-      NTFY_AUTH_ACCESS='${config.sops.placeholder.ntfy_access}'
-    '';
-  };
 }

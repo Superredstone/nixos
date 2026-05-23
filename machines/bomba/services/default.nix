@@ -1,10 +1,10 @@
 { ... }:
 {
   imports = [
+    ./caddy.nix
     ./gitea.nix
     ./nextcloud.nix
-    ./nginx.nix
-    ./ntfy.nix
+    ./nixflix.nix
     ./octoprint.nix
     ./teamspeak.nix
     ./vaultwarden.nix

@@ -29,9 +29,10 @@
         ];
       };
     };
+    # Required to change nextcloud port 
     nginx.virtualHosts."${config.services.nextcloud.hostName}".listen = [
       {
-        addr = "172.18.0.1";
+        addr = "127.0.0.1";
         port = 8004;
       }
     ];

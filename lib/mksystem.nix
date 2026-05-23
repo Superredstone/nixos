@@ -2,7 +2,6 @@
 {
   overlays,
   nixvim,
-  spotiflac-cli,
   sops-nix,
   noctalia,
   inputs,
@@ -27,7 +26,7 @@ let
   HMConfig = ../home;
   systemPackages = ../modules/packages.nix;
   specialArgs = {
-    inherit gamingSystem workSystem enableZram nixvim spotiflac-cli sops-nix noctalia inputs additionalModules;
+    inherit gamingSystem workSystem enableZram nixvim sops-nix noctalia inputs additionalModules;
     pkgs-unstable = import nixpkgs {
       inherit system;
       config.allowUnfree = true;

@@ -18,8 +18,11 @@
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nixflix = {
+      url = "github:kiriwalawren/nixflix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
   };
 
   outputs =
@@ -28,10 +31,10 @@
       nixpkgs-25-11,
       home-manager,
       nixvim,
-      spotiflac-cli,
       sops-nix,
       nix-cachyos-kernel,
       noctalia,
+      nixflix,
       ...
     }@inputs:
     let
@@ -44,7 +47,6 @@
         inherit
           overlays
           nixvim
-          spotiflac-cli
           sops-nix
           noctalia
           inputs
@@ -80,6 +82,9 @@
         user = username;
         desktopEnvironment = "none";
         enableZram = true;
+        additionalModules = [
+          nixflix.nixosModules.default
+        ];
       };
     };
 }
