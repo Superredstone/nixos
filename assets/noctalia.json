@@ -374,7 +374,7 @@
     "position": "center",
     "pinnedApps": [],
     "sortByMostUsed": true,
-    "terminalCommand": "blackbox",
+    "terminalCommand": "kitty -e",
     "customLaunchPrefixEnabled": false,
     "customLaunchPrefix": "",
     "viewMode": "list",

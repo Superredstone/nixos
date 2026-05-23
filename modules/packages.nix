@@ -78,7 +78,6 @@
         firefox
         gapless
         gimp
-        gnome-boxes
         mpv
         nautilus
         nextcloud-client
