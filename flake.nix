@@ -19,7 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
-    hyprland.url = "github:hyprwm/Hyprland";
     spotiflac-cli.url = "github:Superredstone/spotiflac-cli";
   };
 
@@ -61,7 +60,7 @@
         user = username;
         email = personalEmail;
         gamingSystem = true;
-        # Currently supported: plasma, gnome, hyprland and none
+        # Currently supported: plasma, gnome, niri and none
         desktopEnvironment = "niri";
         enableZram = true;
         additionalModules = [

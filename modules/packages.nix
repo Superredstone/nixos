@@ -114,14 +114,6 @@
         kdePackages.wallpaper-engine-plugin
       ];
 
-      hyprlandPackages = lib.optionals (currentSystemDe == "hyprland") [
-        brightnessctl
-        hyprpaper
-        pamixer
-        pavucontrol
-        kdePackages.dolphin
-      ];
-
       gnomePackages = lib.optionals (currentSystemDe == "gnome") [
         gnome-tweaks
         gnomeExtensions.appindicator
@@ -142,7 +134,6 @@
       ++ gamingPackages
       ++ workPackages
       ++ plasmaPackages
-      ++ hyprlandPackages
       ++ gnomePackages
       ++ niriPackages;
 

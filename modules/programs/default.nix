@@ -33,6 +33,5 @@
     nh = {
       enable = true;
     };
-    hyprland.enable = if currentSystemDe == "hyprland" then true else false;
   };
 }
