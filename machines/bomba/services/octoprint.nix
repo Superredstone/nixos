@@ -14,7 +14,7 @@
               sha256 = "sha256-0Gp9EgaKyCnRQv4A1sNHquTRqjag2Oz/fDGVVo95FfY=";
             };
             propagatedBuildInputs = [ pysuper.octoprint ];
-	    pyproject = true;
+            pyproject = true;
             doCheck = false;
           };
         };
