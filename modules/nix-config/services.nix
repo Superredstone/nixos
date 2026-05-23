@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, currentSystemDe, ... }:
 {
   services = {
     pcscd.enable = true;
-    xserver.enable = true;
+    xserver.enable = currentSystemDe != "none";
     xserver.excludePackages = with pkgs; [
       xterm
     ];
