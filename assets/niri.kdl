@@ -154,7 +154,6 @@ window-rule {
 window-rule {
     geometry-corner-radius 12
     clip-to-geometry true
-    open-maximized true
 }
 
 layer-rule {
