@@ -86,6 +86,7 @@
         piper
         qbittorrent
         seahorse
+        spotiflac
         telegram-desktop
         thunderbird
         vlc
