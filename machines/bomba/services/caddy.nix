@@ -77,7 +77,7 @@
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       Restart = "always";
-      User = "nobody";
+      DynamicUser = true;
       ExecStart = ''
         ${pkgs.python3Packages.websockify}/bin/websockify \
           --web ${pkgs.novnc}/share/webapps/novnc \
