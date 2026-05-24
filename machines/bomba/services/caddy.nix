@@ -18,6 +18,9 @@
       "octoprint.patrickcanal.it".extraConfig = ''
         reverse_proxy :${toString config.services.octoprint.port}
       ''; 
+      "vikunja.patrickcanal.it".extraConfig = ''
+        reverse_proxy :${toString config.services.vikunja.port}
+      ''; 
       "jellyfin.patrickcanal.it".extraConfig = ''
         reverse_proxy :${toString config.nixflix.jellyfin.network.internalHttpPort}
       '';
