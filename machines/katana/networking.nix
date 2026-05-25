@@ -3,7 +3,6 @@
   networking = {
     networkmanager.enable = true;
     wireguard.enable = true;
-    nftables.enable = true;
     firewall = {
       checkReversePath = false;
       allowedUDPPorts = [ 25565 ];
