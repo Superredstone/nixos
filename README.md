@@ -9,9 +9,13 @@ My own NixOS configuration, made for myself so probably won't suit you well.
 ```bash
 git clone git@github.com:Superredstone/nixos.git ~/.nixos && cd .nixos
 ```
-2) Choose an hostname 
+2) Choose a hostname 
 3) Copy your current configuration inside of `machines/$HOSTNAME`
-4) Create a file named `machines/$HOSTNAME/default.nix` with the following contents 
+4) Load basic utils to your current environment
+```bash
+nix-shell -p git neovim just
+```
+5) Create a file named `machines/$HOSTNAME/default.nix` with the following contents 
 ```nix
 { ... }: 
 {
@@ -20,11 +24,11 @@ git clone git@github.com:Superredstone/nixos.git ~/.nixos && cd .nixos
 	];
 }
 ```
-5) Follow `secrets/README.md`
 6) Switch to the new configuration
 ```bash
-HOSTNAME=HOSTNAME just switch
+HOSTNAME=HOSTNAME just new-machine
 ```
+7) Follow `secrets/README.md`
 
 ## Contributing 
 After commit [bd788c3](https://github.com/Superredstone/nixos/commit/bd788c366af4b94e1fab8251cabc08fc10f5b037) this repository will follow the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/#specification)
