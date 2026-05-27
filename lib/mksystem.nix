@@ -7,6 +7,7 @@
   inputs,
   nixpkgs,
   nixpkgs-25-11,
+  nixpkgs-my-features,
   home-manager,
 }:
 name:
@@ -32,6 +33,7 @@ let
       config.allowUnfree = true;
     };
     pkgs-25-11 = nixpkgs-25-11.legacyPackages.${system};
+    pkgs-my-features = nixpkgs-my-features.legacyPackages.${system};
     currentSystem = system;
     currentSystemName = name;
     currentSystemUser = user;

@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-my-features.url = "github:Superredstone/nixpkgs/my-features";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -29,6 +30,7 @@
     {
       nixpkgs,
       nixpkgs-25-11,
+      nixpkgs-my-features,
       home-manager,
       nixvim,
       sops-nix,
@@ -52,6 +54,7 @@
           inputs
           nixpkgs
           nixpkgs-25-11
+          nixpkgs-my-features
           home-manager
           ;
       };

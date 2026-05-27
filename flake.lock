@@ -235,6 +235,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-my-features": {
+      "locked": {
+        "lastModified": 1779912664,
+        "narHash": "sha256-OtD0RA+zI3a5BE/g6IgflMf8DiwdKIJ2S2P4k7ww3AI=",
+        "owner": "Superredstone",
+        "repo": "nixpkgs",
+        "rev": "4788847e7c2deefd8c9a7369af552a1d9e9964d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Superredstone",
+        "ref": "my-features",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1779508470,
@@ -372,6 +388,7 @@
         "nixflix": "nixflix",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-25-11": "nixpkgs-25-11",
+        "nixpkgs-my-features": "nixpkgs-my-features",
         "nixvim": "nixvim",
         "noctalia": "noctalia",
         "sops-nix": "sops-nix"
