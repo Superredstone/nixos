@@ -1,12 +1,14 @@
 keys:
   - &katana age18ujjw92tm6vpcpgqqky7dzg3yvzm9nytgzeptkfhtz5jhdskcdpsgmv0vs
   - &bomba age1ynu6zhhy84rr5xqce0flp25x5tnfgskesxfe39u7ewsk900fvagq9sq0lx
+  - &frog age1xfr76wj2hzz9mkxxce5qxgr2n72zsypatzhgl2fxgsh408wdzsaq39wt9z
 creation_rules:
   - path_regex: secrets/default.sops.yaml
     key_groups:
       - age:
         - *katana
         - *bomba
+        - *frog
   - path_regex: secrets/bomba.sops.yaml
     key_groups:
       - age:
