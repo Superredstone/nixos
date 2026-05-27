@@ -86,5 +86,13 @@
           nixflix.nixosModules.default
         ];
       };
+      nixosConfigurations."frog" = mkSystem "frog" {
+        system = "x86_64-linux";
+        user = username;
+        email = personalEmail;
+        workSystem = true;
+        desktopEnvironment = "gnome";
+        enableZram = true;
+      };
     };
 }
