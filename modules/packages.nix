@@ -1,6 +1,7 @@
 {
   pkgs,
   # pkgs-25-11,
+  pkgs-my-features,
   lib,
   gamingSystem,
   workSystem,
@@ -86,11 +87,12 @@
         piper
         qbittorrent
         seahorse
-        spotiflac
         telegram-desktop
         thunderbird
         vlc
         vulkan-tools
+
+        pkgs-my-features.spotiflac
       ];
 
       gamingPackages = lib.optionals gamingSystem [
