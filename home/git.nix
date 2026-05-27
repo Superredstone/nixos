@@ -12,6 +12,7 @@
       init.defaultBranch = "main";
       pull.rebase = true;
       commit.gpgsign = true;
+      push.autoSetupRemote = true;
     };
   };
 }
