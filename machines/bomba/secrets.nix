@@ -1,4 +1,4 @@
-{ ... }:
+{ config, ... }:
 {
   sops =
     let
@@ -20,6 +20,14 @@
         prowlarr_api_key = default;
         seerr_api_key = default;
         indexers_ilcorsaroblu_password = default;
+        gitea_registration_token = default;
+      };
+      templates = {
+        "gitea_runner.env".content = ''
+          GITEA_INSTANCE_URL=${config.services.gitea.settings.server.ROOT_URL}
+          GITEA_RUNNER_NAME="Runner"
+          GITEA_RUNNER_REGISTRATION_TOKEN=${config.sops.placeholder.gitea_registration_token}
+        '';
       };
     };
 }
