@@ -7,20 +7,20 @@
       "amend" = "git commit --amend";
       "commit" = "git commit";
       "add" = "git add .";
-      "ssh" = "kitten ssh"; 
+      "ssh" = "kitten ssh";
       "dev" = "nix develop --command 'fish'";
     };
     interactiveShellInit = ''
-      			# This is commented until a good way of installing themes is found
-      			# fish_config theme choose Catppuccin\ Mocha
+      # This is commented until a good way of installing themes is found
+      # fish_config theme choose Catppuccin\ Mocha
 
-      			function fish_greeting 
-              # Check if not inside of a distrobox 
-              if not test -n "$CONTAINER_ID" 
-      				  krabby random --no-title --padding-left 2
-              end
-      			end
-      		'';
+      function fish_greeting 
+        # Check if not inside of a distrobox 
+        if not test -n "$CONTAINER_ID" 
+          krabby random --no-title --padding-left 2
+        end
+      end
+    '';
     plugins = with pkgs.fishPlugins; [
       {
         name = "fzf.fish";
