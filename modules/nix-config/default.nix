@@ -72,4 +72,5 @@
   };
 
   documentation.man.cache.enable = false;
+  boot.tmp.cleanOnBoot = true;
 }
