@@ -3,7 +3,7 @@
   programs.fish = {
     enable = true;
     shellAliases = {
-      "please" = "sudo $(fc -ln -1)";
+      "please" = "sudo $history[1]";
       "amend" = "git commit --amend";
       "commit" = "git commit";
       "add" = "git add .";
