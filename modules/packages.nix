@@ -73,7 +73,6 @@
       guiPackages = lib.optionals (currentSystemDe != "none") [
         baobab
         bazaar
-        blackbox-terminal
         discord
         firefox
         gapless
@@ -117,6 +116,7 @@
       ];
 
       gnomePackages = lib.optionals (currentSystemDe == "gnome") [
+        blackbox-terminal
         gnome-tweaks
         gnomeExtensions.appindicator
         gnomeExtensions.caffeine
