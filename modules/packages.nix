@@ -89,6 +89,7 @@
         seahorse
         telegram-desktop
         thunderbird
+        tor-browser
         vlc
         vulkan-tools
 
