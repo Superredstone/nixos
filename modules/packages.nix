@@ -15,7 +15,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  environment.systemPackages = with pkgs;
+  environment.systemPackages =
+    with pkgs;
     let
       hostSystem = pkgs.stdenv.hostPlatform.system;
       basePackages = [
@@ -98,7 +99,7 @@
         arrpc
         cura-appimage
         heroic
-        obs-studio 
+        obs-studio
         openrgb
         prismlauncher
         protonplus
@@ -132,11 +133,11 @@
       ];
     in
     basePackages
-      ++ guiPackages
-      ++ gamingPackages
-      ++ workPackages
-      ++ plasmaPackages
-      ++ gnomePackages
-      ++ niriPackages;
+    ++ guiPackages
+    ++ gamingPackages
+    ++ workPackages
+    ++ plasmaPackages
+    ++ gnomePackages
+    ++ niriPackages;
 
 }

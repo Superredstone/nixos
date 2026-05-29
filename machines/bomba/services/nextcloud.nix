@@ -26,7 +26,7 @@
         ];
       };
     };
-    # Required to change nextcloud port 
+    # Required to change nextcloud port
     nginx.virtualHosts."${config.services.nextcloud.hostName}".listen = [
       {
         addr = "127.0.0.1";
