@@ -32,7 +32,7 @@
       "$HOME/.local/bin"
     ];
 
-    stateVersion = "24.11";
+    stateVersion = "26.05";
   };
 
   dconf.enable = true;
