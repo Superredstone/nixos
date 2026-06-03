@@ -129,6 +129,7 @@
       niriPackages = lib.optionals (currentSystemDe == "niri") [
         gnome-keyring
         loupe
+        papers
 
         inputs.noctalia.packages.${hostSystem}.default
       ];
