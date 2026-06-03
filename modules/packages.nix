@@ -93,7 +93,7 @@
         vlc
         vulkan-tools
 
-        pkgs-my-features.spotiflac
+        spotiflac
       ];
 
       gamingPackages = lib.optionals gamingSystem [
