@@ -4,9 +4,9 @@
     inputs.noctalia.homeModules.default
   ];
 
-  programs.noctalia-shell = {
+  programs.noctalia = {
     enable = true;
-    settings = ../assets/noctalia.json;
+    settings = ../assets/noctalia-config.toml;
   };
 
   gtk = {

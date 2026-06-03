@@ -11,8 +11,6 @@ input {
         xkb {
             layout "us,it"
         }
-
-        numlock
     }
     touchpad {
         tap
@@ -164,35 +162,37 @@ window-rule {
     open-maximized true;
 }
 
-layer-rule {
-  match namespace="^noctalia-overview*"
-  place-within-backdrop true
+window-rule {
+  match app-id="dev.noctalia.Noctalia.Settings"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
 }
 
 debug {
   honor-xdg-activation-with-invalid-serial
 }
 
-spawn-at-startup "noctalia-shell"
+spawn-at-startup "noctalia"
 
 binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Run Kitty" { spawn "kitty"; }
     Mod+B hotkey-overlay-title="Run Firefox" { spawn "firefox"; }
-    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Mod+Space hotkey-overlay-title="Run application launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+    Super+Alt+L hotkey-overlay-title="Lock the Screen" { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+Space hotkey-overlay-title="Run application launcher" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
 
-    XF86AudioRaiseVolume { spawn "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume { spawn "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute { spawn "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86AudioPause { spawn "noctalia-shell" "ipc" "call" "media" "pause"; }
-    XF86AudioPlay { spawn "noctalia-shell" "ipc" "call" "media" "playPause"; }
-    XF86AudioStop { spawn "noctalia-shell" "ipc" "call" "media" "stop"; }
-    XF86AudioPrev { spawn "noctalia-shell" "ipc" "call" "media" "previous"; }
-    XF86AudioNext { spawn "noctalia-shell" "ipc" "call" "media" "next"; }
-    XF86MonBrightnessUp { spawn "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown { spawn "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    XF86AudioRaiseVolume { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute { spawn "noctalia" "msg" "volume-mute"; }
+    XF86AudioPause { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioPlay { spawn "noctalia" "msg" "media" "toggle"; }
+    XF86AudioStop { spawn "noctalia" "msg" "media" "stop"; }
+    XF86AudioPrev { spawn "noctalia" "msg" "media" "previous"; }
+    XF86AudioNext { spawn "noctalia" "msg" "media" "next"; }
+    XF86MonBrightnessUp { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown { spawn "noctalia" "msg" "brightness-down"; }
 
     Mod+O repeat=false { toggle-overview; }
 
@@ -239,14 +239,6 @@ binds {
     Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
     Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
 
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Shift+Ctrl+Left  { move-window-to-monitor-left; }
-    // ...
-
-    // And you can also move a whole workspace to another monitor:
-    // Mod+Shift+Ctrl+Left  { move-workspace-to-monitor-left; }
-    // ...
-
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
     Mod+U              { focus-workspace-down; }
@@ -256,21 +248,11 @@ binds {
     Mod+Ctrl+U         { move-column-to-workspace-down; }
     Mod+Ctrl+I         { move-column-to-workspace-up; }
 
-    // Alternatively, there are commands to move just a single window:
-    // Mod+Ctrl+Page_Down { move-window-to-workspace-down; }
-    // ...
-
     Mod+Shift+Page_Down { move-workspace-down; }
     Mod+Shift+Page_Up   { move-workspace-up; }
     Mod+Shift+U         { move-workspace-down; }
     Mod+Shift+I         { move-workspace-up; }
 
-    // You can bind mouse wheel scroll ticks using the following syntax.
-    // These binds will change direction based on the natural-scroll setting.
-    //
-    // To avoid scrolling through workspaces really fast, you can use
-    // the cooldown-ms property. The bind will be rate-limited to this value.
-    // You can set a cooldown on any bind, but it's most useful for the wheel.
     Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
     Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
@@ -281,8 +263,6 @@ binds {
     Mod+Ctrl+WheelScrollRight { move-column-right; }
     Mod+Ctrl+WheelScrollLeft  { move-column-left; }
 
-    // Usually scrolling up and down with Shift in applications results in
-    // horizontal scrolling; these binds replicate that.
     Mod+Shift+WheelScrollDown      { focus-column-right; }
     Mod+Shift+WheelScrollUp        { focus-column-left; }
     Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
