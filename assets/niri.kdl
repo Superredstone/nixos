@@ -11,8 +11,6 @@ input {
         xkb {
             layout "us,it"
         }
-
-        numlock
     }
     touchpad {
         tap
