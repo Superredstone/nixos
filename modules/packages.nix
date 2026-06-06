@@ -87,13 +87,12 @@
         piper
         qbittorrent
         seahorse
+        spotiflac
         telegram-desktop
         thunderbird
         tor-browser
         vlc
         vulkan-tools
-
-        spotiflac
       ];
 
       gamingPackages = lib.optionals gamingSystem [
