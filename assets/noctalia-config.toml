@@ -19,6 +19,10 @@ start = [ "launcher", "workspaces" ]
 [calendar]
 enabled = true
 
+    [calendar.account.personal_google]
+    name = "Calendar"
+    type = "google"
+
 [desktop_widgets]
 schema_version = 1
 widget_order = []
@@ -37,15 +41,49 @@ icon_size = 40
 padding = 4
 show_dots = true
 
+[location]
+address = "Bolzano"
+
+[lockscreen_widgets]
+enabled = false
+schema_version = 1
+widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    cx = 960.0
+    cy = 957.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "login_box"
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    cx = 960.0
+    cy = 957.0
+    output = "eDP-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "login_box"
+
 [shell]
 avatar_path = "/home/r3ddy/.face"
 font_family = "Noto Sans"
 
 [theme]
 builtin = "Catppuccin"
-community_palette = "m3-content"
-custom_palette = "ADW"
-wallpaper_scheme = "Noctalia"
+community_palette = "Tokyo Night Moon"
+custom_palette = "Tokyo Night Moon"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "kitty", "niri", "qt" ]
+    community_ids = [ "telegram" ]
 
 [wallpaper]
 directory = "/home/r3ddy/Pictures/Wallpapers"
