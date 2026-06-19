@@ -1,4 +1,5 @@
 [bar.default]
+center = [ "clock", "cat" ]
 end = [
     "media",
     "tray",
@@ -39,10 +40,14 @@ auto_hide = true
 enabled = true
 icon_size = 40
 padding = 4
+reserve_space = false
 show_dots = true
 
 [location]
 address = "Bolzano"
+
+[lockscreen]
+blurred_desktop = true
 
 [lockscreen_widgets]
 enabled = false
@@ -70,9 +75,14 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     scale = 1.0
     type = "login_box"
 
+[plugins]
+enabled = [ "noctalia/bongocat" ]
+
 [shell]
 avatar_path = "/home/r3ddy/.face"
 font_family = "Noto Sans"
+polkit_agent = true
+settings_show_advanced = true
 
 [theme]
 builtin = "Catppuccin"
@@ -103,6 +113,13 @@ directory = "/home/r3ddy/Pictures/Wallpapers"
 [weather]
 address = "Bolzano"
 refresh_minutes = 60
+
+[widget.cat]
+audio_spectrum = true
+rave_mode = true
+tappy_mode = true
+type = "noctalia/bongocat:cat"
+use_mpris_filter = true
 
 [widget.clock]
 format = "{:%a %d %b %Y %H:%M}"
