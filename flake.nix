@@ -23,7 +23,6 @@
       url = "github:kiriwalawren/nixflix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs =
@@ -34,14 +33,12 @@
       home-manager,
       nixvim,
       sops-nix,
-      nix-cachyos-kernel,
       noctalia,
       nixflix,
       ...
     }@inputs:
     let
       overlays = [
-        nix-cachyos-kernel.overlays.pinned
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
