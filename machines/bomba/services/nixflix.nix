@@ -11,6 +11,7 @@ let
   prowlarrPort = 8008;
   seerrPort = 8009;
   sonarrPort = 8010;
+  lidarrPort = 8012;
   hostConfig = {
     username = user;
     password._secret = config.sops.secrets.nixflix_password.path;
@@ -64,6 +65,16 @@ in
       };
     };
 
+    lidarr = {
+      enable = true;
+      config = {
+        apiKey._secret = config.sops.secrets.lidarr_api_key.path;
+        hostConfig = hostConfig // {
+          port = lidarrPort;
+        };
+      };
+    };
+
     prowlarr = {
       enable = true;
       settings.server.port = prowlarrPort;
@@ -113,6 +124,13 @@ in
           seasonZeroDisplayName = "Specials";
           paths = [
             "${mediaDir}/tv"
+          ];
+        };
+
+        Music = {
+          collectionType = "music";
+          paths = [
+            "${mediaDir}/music"
           ];
         };
       };

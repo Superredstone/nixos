@@ -17,6 +17,7 @@
         qbittorrent_password = default;
         radarr_api_key = default;
         sonarr_api_key = default;
+        lidarr_api_key = default;
         prowlarr_api_key = default;
         seerr_api_key = default;
         indexers_ilcorsaroblu_password = default;

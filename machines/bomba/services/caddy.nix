@@ -62,6 +62,9 @@
         "sonarr.patrickcanal.it".extraConfig = ''
           reverse_proxy :${toString config.nixflix.sonarr.settings.server.port}
         '';
+        "lidarr.patrickcanal.it".extraConfig = ''
+          reverse_proxy :${toString config.nixflix.lidarr.settings.server.port}
+        '';
         "prowlarr.patrickcanal.it".extraConfig = ''
           reverse_proxy :${toString config.nixflix.prowlarr.settings.server.port}
         '';
