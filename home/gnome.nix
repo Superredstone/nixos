@@ -16,10 +16,6 @@
     enable = true;
     colorScheme = "dark";
     gtk4.theme = null;
-    iconTheme = {
-      name = "Papirus";
-      package = pkgs.papirus-icon-theme;
-    };
     cursorTheme = {
       name = "Bibata-Modern-Classic";
       package = pkgs.bibata-cursors;
