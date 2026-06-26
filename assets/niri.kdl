@@ -35,6 +35,10 @@ output "Acer Technologies Acer KG241Q 0x93210922" {
     mode "1920x1080@74.986"
 }
 
+output "Microstep MSI G255F BC0M275402311" {
+    mode "1920x1080@179.998"
+}
+
 output "HDMI-A-1" {
     mode "1920x1080@60.000"
 }
