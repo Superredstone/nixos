@@ -90,9 +90,6 @@ in
             password._secret = config.sops.secrets.indexers_ilcorsaroblu_password.path;
           }
           {
-            name = "kickasstorrents.ws";
-          }
-          {
             name = "LimeTorrents";
           }
           {
