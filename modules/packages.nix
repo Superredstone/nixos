@@ -102,7 +102,6 @@
         obs-studio
         openrgb
         prismlauncher
-        protonplus
         satisfactorymodmanager
       ];
 
