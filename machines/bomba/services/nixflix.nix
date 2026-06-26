@@ -89,6 +89,15 @@ in
             username = "Petrich";
             password._secret = config.sops.secrets.indexers_ilcorsaroblu_password.path;
           }
+          {
+            name = "kickasstorrents.ws";
+          }
+          {
+            name = "LimeTorrents";
+          }
+          {
+            name = "The Pirate Bay";
+          }
         ];
       };
     };
