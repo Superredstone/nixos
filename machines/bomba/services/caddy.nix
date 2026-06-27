@@ -71,6 +71,9 @@
         "seerr.patrickcanal.it".extraConfig = ''
           reverse_proxy :${toString config.nixflix.seerr.port}
         '';
+        "navidrome.patrickcanal.it".extraConfig = ''
+          reverse_proxy :${toString config.services.navidrome.settings.Port}
+        '';
       };
     };
 

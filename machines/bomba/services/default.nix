@@ -2,6 +2,7 @@
 {
   imports = [
     ./caddy.nix
+    ./navidrome.nix
     ./gitea.nix
     ./nextcloud.nix
     ./nixflix.nix
