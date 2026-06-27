@@ -3,6 +3,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-my-features.url = "github:Superredstone/nixpkgs/my-features";
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,12 +34,14 @@
       home-manager,
       nixvim,
       sops-nix,
+      nix-cachyos-kernel,
       noctalia,
       nixflix,
       ...
     }@inputs:
     let
       overlays = [
+        nix-cachyos-kernel.overlays.pinned
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
