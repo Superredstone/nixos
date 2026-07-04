@@ -22,6 +22,7 @@
         seerr_api_key = default;
         indexers_ilcorsaroblu_password = default;
         gitea_registration_token = default;
+        navidrome_env = default;
       };
       templates = {
         "gitea_runner.env".content = ''
