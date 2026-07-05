@@ -38,17 +38,17 @@
       enable = true;
       xdgOpenUsePortal = true;
       extraPortals = lib.mkForce [
-        pkgs.xdg-desktop-portal-wlr
+        pkgs.xdg-desktop-portal-gnome
         pkgs.xdg-desktop-portal-gtk
       ];
       config = {
         niri = {
           default = lib.mkForce [
+            "gnome"
             "gtk"
-            "wlr"
           ];
-          "org.freedesktop.impl.portal.ScreenCast" = [ "wlr" ];
-          "org.freedesktop.impl.portal.Screenshot" = [ "wlr" ];
+          "org.freedesktop.impl.portal.ScreenCast" = [ "gnome" ];
+          "org.freedesktop.impl.portal.Screenshot" = [ "gnome" ];
         };
       };
     };
