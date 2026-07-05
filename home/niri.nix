@@ -23,13 +23,6 @@
     };
   };
 
-  qt = {
-    enable = true;
-    style = {
-      name = "adwaita-dark";
-    };
-  };
-
   home.file = {
     # Fix for steam cursor
     ".local/share/icons/default" = {
