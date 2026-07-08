@@ -4,7 +4,7 @@
     graphics.enable = true;
     nvidia = {
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.latest;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
       open = true;
       prime = {
         offload = {
