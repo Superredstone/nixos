@@ -74,6 +74,9 @@
         "navidrome.patrickcanal.it".extraConfig = ''
           reverse_proxy :${toString config.services.navidrome.settings.Port}
         '';
+        "yamtrack.patrickcanal.it".extraConfig = ''
+          reverse_proxy :8014
+        '';
       };
     };
 
