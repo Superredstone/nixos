@@ -74,7 +74,6 @@
       guiPackages = lib.optionals (currentSystemDe != "none") [
         baobab
         bazaar
-        discord
         firefox
         gapless
         gimp
@@ -91,6 +90,7 @@
         telegram-desktop
         thunderbird
         tor-browser
+        vesktop
         vlc
         vulkan-tools
       ];
