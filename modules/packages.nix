@@ -74,19 +74,20 @@
       guiPackages = lib.optionals (currentSystemDe != "none") [
         baobab
         bazaar
+        brave
+        cinny-desktop
         firefox
+        fladder
         gapless
         gimp
         mpv
         nautilus
         nextcloud-client
         obs-studio
-        ollama
         onlyoffice-desktopeditors
-        piper
         qbittorrent
+        rustdesk
         seahorse
-        spotiflac
         telegram-desktop
         thunderbird
         tor-browser
