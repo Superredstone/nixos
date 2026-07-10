@@ -1,5 +1,5 @@
 [bar.default]
-center = [ "clock", "cat" ]
+center = [ "clock" ]
 end = [
     "media",
     "tray",
@@ -39,6 +39,7 @@ widget_order = []
 auto_hide = true
 enabled = true
 icon_size = 40
+magnification_scale = 1.3500000052154064
 padding = 4
 reserve_space = false
 show_dots = true
@@ -52,7 +53,7 @@ blurred_desktop = true
 [lockscreen_widgets]
 enabled = false
 schema_version = 1
-widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
+widget_order = [ "lockscreen-login-box@winit", "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
 
     [lockscreen_widgets.grid]
     cell_size = 16
@@ -60,6 +61,8 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 70.0
+    box_width = 400.0
     cx = 960.0
     cy = 957.0
     output = "HDMI-A-1"
@@ -67,7 +70,15 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     scale = 1.0
     type = "login_box"
 
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 70.0
+    box_width = 400.0
     cx = 960.0
     cy = 957.0
     output = "eDP-1"
@@ -75,8 +86,37 @@ widget_order = [ "lockscreen-login-box@HDMI-A-1", "lockscreen-login-box@eDP-1" ]
     scale = 1.0
     type = "login_box"
 
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@winit"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 464.0
+    cy = 863.0
+    output = "winit"
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@winit".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        input_opacity = 1.0
+        input_radius = 6.0
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_password_hint = true
+
+[osd.kinds]
+media = false
+
 [plugins]
-enabled = [ "noctalia/bongocat" ]
+enabled = []
 
 [shell]
 avatar_path = "/home/r3ddy/.face"
@@ -93,7 +133,7 @@ wallpaper_scheme = "m3-content"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "kitty", "niri", "qt" ]
-    community_ids = [ "telegram" ]
+    community_ids = [ "discord", "telegram" ]
 
 [wallpaper]
 directory = "/home/r3ddy/Pictures/Wallpapers"
