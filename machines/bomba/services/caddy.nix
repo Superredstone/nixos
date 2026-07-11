@@ -8,7 +8,7 @@
   services.caddy =
     let
       basicAuth = ''
-        basicauth {
+        basic_auth {
           ${currentSystemUser} $2a$14$L6SBwu.0FhGBYwH2LWa6uOrBSeRHo8Lo95Vkle/g5uB7kZl7nmJPO
         }
       '';
@@ -76,6 +76,9 @@
         '';
         "yamtrack.patrickcanal.it".extraConfig = ''
           reverse_proxy :8014
+        '';
+        "actual.patrickcanal.it".extraConfig = ''
+          reverse_proxy :${toString config.services.actual.settings.port}
         '';
       };
     };

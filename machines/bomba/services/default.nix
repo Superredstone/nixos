@@ -12,6 +12,7 @@
     ./vaultwarden.nix
     ./vikunja.nix
     ./yamtrack.nix
+  ./actual.nix
   ];
 
   services.openssh.enable = true;
