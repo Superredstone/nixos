@@ -80,6 +80,9 @@
         "actual.patrickcanal.it".extraConfig = ''
           reverse_proxy :${toString config.services.actual.settings.port}
         '';
+        "inventory.patrickcanal.it".extraConfig = ''
+          reverse_proxy :${toString config.services.homebox.settings.HBOX_WEB_PORT}
+        '';
       };
     };
 

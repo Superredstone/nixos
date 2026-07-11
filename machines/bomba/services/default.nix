@@ -1,9 +1,11 @@
 { ... }:
 {
   imports = [
+    ./actual.nix
     ./caddy.nix
     ./fail2ban.nix
     ./gitea.nix
+    ./homebox.nix
     ./navidrome.nix
     ./nextcloud.nix
     ./nixflix.nix
@@ -12,7 +14,6 @@
     ./vaultwarden.nix
     ./vikunja.nix
     ./yamtrack.nix
-  ./actual.nix
   ];
 
   services.openssh.enable = true;
