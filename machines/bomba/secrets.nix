@@ -1,4 +1,4 @@
-{ config, ... }:
+{... }:
 {
   sops =
     let
@@ -24,13 +24,6 @@
         gitea_registration_token = default;
         navidrome_env = default;
         yamtrack_env = default;
-      };
-      templates = {
-        "gitea_runner.env".content = ''
-          GITEA_INSTANCE_URL=${config.services.gitea.settings.server.ROOT_URL}
-          GITEA_RUNNER_NAME="Runner"
-          GITEA_RUNNER_REGISTRATION_TOKEN=${config.sops.placeholder.gitea_registration_token}
-        '';
       };
     };
 }
