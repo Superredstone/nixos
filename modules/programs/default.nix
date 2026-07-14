@@ -34,5 +34,8 @@
     nh = {
       enable = true;
     };
+    bash.shellAliases = {
+      dev = "nix develop --command 'fish'";
+    };
   };
 }
