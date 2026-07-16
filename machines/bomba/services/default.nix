@@ -2,6 +2,7 @@
 {
   imports = [
     ./actual.nix
+    ./adguard.nix
     ./caddy.nix
     ./fail2ban.nix
     ./gitea.nix

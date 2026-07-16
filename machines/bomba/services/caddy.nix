@@ -83,6 +83,10 @@
         "inventory.patrickcanal.it".extraConfig = ''
           reverse_proxy :${toString config.services.homebox.settings.HBOX_WEB_PORT}
         '';
+        "adguard.patrickcanal.it".extraConfig = ''
+          ${basicAuth}
+          reverse_proxy :${toString config.services.adguardhome.port}
+        '';
       };
     };
 
