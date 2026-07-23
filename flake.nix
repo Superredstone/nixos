@@ -24,6 +24,10 @@
       url = "github:kiriwalawren/nixflix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    authentik-nix = {
+      url = "github:nix-community/authentik-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -37,6 +41,7 @@
       nix-cachyos-kernel,
       noctalia,
       nixflix,
+      authentik-nix,
       ...
     }@inputs:
     let
@@ -87,6 +92,7 @@
         enableZram = true;
         additionalModules = [
           nixflix.nixosModules.default
+          authentik-nix.nixosModules.default
         ];
       };
       nixosConfigurations."frog" = mkSystem "frog" {
