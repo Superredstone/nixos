@@ -34,7 +34,7 @@
         '';
         "vaultwarden.patrickcanal.it".extraConfig = ''
           encode zstd gzip
-          reverse_proxy :${toString config.services.vaultwarden.config.ROCKET_PORT} {
+          reverse_proxy :8003 {
             header_up X-Real-IP {remote_host}
           }
         '';
