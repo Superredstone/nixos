@@ -6,10 +6,6 @@
     settings = {
       disable_startup_analytics = true;
       avatars = "initials";
-      listen = {
-        ldap = "0.0.0.0:3389";
-        ldaps = "0.0.0.0:6636";
-      };
     };
   };
 }

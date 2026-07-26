@@ -1,15 +1,17 @@
 {
-  pkgs,
   config,
-  currentSystemUser,
   ...
 }:
 {
   services.caddy =
     let
-      basicAuth = ''
-        basic_auth {
-          ${currentSystemUser} $2a$14$L6SBwu.0FhGBYwH2LWa6uOrBSeRHo8Lo95Vkle/g5uB7kZl7nmJPO
+      authentikAuth = ''
+        reverse_proxy /outpost.goauthentik.io/* http://127.0.0.1:9000
+
+        forward_auth http://127.0.0.1:9000 {
+          uri /outpost.goauthentik.io/auth/caddy
+          copy_headers X-Authentik-Username X-Authentik-Groups X-Authentik-Entitlements X-Authentik-Email X-Authentik-Name X-Authentik-Uid X-Authentik-Jwt X-Authentik-Meta-Jwks X-Authentik-Meta-Outpost X-Authentik-Meta-Provider X-Authentik-Meta-App X-Authentik-Meta-Version
+          trusted_proxies private_ranges
         }
       '';
     in
@@ -19,18 +21,6 @@
         "patrickcanal.it".extraConfig = ''
           root /var/www/patrickcanal.it/public
           file_server
-        '';
-        "novnc.patrickcanal.it".extraConfig = ''
-          handle {
-            ${basicAuth}
-            root ${pkgs.novnc}/share/webapps/novnc
-            file_server browse
-          }
-
-          handle /websockify {
-            ${basicAuth}
-            reverse_proxy 127.0.0.1:6080
-          }
         '';
         "vaultwarden.patrickcanal.it".extraConfig = ''
           encode zstd gzip
@@ -84,7 +74,7 @@
           reverse_proxy :${toString config.services.homebox.settings.HBOX_WEB_PORT}
         '';
         "adguard.patrickcanal.it".extraConfig = ''
-          ${basicAuth}
+          ${authentikAuth}
           reverse_proxy :${toString config.services.adguardhome.port}
         '';
         "auth.patrickcanal.it".extraConfig = ''
@@ -92,19 +82,4 @@
         '';
       };
     };
-
-  systemd.services.websockify = {
-    description = "Websockify for noVNC";
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
-    serviceConfig = {
-      Restart = "always";
-      DynamicUser = true;
-      ExecStart = ''
-        ${pkgs.python3Packages.websockify}/bin/websockify \
-          --web ${pkgs.novnc}/share/webapps/novnc \
-          6080 127.0.0.1:5900
-      '';
-    };
-  };
 }
