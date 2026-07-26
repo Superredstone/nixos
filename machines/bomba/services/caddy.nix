@@ -44,6 +44,7 @@
           reverse_proxy :${toString config.nixflix.jellyfin.network.internalHttpPort}
         '';
         "qbittorrent.patrickcanal.it".extraConfig = ''
+          ${authentikAuth}
           reverse_proxy :${toString config.nixflix.downloadarr.qbittorrent.port}
         '';
         "radarr.patrickcanal.it".extraConfig = ''
