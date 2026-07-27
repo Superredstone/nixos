@@ -84,7 +84,6 @@
         nautilus
         nextcloud-client
         obs-studio
-        onlyoffice-desktopeditors
         qbittorrent
         rustdesk
         seahorse
