@@ -59,6 +59,8 @@
     };
 
   fonts.packages = with pkgs; [
+    monocraft
+    miracode
     nerd-fonts.jetbrains-mono
     noto-fonts
   ];
