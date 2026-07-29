@@ -24,6 +24,9 @@
         gitea_registration_token = default;
         navidrome_env = default;
         yamtrack_env = default;
+        authentik_env = default;
+        vaultwarden_env = default;
+        vikunja_env = default;
       };
     };
 }
