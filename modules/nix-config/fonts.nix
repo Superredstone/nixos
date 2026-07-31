@@ -59,6 +59,7 @@
     };
 
   fonts.packages = with pkgs; [
+    vista-fonts
     monocraft
     miracode
     nerd-fonts.jetbrains-mono
