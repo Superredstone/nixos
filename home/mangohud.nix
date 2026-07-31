@@ -3,7 +3,7 @@
   programs.mangohud = {
     enable = gamingSystem;
     settings = {
-      fps_limit = 75;
+      fps_limit = 180;
     };
   };
 }
