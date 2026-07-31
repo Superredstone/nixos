@@ -93,6 +93,7 @@
         vesktop
         vlc
         vulkan-tools
+        libreoffice
       ];
 
       gamingPackages = lib.optionals gamingSystem [
