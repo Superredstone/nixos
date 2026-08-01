@@ -39,6 +39,7 @@ in
           MaxAuthenticationFailCount = 0;
           Username = user;
           Password_PBKDF2 = "@ByteArray(8AhaCcVLo4H07+dv5uF7pQ==:m+wRuZuzus0N5mkOGXePQmDZfgTpRZiv2OSKbk1pnOA/QPa/JF4Ai1FwVbyZ1PF9odSOSI1UaRQwDMb3MxOKMg==)";
+          LocalHostAuth = false; # Disable auth because authentik is setup
         };
       };
     };
