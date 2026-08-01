@@ -72,6 +72,7 @@
       ];
 
       guiPackages = lib.optionals (currentSystemDe != "none") [
+        android-studio
         baobab
         bazaar
         brave
@@ -107,7 +108,6 @@
       ];
 
       workPackages = lib.optionals workSystem [
-        android-studio
         ansible
         virt-manager
       ];
