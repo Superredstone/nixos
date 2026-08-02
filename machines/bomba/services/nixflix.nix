@@ -116,6 +116,11 @@ in
     jellyfin = {
       enable = true;
       apiKey._secret = config.sops.secrets.jellyfin_api_key.path;
+      branding.loginDisclaimer = ''
+        <a href="/sso/OIDC/Start/authentik">
+          Sign in with Authentik
+        </a>
+      '';
       network = {
         knownProxies = [ "127.0.0.1" ];
         internalHttpPort = jellyfinPort;
