@@ -27,6 +27,7 @@
         btop
         bun
         busybox
+        devenv
         dig
         distrobox
         docker
