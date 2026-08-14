@@ -52,6 +52,7 @@
         openssl
         openvpn
         pinentry-tty
+        pre-commit
         python3
         ripgrep
         rsync
