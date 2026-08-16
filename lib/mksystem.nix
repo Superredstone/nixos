@@ -4,6 +4,7 @@
   nixvim,
   sops-nix,
   noctalia,
+  simple-mailserver,
   inputs,
   nixpkgs,
   nixpkgs-25-11,
@@ -32,6 +33,7 @@ let
       workSystem
       enableZram
       nixvim
+      simple-mailserver
       sops-nix
       noctalia
       inputs

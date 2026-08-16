@@ -8,6 +8,7 @@
     ./fail2ban.nix
     ./gitea.nix
     ./homebox.nix
+    ./mail.nix
     ./navidrome.nix
     ./nextcloud.nix
     ./nixflix.nix

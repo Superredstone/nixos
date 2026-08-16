@@ -4,6 +4,7 @@
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-my-features.url = "github:Superredstone/nixpkgs/my-features";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
+    simple-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,6 +43,7 @@
       noctalia,
       nixflix,
       authentik-nix,
+      simple-mailserver,
       ...
     }@inputs:
     let
@@ -56,6 +58,7 @@
           nixvim
           sops-nix
           noctalia
+          simple-mailserver
           inputs
           nixpkgs
           nixpkgs-25-11
@@ -93,6 +96,7 @@
         additionalModules = [
           nixflix.nixosModules.default
           authentik-nix.nixosModules.default
+          simple-mailserver.nixosModules.default
         ];
       };
       nixosConfigurations."frog" = mkSystem "frog" {
