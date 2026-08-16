@@ -22,6 +22,10 @@
           root /var/www/patrickcanal.it/public
           file_server
         '';
+        "mail.patrickcanal.it".extraConfig = ''
+          root /var/www/patrickcanal.it/public
+          file_server
+        '';
         "vaultwarden.patrickcanal.it".extraConfig = ''
           encode zstd gzip
           reverse_proxy :8003 {
