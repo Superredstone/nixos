@@ -1,7 +1,7 @@
-{ pkgs, currentSystemDe, ... }:
+{ pkgs, ... }:
 {
   programs.kitty = {
-    enable = currentSystemDe != "none";
+    enable = true;
     themeFile = "Catppuccin-Mocha";
     extraConfig = "		";
     enableGitIntegration = true;
