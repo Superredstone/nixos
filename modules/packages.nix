@@ -74,16 +74,13 @@
 
       guiPackages = lib.optionals (currentSystemDe != "none") [
         android-studio
-        baobab
         bazaar
         brave
         cinny-desktop
         firefox
         fladder
-        gapless
         gimp
         mpv
-        nautilus
         nextcloud-client
         obs-studio
         qbittorrent
@@ -91,7 +88,6 @@
         seahorse
         telegram-desktop
         thunderbird
-        tor-browser
         vesktop
         vlc
         vulkan-tools
@@ -99,18 +95,15 @@
       ];
 
       gamingPackages = lib.optionals gamingSystem [
-        arrpc
         cura-appimage
         heroic
         obs-studio
-        openrgb
         prismlauncher
         satisfactorymodmanager
       ];
 
       workPackages = lib.optionals workSystem [
         ansible
-        virt-manager
       ];
 
       plasmaPackages = lib.optionals (currentSystemDe == "plasma") [
@@ -129,6 +122,7 @@
       niriPackages = lib.optionals (currentSystemDe == "niri") [
         gnome-keyring
         loupe
+        nautilus
         papers
 
         inputs.noctalia.packages.${hostSystem}.default
