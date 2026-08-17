@@ -30,7 +30,6 @@
         devenv
         dig
         distrobox
-        docker
         dua
         fd
         file
