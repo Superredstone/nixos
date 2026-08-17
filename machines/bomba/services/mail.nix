@@ -31,6 +31,9 @@ in
           "io@patrickcanal.it"
         ];
       };
+      "auth@patrickcanal.it" = {
+        hashedPassword = "$y$j9T$JqqefR6flaaJBRjD4KVZc1$QM6h4Spr5.yn/FuIT.ydTV22daEbiVd8ZprV/POtPgB";
+      };
     };
   };
 }
