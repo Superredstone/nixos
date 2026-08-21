@@ -1,4 +1,4 @@
-{ config, ... }:
+{ lib, ... }:
 let
   fqdn = "mail.patrickcanal.it";
 in
@@ -33,6 +33,10 @@ in
       };
       "auth@patrickcanal.it" = {
         hashedPassword = "$y$j9T$JqqefR6flaaJBRjD4KVZc1$QM6h4Spr5.yn/FuIT.ydTV22daEbiVd8ZprV/POtPgB";
+      };
+      "spotify@patrickcanal.it" = {
+        hashedPassword = "$y$j9T$l2WgZXWJ0F6chBhGW4RwI0$/IURShZgPKU90StBtKwND9k4KDGix1toIeUuhJ9gfQ/";
+        aliases = [ ] ++ builtins.genList (i: "spotify-${toString i}@patrickcanal.it") 101;
       };
     };
   };
