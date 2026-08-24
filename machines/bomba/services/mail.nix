@@ -38,6 +38,9 @@ in
         hashedPassword = "$y$j9T$l2WgZXWJ0F6chBhGW4RwI0$/IURShZgPKU90StBtKwND9k4KDGix1toIeUuhJ9gfQ/";
         aliases = [ ] ++ builtins.genList (i: "spotify-${toString i}@patrickcanal.it") 101;
       };
+      "test@patrickcanal.it" = {
+        hashedPassword = "$y$j9T$Bgf1W.OSUZg8jcT7IVz0Q/$gsld9qhZGfYCSq413Td1Yh.oT8I37LDSbmU3fHhsQ.B";
+      };
     };
   };
 }
