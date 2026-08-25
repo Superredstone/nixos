@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 {
   services = {
     flatpak.enable = true;
@@ -6,5 +6,9 @@
     # Required for piper to work
     ratbagd.enable = true;
     xserver.videoDrivers = [ "nvidia" ];
+    udev = {
+      enable = true;
+      packages = with pkgs; [ via ];
+    };
   };
 }
