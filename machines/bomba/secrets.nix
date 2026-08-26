@@ -26,7 +26,6 @@
         yamtrack_env = default;
         authentik_env = default;
         vaultwarden_env = default;
-        vikunja_env = default;
         mail_password = default;
       };
     };

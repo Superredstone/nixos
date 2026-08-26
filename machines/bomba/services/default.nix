@@ -15,7 +15,6 @@
     ./octoprint.nix
     ./teamspeak.nix
     ./vaultwarden.nix
-    ./vikunja.nix
     ./yamtrack.nix
   ];
 
