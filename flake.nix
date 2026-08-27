@@ -11,7 +11,7 @@
     };
     nixvim = {
       url = "github:Superredstone/nixvim";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     sops-nix = {
       url = "github:Mic92/sops-nix";
