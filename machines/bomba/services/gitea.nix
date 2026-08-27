@@ -1,6 +1,6 @@
-{ config, ... }:
+{ ... }:
 {
-  config.services.gitea = {
+  services.gitea = {
     enable = true;
     settings = {
       server = {
