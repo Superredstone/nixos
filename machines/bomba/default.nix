@@ -7,6 +7,7 @@
     ./secrets.nix
     ./services
     ./virtualisation.nix
+    ./utilities.nix
   ];
 
   networking.hostName = "bomba";
