@@ -67,6 +67,7 @@
     ];
     trusted-users = [
       "root"
+      "@wheel"
       currentSystemUser
     ];
   };
