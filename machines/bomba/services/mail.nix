@@ -41,6 +41,10 @@ in
       "test@patrickcanal.it" = {
         hashedPassword = "$y$j9T$Bgf1W.OSUZg8jcT7IVz0Q/$gsld9qhZGfYCSq413Td1Yh.oT8I37LDSbmU3fHhsQ.B";
       };
+      "all@patrickcanal.it" = {
+        hashedPassword = "$y$j9T$bHfRKx3Wsu7uAIvx4VrZn1$BUCFFIJzETniHMll.7ThAd412w0YuCw/6i1KnjmWo7/";
+        catchAll = [ "patrickcanal.it" ];
+      };
     };
   };
 }
