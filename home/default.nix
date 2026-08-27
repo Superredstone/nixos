@@ -17,7 +17,6 @@
     if currentSystemDe != "none" then
       [
         ./mangohud.nix
-        ./vesktop.nix
       ]
     else
       [ ]
