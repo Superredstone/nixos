@@ -97,7 +97,6 @@
       gamingPackages = lib.optionals gamingSystem [
         cura-appimage
         heroic
-        obs-studio
         prismlauncher
         satisfactorymodmanager
       ];
