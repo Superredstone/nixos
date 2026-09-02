@@ -22,6 +22,7 @@
       basePackages = [
         # CLI utils
         appimage-run
+        android-tools
         bat
         bintools
         btop
