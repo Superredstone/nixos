@@ -61,7 +61,6 @@
         unzip
         wget
         wl-clipboard
-        pkgs-25-11.xwayland-satellite
         zip
         zoxide
         zulu
@@ -81,9 +80,11 @@
         firefox
         fladder
         gimp
+        libreoffice
         mpv
         nextcloud-client
         obs-studio
+        pkgs-25-11.xwayland-satellite
         qbittorrent
         rustdesk
         seahorse
@@ -92,7 +93,6 @@
         vesktop
         vlc
         vulkan-tools
-        libreoffice
       ];
 
       gamingPackages = lib.optionals gamingSystem [
