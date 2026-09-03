@@ -1,6 +1,6 @@
 {
   pkgs,
-  # pkgs-25-11,
+  pkgs-25-11,
   pkgs-my-features,
   lib,
   gamingSystem,
@@ -61,7 +61,7 @@
         unzip
         wget
         wl-clipboard
-        xwayland-satellite
+        pkgs-25-11.xwayland-satellite
         zip
         zoxide
         zulu
