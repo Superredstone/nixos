@@ -60,7 +60,6 @@
         tree
         unzip
         wget
-        wl-clipboard
         zip
         zoxide
         zulu
@@ -93,6 +92,7 @@
         vesktop
         vlc
         vulkan-tools
+        wl-clipboard
       ];
 
       gamingPackages = lib.optionals gamingSystem [
