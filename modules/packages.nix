@@ -21,8 +21,8 @@
       hostSystem = pkgs.stdenv.hostPlatform.system;
       basePackages = [
         # CLI utils
-        appimage-run
         android-tools
+        appimage-run
         bat
         bintools
         btop
@@ -57,6 +57,7 @@
         ripgrep
         rsync
         sops
+        tldr
         tree
         unzip
         wget
