@@ -86,6 +86,7 @@
         obs-studio
         pkgs-25-11.xwayland-satellite
         qbittorrent
+        rufin
         rustdesk
         seahorse
         telegram-desktop
