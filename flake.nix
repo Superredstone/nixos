@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-my-features.url = "github:Superredstone/nixpkgs/my-features";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
@@ -34,6 +35,7 @@
   outputs =
     {
       nixpkgs,
+      nixpkgs-small,
       nixpkgs-25-11,
       nixpkgs-my-features,
       home-manager,
@@ -61,6 +63,7 @@
           simple-mailserver
           inputs
           nixpkgs
+          nixpkgs-small
           nixpkgs-25-11
           nixpkgs-my-features
           home-manager

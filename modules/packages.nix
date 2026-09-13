@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-small,
   pkgs-25-11,
   pkgs-my-features,
   lib,
@@ -28,7 +29,7 @@
         btop
         bun
         busybox
-        devenv
+        pkgs-small.devenv
         dig
         distrobox
         dua

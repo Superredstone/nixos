@@ -7,6 +7,7 @@
   simple-mailserver,
   inputs,
   nixpkgs,
+  nixpkgs-small,
   nixpkgs-25-11,
   nixpkgs-my-features,
   home-manager,
@@ -42,6 +43,9 @@ let
     pkgs-unstable = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+    };
+    pkgs-small = import nixpkgs-small {
+      inherit system;
     };
     pkgs-25-11 = nixpkgs-25-11.legacyPackages.${system};
     pkgs-my-features = nixpkgs-my-features.legacyPackages.${system};
