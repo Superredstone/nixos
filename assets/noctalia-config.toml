@@ -7,6 +7,7 @@ center = [ "clock" ]
 end = [
     "media",
     "tray",
+    "bar",
     "notifications",
     "clipboard",
     "network",
@@ -261,13 +262,14 @@ widget_order = [
 media = false
 
 [plugin_settings."damian-ds7/battery-threshold"]
+battery_device = "/sys/class/power_supply/BAT1"
 panel_placement = "attached"
 
 [plugin_settings."noctalia/bitwarden"]
 server_url = "https://vaultwarden.patrickcanal.it"
 
 [plugins]
-enabled = [ "damian-ds7/battery-threshold" ]
+enabled = [ "damian-ds7/battery-threshold", "noctalia/bongocat", "noctalia/timer" ]
 
 [shell]
 app_icon_color = "on_surface_variant"
@@ -293,7 +295,7 @@ wallpaper_scheme = "dysfunctional"
 
     [theme.templates]
     builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "niri", "qt" ]
-    community_ids = [ "discord", "telegram", "vscode", "heroiclauncher", "steam", "obs", "lazygit" ]
+    community_ids = [ "discord", "telegram", "libreoffice", "vscode", "heroiclauncher", "prismlauncher", "steam", "obs", "lazygit" ]
 
 [wallpaper]
 directory = "/home/r3ddy/Pictures/Wallpapers"
@@ -313,6 +315,14 @@ directory = "/home/r3ddy/Pictures/Wallpapers"
 [weather]
 address = "Bolzano"
 refresh_minutes = 60
+
+[widget.audio_visualizer]
+bands = 47
+color_2 = "secondary"
+width = 311
+
+[widget.bar]
+type = "noctalia/timer:bar"
 
 [widget.cat]
 audio_spectrum = true
