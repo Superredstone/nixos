@@ -154,7 +154,7 @@ window-rule {
 }
 
 window-rule {
-    geometry-corner-radius 0 // Embrace rectangles, reject modernity
+    geometry-corner-radius 8 // Return to modernity
     clip-to-geometry true
 }
 
