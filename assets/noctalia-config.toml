@@ -2,7 +2,7 @@
 ui_scale = 1.0000000074505806
 
 [bar.default]
-capsule_radius = 0
+capsule_radius = "auto"
 center = [ "clock" ]
 end = [
     "media",
@@ -326,6 +326,13 @@ format = "{:%a %d %b %Y %H:%M}"
 
 [widget.control-center]
 glyph = "ghost-3-filled"
+
+[widget.media]
+capsule_fill = "on_primary"
+capsule_radius = "auto"
+hide_when_no_media = true
+max_length = 400
+show_progress = true
 
 [widget.network]
 show_label = false
