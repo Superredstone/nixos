@@ -103,6 +103,7 @@
         heroic
         prismlauncher
         satisfactorymodmanager
+        shipwright
       ];
 
       workPackages = lib.optionals workSystem [
