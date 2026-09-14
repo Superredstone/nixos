@@ -14,6 +14,7 @@
     ./nextcloud.nix
     ./nixflix.nix
     ./octoprint.nix
+    ./patrickcanal.it.nix
     ./teamspeak.nix
     ./vaultwarden.nix
     ./yamtrack.nix

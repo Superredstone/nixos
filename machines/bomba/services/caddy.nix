@@ -1,4 +1,5 @@
 {
+  pkgs,
   config,
   ...
 }:
@@ -19,8 +20,11 @@
       enable = true;
       virtualHosts = {
         "patrickcanal.it".extraConfig = ''
-          root /var/www/patrickcanal.it/public
-          file_server
+          reverse_proxy :8011 {
+            header_up Host {hostport}
+            header_up X-Real-IP {remote_host}
+            header_up X-Forwarded-For {header.X-Forwarded-For}
+          }
         '';
         "mail.patrickcanal.it".extraConfig = ''
           root /var/www/patrickcanal.it/public
