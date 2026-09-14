@@ -12,6 +12,8 @@ in
 
   mailserver = {
     enable = true;
+    enableSubmission = true;
+    enableSubmissionSsl = true;
     stateVersion = 5;
     fqdn = fqdn;
     domains = [ "patrickcanal.it" ];
