@@ -1,7 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-small.url = "github:nixos/nixpkgs/nixos-unstable-small";
+    nixpkgs-small.url = "github:nixos/nixpkgs/bb11e50a8843e245cd8400e1ae3823bd6f64cc9c";
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-my-features.url = "github:Superredstone/nixpkgs/my-features";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
