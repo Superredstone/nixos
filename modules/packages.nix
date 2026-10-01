@@ -125,9 +125,8 @@
         gnome-keyring
         loupe
         nautilus
+        noctalia
         papers
-
-        inputs.noctalia.packages.${hostSystem}.default
       ];
     in
     basePackages

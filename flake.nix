@@ -18,10 +18,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixflix = {
       url = "github:kiriwalawren/nixflix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -42,7 +38,6 @@
       nixvim,
       sops-nix,
       nix-cachyos-kernel,
-      noctalia,
       nixflix,
       authentik-nix,
       simple-mailserver,
@@ -59,7 +54,6 @@
           overlays
           nixvim
           sops-nix
-          noctalia
           simple-mailserver
           inputs
           nixpkgs

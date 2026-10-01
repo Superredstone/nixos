@@ -3,7 +3,6 @@
   overlays,
   nixvim,
   sops-nix,
-  noctalia,
   simple-mailserver,
   inputs,
   nixpkgs,
@@ -36,7 +35,6 @@ let
       nixvim
       simple-mailserver
       sops-nix
-      noctalia
       inputs
       additionalModules
       ;
