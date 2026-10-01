@@ -88,7 +88,6 @@
         pkgs-25-11.xwayland-satellite
         qbittorrent
         rufin
-        rustdesk
         seahorse
         telegram-desktop
         thunderbird
@@ -103,7 +102,6 @@
         heroic
         prismlauncher
         satisfactorymodmanager
-        shipwright
       ];
 
       workPackages = lib.optionals workSystem [
