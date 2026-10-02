@@ -11,7 +11,7 @@
       systemd.enable = true;
     };
     # Do not remove cachy kernel, it fixes nvidia kernel panic on shutdown
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-lts-lto-x86_64-v3;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v4;
     consoleLogLevel = 3;
     kernelParams = [
       "quiet"
