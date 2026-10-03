@@ -22,6 +22,7 @@
       [ ]
   )
   ++ (if builtins.elem "gnome" currentSystemDe then [ ./gnome.nix ] else [ ])
+  ++ (if builtins.elem "plasma" currentSystemDe then [ ./plasma.nix ] else [ ])
   ++ (if builtins.elem "niri" currentSystemDe then [ ./niri.nix ] else [ ]);
 
   home = {
