@@ -1,16 +1,24 @@
 {
   pkgs,
+  lib,
   gamingSystem,
   currentSystemDe,
   ...
 }:
+let
+  desktopEnvironments = builtins.filter (environment: environment != "none") currentSystemDe;
+in
 {
   imports = [
 
   ]
-  ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ])
-  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ])
-  ++ (if currentSystemDe == "plasma" then [ ./plasma.nix ] else [ ]);
+  ++ (if builtins.elem "niri" currentSystemDe then [ ./niri.nix ] else [ ])
+  ++ (if builtins.elem "gnome" currentSystemDe then [ ./gnome.nix ] else [ ])
+  ++ (if builtins.elem "plasma" currentSystemDe then [ ./plasma.nix ] else [ ]);
+
+  services.displayManager.defaultSession = lib.mkIf (desktopEnvironments != [ ]) (
+    lib.mkForce (builtins.head desktopEnvironments)
+  );
 
   programs = {
     gamescope = {

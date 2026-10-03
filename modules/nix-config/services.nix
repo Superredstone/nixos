@@ -2,7 +2,7 @@
 {
   services = {
     pcscd.enable = true;
-    xserver.enable = currentSystemDe != "none";
+    xserver.enable = !(builtins.elem "none" currentSystemDe);
     xserver.excludePackages = with pkgs; [
       xterm
     ];

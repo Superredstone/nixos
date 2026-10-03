@@ -14,15 +14,15 @@
     ./zoxide.nix
   ]
   ++ (
-    if currentSystemDe != "none" then
+    if !(builtins.elem "none" currentSystemDe) then
       [
         ./mangohud.nix
       ]
     else
       [ ]
   )
-  ++ (if currentSystemDe == "gnome" then [ ./gnome.nix ] else [ ])
-  ++ (if currentSystemDe == "niri" then [ ./niri.nix ] else [ ]);
+  ++ (if builtins.elem "gnome" currentSystemDe then [ ./gnome.nix ] else [ ])
+  ++ (if builtins.elem "niri" currentSystemDe then [ ./niri.nix ] else [ ]);
 
   home = {
     username = "${currentSystemUser}";

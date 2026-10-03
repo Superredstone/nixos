@@ -71,7 +71,7 @@
         email = personalEmail;
         gamingSystem = true;
         # Currently supported: plasma, gnome, niri and none
-        desktopEnvironment = "niri";
+        desktopEnvironment = [ "niri" "plasma" ];
         enableZram = true;
         additionalModules = [
         ];
@@ -81,14 +81,14 @@
         user = username;
         email = personalEmail;
         workSystem = true;
-        desktopEnvironment = "gnome";
+        desktopEnvironment = [ "gnome" ];
         enableZram = true;
       };
       nixosConfigurations."bomba" = mkSystem "bomba" {
         system = "x86_64-linux";
         email = personalEmail;
         user = username;
-        desktopEnvironment = "none";
+        desktopEnvironment = [ "none" ];
         enableZram = true;
         additionalModules = [
           nixflix.nixosModules.default
@@ -101,7 +101,7 @@
         user = username;
         email = personalEmail;
         workSystem = true;
-        desktopEnvironment = "gnome";
+        desktopEnvironment = [ "gnome" ];
         enableZram = true;
       };
     };

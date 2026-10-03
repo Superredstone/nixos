@@ -14,7 +14,7 @@
     ./services.nix
   ]
   ++ (
-    if (currentSystemDe != "none") then
+    if !(builtins.elem "none" currentSystemDe) then
       [
         ./fonts.nix
         ./sound.nix

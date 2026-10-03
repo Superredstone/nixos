@@ -73,7 +73,7 @@
         inputs.nixvim.packages.${stdenv.hostPlatform.system}.default # The only and one great editor improved even further
       ];
 
-      guiPackages = lib.optionals (currentSystemDe != "none") [
+      guiPackages = lib.optionals (!(builtins.elem "none" currentSystemDe)) [
         android-studio
         bazaar
         brave
@@ -108,11 +108,11 @@
         ansible
       ];
 
-      plasmaPackages = lib.optionals (currentSystemDe == "plasma") [
+      plasmaPackages = lib.optionals (builtins.elem "plasma" currentSystemDe) [
         kdePackages.wallpaper-engine-plugin
       ];
 
-      gnomePackages = lib.optionals (currentSystemDe == "gnome") [
+      gnomePackages = lib.optionals (builtins.elem "gnome" currentSystemDe) [
         blackbox-terminal
         gnome-tweaks
         gnomeExtensions.appindicator
@@ -121,7 +121,7 @@
         gnomeExtensions.wallpaper-slideshow
       ];
 
-      niriPackages = lib.optionals (currentSystemDe == "niri") [
+      niriPackages = lib.optionals (builtins.elem "niri" currentSystemDe) [
         gnome-keyring
         loupe
         nautilus
