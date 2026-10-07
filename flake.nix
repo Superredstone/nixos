@@ -71,7 +71,7 @@
         email = personalEmail;
         gamingSystem = true;
         # Currently supported: plasma, gnome, niri and none
-        desktopEnvironment = [ "niri" "plasma" ];
+        desktopEnvironment = [ "plasma" ];
         enableZram = true;
         additionalModules = [
         ];
