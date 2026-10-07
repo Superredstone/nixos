@@ -7,7 +7,7 @@
       "amend" = "git commit --amend";
       "commit" = "git commit";
       "add" = "git add .";
-      "ssh" = "kitten ssh";
+      "kssh" = "kitten ssh";
       "dev" = "nix develop --command 'fish'";
     };
     interactiveShellInit = ''
