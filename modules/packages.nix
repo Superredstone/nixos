@@ -27,7 +27,6 @@
         btop
         bun
         busybox
-        pkgs-small.devenv
         dig
         distrobox
         dua
@@ -48,9 +47,11 @@
         nixpkgs-review
         nmap
         nodejs
+        opencode
         openssl
         openvpn
         pinentry-tty
+        pkgs-small.devenv
         pre-commit
         python3
         ripgrep
