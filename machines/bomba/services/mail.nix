@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ ... }:
 let
   fqdn = "mail.patrickcanal.it";
 in

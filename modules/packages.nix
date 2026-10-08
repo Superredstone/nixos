@@ -2,7 +2,6 @@
   pkgs,
   pkgs-small,
   pkgs-25-11,
-  pkgs-my-features,
   lib,
   gamingSystem,
   workSystem,
