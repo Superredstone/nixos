@@ -19,7 +19,6 @@
   environment.systemPackages =
     with pkgs;
     let
-      hostSystem = pkgs.stdenv.hostPlatform.system;
       basePackages = [
         # CLI utils
         android-tools
