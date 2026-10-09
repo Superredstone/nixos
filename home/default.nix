@@ -11,6 +11,7 @@
     ./git.nix
     ./kitty.nix
     ./tmux.nix
+    ./zellij.nix
     ./zoxide.nix
   ]
   ++ (
