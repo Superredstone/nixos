@@ -88,6 +88,9 @@
         "auth.patrickcanal.it".extraConfig = ''
           reverse_proxy :9000
         '';
+        "paperless.patrickcanal.it".extraConfig = ''
+          reverse_proxy :8018
+        '';
       };
     };
 }

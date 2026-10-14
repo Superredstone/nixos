@@ -14,6 +14,7 @@
     ./nextcloud.nix
     ./nixflix.nix
     ./octoprint.nix
+    ./paperless.nix
     ./patrickcanal.it.nix
     ./teamspeak.nix
     ./vaultwarden.nix
