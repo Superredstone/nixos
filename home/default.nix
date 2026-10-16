@@ -31,7 +31,7 @@
     sessionVariables = {
       EDITOR = "nvim";
       BROWSER = "firefox";
-      TERMINAL = "kitty";
+      TERMINAL = "alacritty";
     };
     packages = [
       pkgs.dconf
