@@ -12,9 +12,7 @@
       hostName = "nextcloud.patrickcanal.it";
       https = false;
       config = {
-        adminpassFile = config.sops.secrets.nextcloud_password.path;
         dbtype = "sqlite";
-        adminuser = currentSystemUser;
       };
       settings = {
         default_phone_region = "IT";
