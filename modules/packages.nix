@@ -79,6 +79,7 @@
         cinny-desktop
         firefox
         fladder
+        ghidra
         gimp
         libreoffice
         mpv
