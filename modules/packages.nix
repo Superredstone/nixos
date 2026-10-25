@@ -85,7 +85,6 @@
         mpv
         nextcloud-client
         obs-studio
-        pkgs-25-11.xwayland-satellite
         qbittorrent
         rufin
         seahorse
@@ -95,6 +94,7 @@
         vlc
         vulkan-tools
         wl-clipboard
+        xwayland-satellite
       ];
 
       gamingPackages = lib.optionals gamingSystem [
