@@ -26,6 +26,10 @@
       url = "github:nix-community/authentik-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -71,7 +75,7 @@
         email = personalEmail;
         gamingSystem = true;
         # Currently supported: plasma, gnome, niri and none
-        desktopEnvironment = [ "plasma" ];
+        desktopEnvironment = [ "niri" ];
         enableZram = true;
         additionalModules = [
         ];

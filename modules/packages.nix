@@ -6,8 +6,9 @@
   gamingSystem,
   workSystem,
   currentSystemDe,
+  inputs,
   ...
-}@inputs:
+}:
 {
   imports = [
     ./programs
@@ -77,6 +78,7 @@
         bazaar
         brave
         cinny-desktop
+        inputs.llm-agents.packages.${stdenv.hostPlatform.system}.claude-desktop
         firefox
         fladder
         ghidra
