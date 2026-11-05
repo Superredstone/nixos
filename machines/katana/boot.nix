@@ -6,7 +6,7 @@
     loader.systemd-boot.configurationLimit = 10;
     initrd.luks.devices."luks-563ebcd9-614b-460f-af9a-5cf1d9c8bef5".device =
       "/dev/disk/by-uuid/563ebcd9-614b-460f-af9a-5cf1d9c8bef5";
-    kernelPackages = pkgs.linuxPackages;
+    kernelPackages = pkgs.linuxPackages_latest;
     consoleLogLevel = 3;
     kernelParams = [
       "quiet"
