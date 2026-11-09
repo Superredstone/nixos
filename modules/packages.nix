@@ -76,7 +76,6 @@
       guiPackages = lib.optionals (!(builtins.elem "none" currentSystemDe)) [
         android-studio
         bazaar
-        brave
         cinny-desktop
         inputs.llm-agents.packages.${stdenv.hostPlatform.system}.claude-desktop
         firefox
