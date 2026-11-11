@@ -87,7 +87,7 @@
         nextcloud-client
         obs-studio
         qbittorrent
-        rufin
+        inputs.nixpkgs-master.legacyPackages.${stdenv.hostPlatform.system}.rufin
         seahorse
         telegram-desktop
         thunderbird

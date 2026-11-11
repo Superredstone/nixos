@@ -4,6 +4,7 @@
     nixpkgs-small.url = "github:nixos/nixpkgs/bb11e50a8843e245cd8400e1ae3823bd6f64cc9c";
     nixpkgs-25-11.url = "github:nixos/nixpkgs/nixos-25.11";
     nixpkgs-my-features.url = "github:Superredstone/nixpkgs/my-features";
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
     simple-mailserver.url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
     home-manager = {
