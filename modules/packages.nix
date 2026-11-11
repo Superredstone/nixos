@@ -102,6 +102,7 @@
         cura-appimage
         heroic
         prismlauncher
+        quiver-launcher
         satisfactorymodmanager
       ];
 
