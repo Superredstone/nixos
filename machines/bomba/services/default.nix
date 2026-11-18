@@ -9,6 +9,7 @@
     ./fail2ban.nix
     ./gitea.nix
     ./homebox.nix
+    ./koito.nix
     ./mail.nix
     ./navidrome.nix
     ./nextcloud.nix

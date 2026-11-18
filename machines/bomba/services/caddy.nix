@@ -91,6 +91,9 @@
         "paperless.patrickcanal.it".extraConfig = ''
           reverse_proxy :8018
         '';
+        "koito.patrickcanal.it".extraConfig = ''
+          reverse_proxy :8019
+        '';
       };
     };
 }
