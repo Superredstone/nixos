@@ -76,18 +76,18 @@
       guiPackages = lib.optionals (!(builtins.elem "none" currentSystemDe)) [
         android-studio
         bazaar
-        cinny-desktop
-        inputs.llm-agents.packages.${stdenv.hostPlatform.system}.claude-desktop
         firefox
         fladder
+        fluffychat
         ghidra
         gimp
+        inputs.llm-agents.packages.${stdenv.hostPlatform.system}.claude-desktop
+        inputs.nixpkgs-master.legacyPackages.${stdenv.hostPlatform.system}.rufin
         libreoffice
         mpv
         nextcloud-client
         obs-studio
         qbittorrent
-        inputs.nixpkgs-master.legacyPackages.${stdenv.hostPlatform.system}.rufin
         seahorse
         telegram-desktop
         thunderbird
