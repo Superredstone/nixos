@@ -6,6 +6,8 @@
       modesetting.enable = true;
       package = config.boot.kernelPackages.nvidiaPackages.production;
       open = true;
+      powerManagement.enable = true;
+      dynamicBoost.enable = true;
       prime = {
         offload = {
           enable = true;
