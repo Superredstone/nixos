@@ -28,10 +28,6 @@
         "test.patrickcanal.it".extraConfig = ''
           reverse_proxy 192.168.1.126:8000
         '';
-        "mail.patrickcanal.it".extraConfig = ''
-          root /var/www/patrickcanal.it/public
-          file_server
-        '';
         "bubi.patrickcanal.it".extraConfig = ''
           root * /var/www/bubi
           file_server
