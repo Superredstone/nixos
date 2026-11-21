@@ -14,6 +14,8 @@
       ];
     };
   };
+  systemd.services.NetworkManager-wait-online.enable = false;
+
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;
