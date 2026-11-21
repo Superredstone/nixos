@@ -12,4 +12,10 @@
       packages = with pkgs; [ via ];
     };
   };
+
+  # Keep SSH keys added to gpg-agent unlocked until logout (~400 days)
+  programs.gnupg.agent.settings = {
+    default-cache-ttl-ssh = 34560000;
+    max-cache-ttl-ssh = 34560000;
+  };
 }
