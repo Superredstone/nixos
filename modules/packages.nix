@@ -91,7 +91,6 @@
         seahorse
         telegram-desktop
         thunderbird
-        vesktop
         vlc
         vulkan-tools
         wl-clipboard
