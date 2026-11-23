@@ -36,6 +36,7 @@
   };
 
   services.postgresql = {
+    enable = true;
     ensureDatabases = [ "matrix-synapse" ];
     ensureUsers = [
       {
