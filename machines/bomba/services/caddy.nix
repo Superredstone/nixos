@@ -19,11 +19,25 @@
       enable = true;
       virtualHosts = {
         "patrickcanal.it".extraConfig = ''
-          reverse_proxy :8011 {
-            header_up Host {hostport}
-            header_up X-Real-IP {remote_host}
-            header_up X-Forwarded-For {header.X-Forwarded-For}
+          handle /.well-known/matrix/client {
+            header Access-Control-Allow-Origin *
+            header Content-Type application/json
+            respond `{"m.homeserver":{"base_url":"https://matrix.patrickcanal.it"}}`
           }
+          handle /.well-known/matrix/server {
+            header Content-Type application/json
+            respond `{"m.server":"matrix.patrickcanal.it:443"}`
+          }
+          handle {
+            reverse_proxy :8011 {
+              header_up Host {hostport}
+              header_up X-Real-IP {remote_host}
+              header_up X-Forwarded-For {header.X-Forwarded-For}
+            }
+          }
+        '';
+        "matrix.patrickcanal.it".extraConfig = ''
+          reverse_proxy :${toString config.services.matrix-conduit.settings.global.port}
         '';
         "test.patrickcanal.it".extraConfig = ''
           reverse_proxy 192.168.1.126:8000

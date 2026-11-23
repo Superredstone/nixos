@@ -11,6 +11,7 @@
     ./homebox.nix
     ./koito.nix
     ./mail.nix
+    ./matrix.nix
     ./navidrome.nix
     ./nextcloud.nix
     ./nixflix.nix
