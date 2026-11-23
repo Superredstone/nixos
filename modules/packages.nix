@@ -16,13 +16,17 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
+
   environment.systemPackages =
     with pkgs;
     let
       basePackages = [
         # CLI utils
         android-tools
-        appimage-run
         bat
         bintools
         btop
