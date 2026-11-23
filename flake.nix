@@ -23,10 +23,6 @@
       url = "github:kiriwalawren/nixflix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    authentik-nix = {
-      url = "github:nix-community/authentik-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     llm-agents = {
       url = "github:numtide/llm-agents.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,7 +40,6 @@
       sops-nix,
       nix-cachyos-kernel,
       nixflix,
-      authentik-nix,
       simple-mailserver,
       ...
     }@inputs:
@@ -97,7 +92,6 @@
         enableZram = true;
         additionalModules = [
           nixflix.nixosModules.default
-          authentik-nix.nixosModules.default
           simple-mailserver.nixosModules.default
         ];
       };

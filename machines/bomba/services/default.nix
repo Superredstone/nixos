@@ -3,7 +3,6 @@
   imports = [
     ./actual.nix
     ./adguard.nix
-    ./authentik.nix
     ./caddy.nix
     ./cron.nix
     ./fail2ban.nix

@@ -39,7 +39,7 @@ in
           MaxAuthenticationFailCount = 0;
           Username = user;
           Password_PBKDF2 = "@ByteArray(8AhaCcVLo4H07+dv5uF7pQ==:m+wRuZuzus0N5mkOGXePQmDZfgTpRZiv2OSKbk1pnOA/QPa/JF4Ai1FwVbyZ1PF9odSOSI1UaRQwDMb3MxOKMg==)";
-          LocalHostAuth = false; # Disable auth because authentik is setup
+          LocalHostAuth = true;
         };
       };
     };
@@ -116,11 +116,6 @@ in
     jellyfin = {
       enable = true;
       apiKey._secret = config.sops.secrets.jellyfin_api_key.path;
-      branding.loginDisclaimer = ''
-        <a href="/sso/OIDC/Start/authentik">
-          Sign in with Authentik
-        </a>
-      '';
       network = {
         knownProxies = [ "127.0.0.1" ];
         internalHttpPort = jellyfinPort;
