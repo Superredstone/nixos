@@ -2,9 +2,9 @@
 {
   services.adguardhome = {
     enable = true;
-    port = 8017;
     mutableSettings = true;
     settings = {
+      http.address = "0.0.0.0:8017";
       dns = {
         upstream_dns = [
           "1.1.1.1"

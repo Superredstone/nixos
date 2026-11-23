@@ -97,7 +97,7 @@
         '';
         "adguard.patrickcanal.it".extraConfig = ''
           ${authentikAuth}
-          reverse_proxy :${toString config.services.adguardhome.port}
+          reverse_proxy :8017
         '';
         "auth.patrickcanal.it".extraConfig = ''
           reverse_proxy :9000
