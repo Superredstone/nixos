@@ -10,6 +10,9 @@ in
     };
   };
 
+  # Gmail hates me 
+  services.postfix.settings.main.inet_protocols = "ipv4";
+
   mailserver = {
     enable = true;
     enableSubmission = true;
