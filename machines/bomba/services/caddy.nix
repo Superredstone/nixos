@@ -37,7 +37,7 @@
           }
         '';
         "matrix.patrickcanal.it".extraConfig = ''
-          reverse_proxy :${toString config.services.matrix-conduit.settings.global.port}
+          reverse_proxy :8020
         '';
         "test.patrickcanal.it".extraConfig = ''
           reverse_proxy 192.168.1.126:8000

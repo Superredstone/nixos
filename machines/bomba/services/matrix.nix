@@ -1,12 +1,47 @@
 { ... }:
 {
-  services.matrix-conduit = {
+  services.matrix-synapse = {
     enable = true;
-    settings.global = {
+    settings = {
       server_name = "patrickcanal.it";
-      address = "127.0.0.1";
-      allow_registration = true;
-      trusted_servers = [ ];
+      public_baseurl = "https://matrix.patrickcanal.it";
+      enable_registration = true;
+      enable_registration_without_verification = true;
+      listeners = [
+        {
+          port = 8020;
+          bind_addresses = [ "127.0.0.1" ];
+          type = "http";
+          tls = false;
+          x_forwarded = true;
+          resources = [
+            {
+              names = [
+                "client"
+                "federation"
+              ];
+              compress = false;
+            }
+          ];
+        }
+      ];
+      database = {
+        name = "psycopg2";
+        args = {
+          database = "matrix-synapse";
+          user = "matrix-synapse";
+        };
+      };
     };
+  };
+
+  services.postgresql = {
+    ensureDatabases = [ "matrix-synapse" ];
+    ensureUsers = [
+      {
+        name = "matrix-synapse";
+        ensureDBOwnership = true;
+      }
+    ];
   };
 }
