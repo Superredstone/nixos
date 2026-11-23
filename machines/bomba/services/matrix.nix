@@ -5,8 +5,6 @@
     settings = {
       server_name = "patrickcanal.it";
       public_baseurl = "https://matrix.patrickcanal.it";
-      enable_registration = true;
-      enable_registration_without_verification = true;
       listeners = [
         {
           port = 8020;
