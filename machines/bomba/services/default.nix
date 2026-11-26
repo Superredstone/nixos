@@ -7,6 +7,7 @@
     ./cron.nix
     ./fail2ban.nix
     ./gitea.nix
+    ./home-assistant.nix
     ./homebox.nix
     ./koito.nix
     ./mail.nix
