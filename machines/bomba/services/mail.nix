@@ -3,6 +3,9 @@ let
   fqdn = "mail.patrickcanal.it";
 in
 {
+  # nixos-mailserver requires a local DNSSEC-validating resolver; binds 127.0.0.1 only, AdGuard keeps the LAN IP
+  services.unbound.enable = true;
+
   security.acme = {
     acceptTerms = true;
     certs."mail.patrickcanal.it" = {
