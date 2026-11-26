@@ -18,8 +18,8 @@ in
 
   mailserver = {
     enable = true;
-    enableSubmission = true;
-    enableSubmissionSsl = true;
+    listeners.submission.enable = true;
+    listeners.submissions.enable = true;
     stateVersion = 5;
     fqdn = fqdn;
     domains = [ "patrickcanal.it" ];
