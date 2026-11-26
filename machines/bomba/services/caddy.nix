@@ -88,7 +88,7 @@
       "paperless.patrickcanal.it".extraConfig = ''
         reverse_proxy :8018
       '';
-      "homeassistant.patrickcanal.it".extraConfig = ''
+      "home.patrickcanal.it".extraConfig = ''
         reverse_proxy :8123
       '';
       "koito.patrickcanal.it".extraConfig = ''
