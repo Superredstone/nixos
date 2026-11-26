@@ -42,6 +42,7 @@
         gh
         git
         gitlab-ci-local
+        glab
         gnumake
         htop
         jq
