@@ -42,6 +42,7 @@ in
     caddy = {
       enable = true;
       domain = "patrickcanal.it";
+      tls.enable = true;
     };
 
     flaresolverr.enable = true;

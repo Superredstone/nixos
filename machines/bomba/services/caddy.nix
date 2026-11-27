@@ -49,27 +49,6 @@
       "octoprint.patrickcanal.it".extraConfig = ''
         reverse_proxy :${toString config.services.octoprint.port}
       '';
-      "jellyfin.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.jellyfin.network.internalHttpPort}
-      '';
-      "qbittorrent.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.downloadarr.qbittorrent.port}
-      '';
-      "radarr.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.radarr.settings.server.port}
-      '';
-      "sonarr.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.sonarr.settings.server.port}
-      '';
-      "lidarr.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.lidarr.settings.server.port}
-      '';
-      "prowlarr.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.prowlarr.settings.server.port}
-      '';
-      "seerr.patrickcanal.it".extraConfig = ''
-        reverse_proxy :${toString config.nixflix.seerr.port}
-      '';
       "navidrome.patrickcanal.it".extraConfig = ''
         reverse_proxy :${toString config.services.navidrome.settings.Port}
       '';
