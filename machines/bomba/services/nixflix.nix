@@ -47,6 +47,26 @@ in
 
     flaresolverr.enable = true;
 
+    # Local postfix accepts unauthenticated mail from localhost for its own domain
+    notif.email = {
+      server = "127.0.0.1";
+      port = 25;
+      from = "nixflix@patrickcanal.it";
+      to = [ "me@patrickcanal.it" ];
+      sonarr = {
+        enable = true;
+        useEncryption = 2;
+      };
+      radarr = {
+        enable = true;
+        useEncryption = 2;
+      };
+      lidarr = {
+        enable = true;
+        requireEncryption = false;
+      };
+    };
+
     torrentClients.qbittorrent = {
       enable = true;
       webuiPort = qbittorrentPort;
