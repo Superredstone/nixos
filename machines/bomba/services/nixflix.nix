@@ -58,6 +58,7 @@ in
       openFirewall = true;
       username = user;
       password._secret = config.sops.secrets.nixflix_password.path;
+      apiKey._secret = config.sops.secrets.slskd_api_key.path;
       settings.soulseek = {
         username = "Petrich";
         password._secret = config.sops.secrets.slskd_soulseek_password.path;

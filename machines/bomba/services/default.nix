@@ -18,6 +18,7 @@
     ./octoprint.nix
     ./paperless.nix
     ./patrickcanal.it.nix
+    ./soularr.nix
     ./teamspeak.nix
     ./vaultwarden.nix
     ./yamtrack.nix
