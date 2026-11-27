@@ -2,6 +2,7 @@
 {
   imports = [
     ./actual.nix
+    ./audiomuse.nix
     ./adguard.nix
     ./caddy.nix
     ./cron.nix

@@ -94,6 +94,9 @@
       "koito.patrickcanal.it".extraConfig = ''
         reverse_proxy :8019
       '';
+      "audiomuse.patrickcanal.it".extraConfig = ''
+        reverse_proxy :8021
+      '';
     };
   };
 }

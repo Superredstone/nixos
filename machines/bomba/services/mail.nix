@@ -13,7 +13,7 @@ in
     };
   };
 
-  # Gmail hates me 
+  # Gmail hates me
   services.postfix.settings.main.inet_protocols = "ipv4";
 
   mailserver = {
