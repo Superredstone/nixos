@@ -12,6 +12,14 @@ let
   seerrPort = 8009;
   sonarrPort = 8010;
   lidarrPort = 8012;
+  subtitleSettings = {
+    subtitleDownloadLanguages = [
+      "ita"
+      "eng"
+    ];
+    saveSubtitlesWithMedia = true;
+    skipSubtitlesIfEmbeddedSubtitlesPresent = true;
+  };
   hostConfig = {
     username = user;
     password._secret = config.sops.secrets.nixflix_password.path;
@@ -139,15 +147,30 @@ in
         policy.isAdministrator = true;
         password._secret = config.sops.secrets.nixflix_password.path;
       };
+      # Providers that need no account
+      plugins = {
+        subbuzz = {
+          enable = true;
+          config = {
+            EnableAddic7ed = true;
+            EnablePodnapisiNet = true;
+            EnableYifySubtitles = true;
+          };
+        };
+        "Subtitle Extract" = {
+          enable = true;
+          config.ExtractionDuringLibraryScan = true;
+        };
+      };
       libraries = {
-        Movies = {
+        Movies = subtitleSettings // {
           collectionType = "movies";
           paths = [
             "${mediaDir}/movies"
           ];
         };
 
-        Shows = {
+        Shows = subtitleSettings // {
           collectionType = "tvshows";
           seasonZeroDisplayName = "Specials";
           paths = [
