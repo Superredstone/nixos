@@ -111,14 +111,17 @@ in
         indexers = [
           {
             name = "Il Corsaro Blu";
+            tags = [ "flaresolverr" ];
             username = "Petrich";
             password._secret = config.sops.secrets.indexers_ilcorsaroblu_password.path;
           }
           {
             name = "LimeTorrents";
+            tags = [ "flaresolverr" ];
           }
           {
             name = "The Pirate Bay";
+            tags = [ "flaresolverr" ];
           }
         ];
       };
