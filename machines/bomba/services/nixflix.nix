@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  options,
+  pkgs,
+  ...
+}:
 let
   user = "Patrick";
   baseDir = "/var/lib/nixflix";
@@ -133,6 +138,38 @@ in
       enable = true;
       config = {
         apiKey._secret = config.sops.secrets.lidarr_api_key.path;
+        # Built-in "Any" profile, edited in place so existing artists keep it: only FLAC-class or 320-class, upgrade to lossless
+        qualityProfiles = map (
+          p:
+          p
+          // {
+            items = map (
+              i:
+              i
+              // {
+                allowed = builtins.elem (i.name or "") [
+                  "High Quality Lossy"
+                  "Lossless"
+                ];
+              }
+            ) p.items;
+          }
+        ) options.nixflix.lidarr.config.qualityProfiles.default;
+        # Built-in "Standard" profile, edited in place: studio albums/EPs and soundtracks only
+        metadataProfiles = [
+          {
+            name = "Standard";
+            primaryAlbumTypes = {
+              enableAlbum = true;
+              enableEP = true;
+            };
+            secondaryAlbumTypes = {
+              enableStudio = true;
+              enableSoundtrack = true;
+            };
+            releaseStatuses.enableOfficial = true;
+          }
+        ];
         hostConfig = hostConfig // {
           port = lidarrPort;
         };
