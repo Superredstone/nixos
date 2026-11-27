@@ -20,6 +20,7 @@
         lidarr_api_key = default;
         prowlarr_api_key = default;
         seerr_api_key = default;
+        pinchflat_env = default;
         indexers_ilcorsaroblu_password = default;
         gitea_registration_token = default;
         navidrome_env = default;

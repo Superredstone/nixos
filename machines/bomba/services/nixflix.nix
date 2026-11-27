@@ -47,6 +47,12 @@ in
 
     flaresolverr.enable = true;
 
+    pinchflat = {
+      enable = true;
+      # SECRET_KEY_BASE, BASIC_AUTH_USERNAME, BASIC_AUTH_PASSWORD: it is exposed publicly
+      secretsFile = config.sops.secrets.pinchflat_env.path;
+    };
+
     # Local postfix accepts unauthenticated mail from localhost for its own domain
     notif.email = {
       server = "127.0.0.1";
