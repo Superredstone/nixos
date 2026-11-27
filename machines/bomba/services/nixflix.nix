@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 let
   user = "Patrick";
   baseDir = "/var/lib/nixflix";
@@ -18,6 +18,15 @@ let
   };
 in
 {
+  # Intel iGPU driver for Jellyfin QSV transcoding
+  hardware.graphics = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+    ];
+  };
+
   nixflix = {
     inherit mediaDir downloadsDir stateDir;
     enable = true;
@@ -116,6 +125,11 @@ in
     jellyfin = {
       enable = true;
       apiKey._secret = config.sops.secrets.jellyfin_api_key.path;
+      encoding = {
+        hardwareAccelerationType = "qsv";
+        qsvDevice = "/dev/dri/renderD128";
+        enableTonemapping = true;
+      };
       network = {
         knownProxies = [ "127.0.0.1" ];
         internalHttpPort = jellyfinPort;
