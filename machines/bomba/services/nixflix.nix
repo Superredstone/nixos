@@ -47,6 +47,18 @@ in
 
     flaresolverr.enable = true;
 
+    slskd = {
+      enable = true;
+      vpn.enable = false; # no nixflix VPN on bomba
+      openFirewall = true;
+      username = user;
+      password._secret = config.sops.secrets.nixflix_password.path;
+      settings.soulseek = {
+        username = "Petrich";
+        password._secret = config.sops.secrets.slskd_soulseek_password.path;
+      };
+    };
+
     pinchflat = {
       enable = true;
       # SECRET_KEY_BASE, BASIC_AUTH_USERNAME, BASIC_AUTH_PASSWORD: it is exposed publicly

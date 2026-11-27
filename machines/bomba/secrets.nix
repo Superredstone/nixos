@@ -21,6 +21,7 @@
         prowlarr_api_key = default;
         seerr_api_key = default;
         pinchflat_env = default;
+        slskd_soulseek_password = default;
         indexers_ilcorsaroblu_password = default;
         gitea_registration_token = default;
         navidrome_env = default;
