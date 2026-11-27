@@ -57,7 +57,7 @@
     ];
   };
   virtualisation.oci-containers.containers."yamtrack_redis" = {
-    image = "redis:8-alpine";
+    image = "docker.io/library/redis:8-alpine";
     volumes = [
       "yamtrack_redis_data:/data:rw"
     ];

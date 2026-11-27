@@ -52,7 +52,7 @@ in
     audiomuse_flask = app "flask" { ports = [ "8021:8000/tcp" ]; };
     audiomuse_worker = app "worker" { };
     audiomuse_postgres = common // {
-      image = "postgres:15-alpine";
+      image = "docker.io/library/postgres:15-alpine";
       volumes = [ "/var/lib/audiomuse/postgres:/var/lib/postgresql/data:rw" ];
       extraOptions = [
         "--network=${net}"
@@ -60,7 +60,7 @@ in
       ];
     };
     audiomuse_redis = {
-      image = "redis:7-alpine";
+      image = "docker.io/library/redis:7-alpine";
       log-driver = "journald";
       extraOptions = [
         "--network=${net}"
