@@ -19,6 +19,8 @@
   programs.appimage = {
     enable = true;
     binfmt = true;
+    # .NET AppImage games (e.g. from quiver-launcher) need ICU
+    package = pkgs.appimage-run.override { extraPkgs = p: [ p.icu ]; };
   };
 
   environment.systemPackages =

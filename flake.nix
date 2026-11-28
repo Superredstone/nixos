@@ -46,6 +46,29 @@
     let
       overlays = [
         nix-cachyos-kernel.overlays.pinned
+        # beta not in nixpkgs; upstream AppImage is a self-contained sharun/DwarFS bundle, so extract and run its AppRun
+        (final: prev: {
+          quiver-launcher = prev.stdenvNoCC.mkDerivation rec {
+            pname = "quiver-launcher";
+            version = "4.0.0-beta.9";
+            src = prev.fetchurl {
+              url = "https://github.com/tgeorgiadis/quiver-launcher/releases/download/v${version}/QuiverLauncher_${version}_amd64.AppImage";
+              hash = "sha256-yXGK8UO6AEjhwffOCsPe1xoUiebs7Qz43ndurbzlh4c=";
+            };
+            dontUnpack = true;
+            dontFixup = true; # bundle ships its own loader and libs
+            nativeBuildInputs = [ prev.dwarfs ];
+            installPhase = ''
+              mkdir -p $out/opt/${pname} $out/bin $out/share/applications
+              # shortcut: DwarFS offset is hardcoded, recompute (grep -abo DWARFS) when bumping
+              dwarfsextract -i $src -O 1454864 -o $out/opt/${pname}
+              ln -s $out/opt/${pname}/AppRun $out/bin/quiver-launcher
+              cp -r $out/opt/${pname}/share/icons $out/share/
+              cp "$out/opt/${pname}/Quiver Launcher.desktop" $out/share/applications/quiver-launcher.desktop
+            '';
+            meta.mainProgram = "quiver-launcher";
+          };
+        })
       ];
       personalEmail = "patrickcanal3@gmail.com";
       username = "r3ddy";
